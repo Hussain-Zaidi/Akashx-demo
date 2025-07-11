@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /*------Color variables------*/
+    --black_900_b2: #000000b2;
+    --blue_100: #b8d0f2;
+    --blue_200: #a4c4ff;
+    --blue_400: #3499ff;
+    --blue_50: #ebf1fa;
+    --blue_a100: #75b9ff;
+    --blue_a100_33: #75baff33;
+    --blue_a100_7f: #75b9ff7f;
+    --blue_a100_99: #75baff99;
+    --blue_gray_100: #cddaed;
+    --blue_gray_300: #8ea0bd;
+    --blue_gray_500: #546e93;
+    --blue_gray_500_7f: #546e937f;
+    --cyan_400: #30d5c8;
+    --cyan_400_01: #3bc2d1;
+    --deep_purple_50_59: #eeebff59;
+    --deep_purple_a200: #6243ef;
+    --deep_purple_a200_01: #7557ff;
+    --gray_50: #f4f8ff;
+    --gray_900: #080c26;
+    --gray_900_01: #090d27;
+    --indigo_100: #b8cff2;
+    --indigo_200: #a3b8d8;
+    --indigo_300: #6a8aba;
+    --indigo_300_99: #6a8aba99;
+    --indigo_50: #eaf0f9;
+    --light_blue_a100: #6ddcff;
+    --white_a700: #ffffff;
+
+    /*------Shadow variables------*/
+    --shadow-xs: 0 0 55px 0 #75baff33;
+    --shadow-sm: 0 0 27px 0 #eeebff59;
+
+    /*------Border radius variables------*/
+    --radius-xs: 3px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 10px;
+    --radius-2xl: 20px;
+    --radius-3xl: 22px;
+
+    /*------Spacing variables------*/
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 10px;
+    --space-lg: 12px;
+    --space-xl: 14px;
+    --space-2xl: 15px;
+    --space-3xl: 16px;
+    --space-4xl: 24px;
+    --space-5xl: 26px;
+    --space-6xl: 32px;
+    --space-7xl: 40px;
+    --space-8xl: 60px;
+    --space-9xl: 64px;
+    --space-10xl: 66px;
+  }
+}
+@layer components {
+  /*-------------------------------------
+  Container CSS
+--------------------------------------*/
+  .container-xs {
+    @apply w-full mx-auto max-w-[1608px];
+  }
+}
+
+.blog-block li {
+    list-style: none;
+    position: relative;
+    margin-left: 50px;
+}
+.blog-block li:before {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: #b8d0f2;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 8px;
+}
+@media (max-width:1050px) {
+  .blog-block li:before {
+    top: 4px;
+  }
+}
