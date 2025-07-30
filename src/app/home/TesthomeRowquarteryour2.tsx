@@ -81,7 +81,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowqu
               >
                 {section.section3_p1}
               </Heading>
-              <div className="flex flex-col gap-[38px] md:gap-[18px] items-start md:items-center mb-[70px] md:mb-0">
+              <div className="flex flex-col gap-[38px] md:gap-[18px] items-start md:m-auto mb-[70px] md:mb-0">
                 <div className="flex items-center gap-[20px] md:justify-center">
                   <Img
                     src="img_gala_data.svg"

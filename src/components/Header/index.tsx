@@ -119,13 +119,13 @@ export default function Header({ ...props }: Props) {
             </Heading>
           </Link>
         </li>
-        {/* <li onClick={() => setIsMenuOpen(false)}>
+        <li onClick={() => setIsMenuOpen(false)}>
           <Link href="/blogs" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
               className={`text-[20px] font-medium ${
-                pathname === "/about"
+                pathname === "/blogs"
                   ? "text-blue-100"
                   : "text-blue_gray-300 hover:text-blue-100"
               }`}
@@ -133,7 +133,7 @@ export default function Header({ ...props }: Props) {
               Blogs
             </Heading>
           </Link>
-        </li> */}
+        </li>
         {/* <li onClick={() => setIsMenuOpen(false)}>
           <Link href="#" className={`cursor-pointer lg:text-[17px] ${isMobile ? " pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading

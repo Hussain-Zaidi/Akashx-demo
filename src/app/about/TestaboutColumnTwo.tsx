@@ -55,7 +55,7 @@ export default function TestaboutColumnTwo({ fetchedSection }: TestaboutColumnTw
           </Heading>
         </div>
         <div className="flex self-stretch md:flex-col md:gap-[57px] gap-[130px]">
-          <div className="flex w-full items-start gap-[34px] md:gap-[15px] justify-center ">
+          <div className="flex w-full items-start gap-[34px] md:gap-[15px] justify-center md:flex-col ">
             <Img
               src="DavidDeWitt.svg"
               width={286}
@@ -70,7 +70,7 @@ export default function TestaboutColumnTwo({ fetchedSection }: TestaboutColumnTw
               <Heading
                 size="textmd"
                 as="h5"
-                className="text-[22px] font-medium leading-7 text-blue-100 lg:w-full lg:text-[18px] md:w-full md:text-[14px] md:w-[184px] md:leading-[18px]"
+                className="text-[22px] //font-medium leading-7 text-blue-100 lg:w-full lg:text-[18px] md:w-full md:text-[14px] md:w-[184px] md:leading-[18px]"
               >
                 <>
                 {section.luminary1_description}
@@ -104,7 +104,7 @@ export default function TestaboutColumnTwo({ fetchedSection }: TestaboutColumnTw
               </Link>
             </div>
           </div>
-          <div className="flex w-full items-start gap-[34px] md:gap-[15px] justify-center">
+          <div className="flex w-full items-start gap-[34px] md:gap-[15px] justify-center md:flex-col">
             <Img
               src="SamMadden.svg"
               width={286}
@@ -119,7 +119,7 @@ export default function TestaboutColumnTwo({ fetchedSection }: TestaboutColumnTw
               <Heading
                 size="textmd"
                 as="h5"
-                className="text-[22px] font-medium leading-7 text-blue-100 lg:w-full lg:text-[18px] md:w-full md:text-[14px] md:w-[184px] md:leading-[18px]"
+                className="text-[22px] //font-medium leading-7 text-blue-100 lg:w-full lg:text-[18px] md:w-full md:text-[14px] md:w-[184px] md:leading-[18px]"
               >
                 <>
                 {section.luminary2_description}

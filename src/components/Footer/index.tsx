@@ -76,6 +76,13 @@ export default function Footer({ ...props }: Props) {
                       </Heading>
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/blogs" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Blogs
+                      </Heading>
+                    </Link>
+                  </li>
                   {/* <li>
                     <Link href="Works" target="_blank" rel="noreferrer" className="md:text-[14px]">
                       <Heading size="textxs" as="p" className="font-poppins text-[18px] font-medium text-indigo-50">

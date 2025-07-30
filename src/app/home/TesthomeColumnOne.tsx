@@ -87,11 +87,14 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
     <div className="mb-[152px] md:mb-[74px] flex flex-col items-center md:pt-[102px] relative">
       <div className="container-xs flex flex-col items-center gap-[136px] lg:gap-[102px] lg:px-5 md:gap-[102px] md:px-5 md:gap-[68px] min-h-[486px] md:min-h-[310px] justify-between">
         <div className="flex flex-col items-center gap-[20px] md:gap-[9px] self-stretch">
-          <div className="bg-gradient3 bg-clip-text flex flex-wrap items-start  gap-[15px] self-stretch overflow-hidden md:justify-center text-center md:block md:w-[99%] md:m-auto">
+
+
+          {/* <div className="bg-gradient3 bg-clip-text flex flex-wrap items-start  gap-[15px] self-stretch overflow-hidden md:justify-center text-center md:block md:w-[99%] md:m-auto"> */}
+          <div className="bg-gradient3 bg-clip-text block flex-wrap items-start  gap-[15px] self-stretch overflow-hidden md:justify-center text-center md:block md:w-[99%] md:m-auto">
             <Heading
               size="heading2xl"
               as="h1"
-              className="self-center  font-montserrat text-[60px] font-extrabold text-transparent lg:text-[51px] md:text-[40px] md:text-[34px] md:inline"
+              className="inline self-center  font-montserrat text-[60px] font-extrabold text-transparent lg:text-[51px] md:text-[40px] md:text-[34px] md:inline"
               style=
                   {{
                     fontSize: isMobile  ? '29px': "",
@@ -99,7 +102,9 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
             >
               {section.section1_title + " "}
             </Heading>
-            <Heading id="flipTheWord" size="heading2xl" as="h2" className="font-montserrat text-[60px] font-extrabold text-gray-50 lg:text-[51px] md:text-[40px] md:text-[34px]  md:inline"
+
+            
+            <Heading id="flipTheWord" size="heading2xl" as="h2" className=" inline-flex gap-[10px] min-w-[530px] font-montserrat text-[60px] font-extrabold text-gray-50 lg:text-[51px] md:text-[40px] md:text-[34px]  md:inline"
             style={{
               background: (isMobile && 0)
                 ? "inherit"
@@ -114,6 +119,9 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
               <WordFlip words={flipWords} />
             </Heading>
           </div>
+
+
+
           <Heading
             size="text2xl"
             as="h3"

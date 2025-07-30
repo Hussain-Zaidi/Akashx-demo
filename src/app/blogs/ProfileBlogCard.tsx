@@ -90,9 +90,9 @@ const ProfileBlogCard: React.FC<ProfileBlogCardProps> = ({ excludeId }) => {
             </div>
             <div className="flex flex-col justify-between p-[35px] md:p-[20px_16px]">
               <div>
-                {/* <span className="text-[16px] md:text-[12px] bg-[#a3b8d91a] text-[#A3B8D9] p-[12px_16px] md:p-[8px_12px] rounded-[16px] md:rounded-[10px] inline-block mb-[30px] md:mb-[16px]">
+                <span className="hidden md:block md:w-fit text-[16px] md:text-[12px] bg-[#a3b8d91a] text-[#A3B8D9] p-[12px_16px] md:p-[8px_12px] rounded-[16px] md:rounded-[10px] inline-block mb-[30px] md:mb-[16px]">
                   {categoryName}
-                </span> */}
+                </span>
                 <h3 className="text-[#CDDAED] text-[26px] md:text-[18px] font-semibold mb-[16px] md:mb-[12px] leading-[32px] md:leading-[23px]">
                   {title}
                 </h3>
@@ -100,7 +100,7 @@ const ProfileBlogCard: React.FC<ProfileBlogCardProps> = ({ excludeId }) => {
                   {authorName} • {date}
                 </p>
               </div>
-              <p className="text-[22px] leading-[28px] md:text-[14px] md:leading-[18px] text-[#B8D0F2] line-clamp-2 justify-self-end">
+              <p className="text-[22px] leading-[28px] md:text-[14px] md:leading-[18px] text-[#B8D0F2] line-clamp-2 md:line-clamp-3 justify-self-end">
                 {blocks?.[0]?.body ?? description}
               </p>
             </div>

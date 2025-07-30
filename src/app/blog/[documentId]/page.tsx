@@ -65,17 +65,17 @@ const [activeId, setActiveId] = useState<string | null>(null);
     if (documentId) fetchArticle();
   }, [documentId]);
 
-  useEffect(() => {
-  const defaultTitle = 'AkashX Blog';
+//   useEffect(() => {
+//   const defaultTitle = 'AkashX Blog';
 
-  if (article?.title) {
-    document.title = `${article.title} | ${defaultTitle}`;
-  }
+//   if (article?.title) {
+//     document.title = `${article.title} | ${defaultTitle}`;
+//   }
 
-  return () => {
-    document.title = defaultTitle;
-  };
-}, [article?.title]);
+//   return () => {
+//     document.title = defaultTitle;
+//   };
+// }, [article?.title]);
 
 
 useEffect(() => {
@@ -156,12 +156,12 @@ useEffect(() => {
         <div className="w-full">
          
             {/* <Header /> */}
-    <div className="max-w-[1240px] mx-auto  m-[220px_0_148px] md:m-[120px_20px_42px] pb-[120px] border-b-2 border-[#555e9480] md:border-0">
+    <div className="max-w-[1240px] mx-auto  m-[220px_0_148px] md:m-[120px_20px_42px] pb-[120px] border-b-[1px] border-blue_gray-500_7f md:border-0">
         <div>
             <h1 className="text-[#B8D0F2] text-[42px] md:text-[24px] font-bold mb-[30px] md:mb-[14px] ">{article.title}</h1>
             <p className="text-[#B8D0F2] text-[26px] md:text-[16px] mb-[46px] md:mb-[28px]">{article.description}</p>
             <div className="relative mb-[71px] md:mb-[40px]" >
-                <div className="text-[22px] leading-[26px] font-bold md:text-[14px] md:leading-normal md:font-semibold text-[#CDDAED] absolute bottom-0 w-full bg-[linear-gradient(180deg,_rgb(204_230_255_/_90%),_rgb(8_12_38_/_90%))] h-[124px] md:h-[60px] flex items-center p-5">
+                <div className="text-[22px] leading-[26px] font-bold md:text-[14px] md:leading-normal md:font-semibold text-[#CDDAED] absolute bottom-[-1px] w-full bg-[linear-gradient(180deg,_rgb(8_12_38_/_10%),_rgb(8_12_38_/_100%))] h-[124px] md:h-[60px] flex items-center p-5 backdrop-blur-[4px] opacity-[100%]">
                     {article.author?.name && <span>By {article.author.name}&nbsp;</span>}
                     {date && <span>•&nbsp;{'Jul 11, 2025'}</span>}
                 </div>
@@ -236,7 +236,7 @@ useEffect(() => {
                     {quoteBlocksWithTitles.length > 0 && (
                       <>
                         <div className='text-[22px] text-[#B8D0F2] mb-[16px] md:hidden'>In this article</div>
-                        <div className='border-t-2 border-[#555e9480] space-y-[20px] pt-[30px] mb-[80px] md:hidden'>
+                        <div className='border-t-[1px] border-blue_gray-500_7f space-y-[20px] pt-[30px] mb-[80px] md:hidden'>
                           {quoteBlocksWithTitles.map((block: { __component: any; id: any; title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }, index: any) => (
                             <div key={`${block.__component}-${block.id}-${index}`}>
                               <div
@@ -254,20 +254,20 @@ useEffect(() => {
                         </div>
                       </>
                     )}
-                    <div className='md:pt-[40px] md:border-t-2 md:border-[#555e9480] text-[22px] text-[#B8D0F2] mb-[16px] md:mb-0 md:text-center' >Share this article</div>
-                    <div className='border-t-2 md:border-0 border-[#555e9480] space-y-[20px] pt-[30px] md:pt-[24px]' >
+                    <div className='md:pt-[40px] md:border-t-[1px] md:border-blue_gray-500_7f text-[22px] text-[#B8D0F2] mb-[16px] md:mb-0 md:text-center' >Share this article</div>
+                    <div className='border-t-[1px] md:border-0 border-blue_gray-500_7f space-y-[20px] pt-[30px] md:pt-[24px]' >
 
                             <div className="flex gap-[26px] md:gap-[18px] md:justify-center">
-                                <Button className="flex h-[44px] w-[44px] md:h-[42px] md:w-[42px] items-center justify-center rounded-[22px] border border-solid border-[#3499FF] px-2.5  hover:bg-[#a3b8d91a]">
-                                    <Img src="link.svg" width={24} height={24} className="w-[70%]" />
+                                <Button className="group flex h-[44px] w-[44px] md:h-[42px] md:w-[42px] items-center justify-center rounded-[22px] border border-solid border-[#3499FF] px-2.5  hover:bg-[#a3b8d91a]">
+                                    <Img src="link.svg" width={24} height={24} className="group-hover:brightness-150" />
                                 </Button>
                                 <Link href="https://www.linkedin.com/company/akashx-inc/" rel="noreferrer">
-                                    <Button className="flex h-[44px] w-[44px] md:h-[42px] md:w-[42px] items-center justify-center rounded-[22px] border border-solid border-[#3499FF] px-2.5  hover:bg-[#a3b8d91a]">
-                                        <Img src="formkit_linkedin.svg" width={22} height={22} />
+                                    <Button className="group flex h-[44px] w-[44px] md:h-[42px] md:w-[42px] items-center justify-center rounded-[22px] border border-solid border-[#3499FF] px-2.5  hover:bg-[#a3b8d91a]">
+                                        <Img src="formkit_linkedin.svg" width={22} height={22} className="group-hover:brightness-150" />
                                     </Button>
                                 </Link>
-                                <Button className="flex h-[44px] w-[44px] md:h-[42px] md:w-[42px] items-center justify-center rounded-[22px] border border-solid border-[#3499FF] px-2.5  hover:bg-[#a3b8d91a]">
-                                    <Img src="proicons_x-twitter.svg" width={24} height={24} className="w-[70%]" />
+                                <Button className="group flex h-[44px] w-[44px] md:h-[42px] md:w-[42px] items-center justify-center rounded-[22px] border border-solid border-[#3499FF] px-2.5  hover:bg-[#a3b8d91a]">
+                                    <Img src="proicons_x-twitter.svg" width={24} height={24} className="group-hover:brightness-150"  />
                                 </Button>
                             </div>
 

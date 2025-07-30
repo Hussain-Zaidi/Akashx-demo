@@ -52,7 +52,8 @@ export default function TestAboutPage() {
       style=
       {{
         backgroundSize: isMobile  ? '275px': "",
-        backgroundPosition: isMobile  ? '100% -60%': "",
+        // backgroundPosition: isMobile  ? '100% -60%': "",
+        backgroundPosition: isMobile  ? '75% -45%': "",
         marginTop: isMobile  ? '80px': "",
       }}
       >
