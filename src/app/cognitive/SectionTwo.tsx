@@ -58,7 +58,7 @@ export default function StickyStackSection() {
               </div>
               <div className="flex justify-end">
                 <img
-                  className="w-auto h-[25rem]  md:flex-[0_0_6rem] md:w-[6rem] md:h-[6rem] pointer-events-none select-none"
+                  className="w-auto h-[25rem]  md:flex-[0_0_6rem] md:w-auto md:h-[9.375rem] pointer-events-none select-none"
                   src={`/images/cognitive/Group1000004501.svg`}
                 />
               </div>
@@ -84,7 +84,7 @@ export default function StickyStackSection() {
               </div>
               <div className="flex justify-end">
                 <img
-                  className="w-auto h-[25rem] md:flex-[0_0_6rem] md:w-[6rem] md:h-[6rem] pointer-events-none select-none"
+                  className="w-auto h-[25rem] md:flex-[0_0_9.375rem] md:w-auto md:h-[9.375rem] pointer-events-none select-none"
                   src={`/images/cognitive/Group1000004502.svg`}
                 />
               </div>
@@ -105,7 +105,7 @@ export default function StickyStackSection() {
                 height={22}
                 alt="Bookmark"
                 className="md:h-[1rem] md:w-[1rem] h-[1.8rem] w-[1.8rem] object-contain fade-in-sequence1 "
-                style={{ margin: isMobile ? '0px -4px' : '0px -4px' }}
+                style={{ margin: isMobile ? '0px 0px' : '0px -4px' }}
               />
               <Img
                 src="cognitive/Vector5C85EB.svg"
@@ -113,7 +113,7 @@ export default function StickyStackSection() {
                 height={22}
                 alt="Bookmark"
                 className="md:h-[1rem] md:w-[1rem] h-[1.8rem] w-[1.8rem] object-contain fade-in-sequence2 "
-                style={{ margin: isMobile ? '0px -4px' : '0px -4px' }}
+                style={{ margin: isMobile ? '0px 0px' : '0px -4px' }}
               />
               <Img
                 src="cognitive/VectorArrow.svg"
@@ -121,7 +121,7 @@ export default function StickyStackSection() {
                 height={22}
                 alt="Bookmark"
                 className="md:h-[1rem] md:w-[1rem] h-[1.8rem] w-[1.8rem] object-contain fade-in-sequence3 "
-                style={{ margin: isMobile ? '0px -4px' : '0px -4px' }}
+                style={{ margin: isMobile ? '0px 0px' : '0px -4px' }}
               />
               <Img
                 src="cognitive/VectorArrow.svg"
@@ -129,7 +129,7 @@ export default function StickyStackSection() {
                 height={22}
                 alt="Bookmark"
                 className="md:h-[1rem] md:w-[1rem] h-[1.8rem] w-[1.8rem] object-contain fade-in-sequence4 "
-                style={{ margin: isMobile ? '0px -4px' : '0px -4px' }}
+                style={{ margin: isMobile ? '0px 0px' : '0px -4px' }}
               />
             </div>
           </div>

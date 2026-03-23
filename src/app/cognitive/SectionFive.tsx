@@ -56,7 +56,7 @@ export default function StickyStackSection() {
                 </div>
 
                 {/* Card */}
-                <div className="absolute bottom-[10.3rem] md:bottom-[4.9rem] left-0 w-[83.5%] bg-[linear-gradient(0deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
+                <div className="absolute bottom-[10.3rem] md:bottom-[4.9rem] left-0 w-[83.5%] bg-[linear-gradient(180deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
                   <p className="text-[#B8D0F2] text-[1.8333125rem] md:text-[.85rem] font-inter md:leading-normal font-medium">
                     Unleash your agents <br />
                     to deterministically query without <br />
@@ -79,7 +79,7 @@ export default function StickyStackSection() {
                   </div>
 
                   <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
-                    <span className="text-[#75BAFF80] font-bold">
+                    <span className="text-[#75BAFF] font-bold">
                       Extract inferred insights and facts
                     </span>{' '}
                     from PDFs, docs, Spreadsheets, and multimedia
@@ -96,7 +96,7 @@ export default function StickyStackSection() {
                   </div>
 
                   <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
-                    <span className="text-[#75BAFF80] font-bold">Reuse</span>{' '}
+                    <span className="text-[#75BAFF] font-bold">Reuse</span>{' '}
                     persistent inference-results across many questions
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export default function StickyStackSection() {
 
                   <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
                     Enable{' '}
-                    <span className="text-[#75BAFF80] font-bold">
+                    <span className="text-[#75BAFF] font-bold">
                       millisecond-latency AI
                     </span>{' '}
                     queries by incrementally refreshing in the background.
@@ -160,7 +160,7 @@ export default function StickyStackSection() {
                 </div>
 
                 {/* Card */}
-                <div className="absolute bottom-[10.4rem] md:bottom-[4.9rem] right-0 w-[85.2%] bg-[linear-gradient(0deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
+                <div className="absolute bottom-[10.4rem] md:bottom-[4.9rem] right-0 w-[85.2%] bg-[linear-gradient(180deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
                   <p className="text-[#B8D0F2] text-[1.8333125rem] md:text-[.85rem] font-inter md:leading-normal font-medium">
                     Deterministic query retrieval <br />
                     without the probabilistic <br />
@@ -183,7 +183,7 @@ export default function StickyStackSection() {
                   </div>
 
                   <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
-                    <span className="text-[#75BAFF80] font-bold">98%</span>+
+                    <span className="text-[#75BAFF] font-bold">98%</span>+
                     accuracy on Finance Bench (3000+ complex questions across
                     many 100+ page 10K filing reports)
                   </p>
@@ -199,7 +199,7 @@ export default function StickyStackSection() {
                   </div>
 
                   <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
-                    <span className="text-[#75BAFF80] font-bold">
+                    <span className="text-[#75BAFF] font-bold">
                       Incremental updates
                     </span>{' '}
                     as new documents arrive - no pipelines needed.
@@ -218,7 +218,7 @@ export default function StickyStackSection() {
                   <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
                     Hierarchical concept indexing that can be combined with 
                     Vector-index based{' '}
-                    <span className="text-[#75BAFF80] font-bold">
+                    <span className="text-[#75BAFF] font-bold">
                       Hybrid retrieval
                     </span>
                   </p>

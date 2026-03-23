@@ -57,8 +57,23 @@ export default function StickyStackSection() {
         className="relative mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
       >
         {/* Sticky Heading */}
-        <div className="sticky top-28 z-9 text-center mb-[7.833rem] md:mb-12">
-          <div className="text-center mb-12 md:mb-10">
+        {/* <div className="sticky top-28 z-9 text-center mb-[7.833rem] md:mb-12"> */}
+          
+        {/* </div> */}
+
+        {/* Cards */}
+        <div className="space-y-[4.4rem] md:space-y-[2.2rem] max-w-[52.5rem] m-auto">
+          {cards.map((card, i) => (
+            <div
+              key={i}
+              className="sticky top-[26.4rem] md:sticky "
+              style={{
+                top: isMobile ? i==0 ? '6rem' :`${15 + i * 3.5}rem` : i==0 ? '7rem' :`${21.5 + i * 5.5}rem`,
+                zIndex: 10 + i,
+              }}
+            >
+              {i == 0 &&(
+                <div className="text-center mb-12 md:mb-10" style={{width:'110%', marginLeft:'-5%'}}>
             <Heading
               size="auto"
               as="h1"
@@ -73,19 +88,7 @@ export default function StickyStackSection() {
               No Vector DB <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> No RAG-Pipelines <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> No LLM Orchestration <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> Just SQL
             </p>
           </div>
-        </div>
-
-        {/* Cards */}
-        <div className="space-y-[4.4rem] md:space-y-[2.2rem] max-w-[52.5rem] m-auto">
-          {cards.map((card, i) => (
-            <div
-              key={i}
-              className="sticky top-[26.4rem] md:sticky"
-              style={{
-                top: isMobile ? `${15 + i * 3.5}rem` :`${20 + i * 5.5}rem`,
-                zIndex: 10 + i,
-              }}
-            >
+              )}
               <div className="shadow-[0_0_2.5rem_0_#75BAFF33] rounded-[2.5rem] md:rounded-[1rem]  bg-[linear-gradient(180deg,#5439CC_50%,#30D5C8)] p-2 md:p-1 ">
                 <h3 className="uppercase text-[#CDDAED] text-[1.833125rem] md:text-base font-bold font-inter p-[1.65rem_2.15rem_2.15rem] md:p-[0.75rem_1rem_1rem] m-auto text-center">
                   {card.title}

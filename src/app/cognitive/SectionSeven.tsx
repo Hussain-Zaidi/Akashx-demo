@@ -21,7 +21,7 @@ export default function StickyStackSection() {
   }, []);
 
   return (
-    <div className="bg-[url(/images/cognitive/Frame1000004460.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize:'105.166rem'}}>
+    <div className="bg-[url(/images/cognitive/Frame1000004460.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize: isMobile ? '55rem':'105.166rem'}}>
       <div
         ref={sectionRef}
         className="relative max-w-[85rem] mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
@@ -45,8 +45,8 @@ export default function StickyStackSection() {
           </p>
         </div>
 
-        <div className="shadow-[0_0_3.4375rem_0_#75BAFF33] border border-[#2B7FFF4D] rounded-[1.5rem] bg-[#070A20] p-[3.1468rem] md:p-5 flex flex-col items-center">
-          <div className="flex w-full gap-11 md:gap-0 md:flex-col items-center mb-[5rem]">
+        <div className="shadow-[0_0_3.4375rem_0_#75BAFF33] border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] bg-[#070A20] p-[3.1468rem] md:p-5 flex flex-col items-center">
+          <div className="flex w-full gap-11 md:gap-0 md:flex-col items-center mb-[5rem] md:mb-6">
             <img
               className="w-full"
               src="/images/cognitive/Group1000004517.svg"
@@ -54,10 +54,10 @@ export default function StickyStackSection() {
             />
           </div>
 
-          <div className="w-[34.75rem] md:w-11/12 h-[0.125rem] bg-[linear-gradient(90deg,#2941591A,#41668C,#2941591A)]"></div>
+          <div className="w-[34.75rem] md:w-11/12 h-[0.1rem] bg-[linear-gradient(90deg,#2941591A,#41668C,#2941591A)]"></div>
 
           <div className="flex gap-6 pt-[2.7rem] md:pt-5">
-            <div className="text-[#75BAFF] text-2xl md:text-base font-semibold font-inter text-center">
+            <div className="text-[#75BAFF] text-[1.5rem] md:text-[0.875rem] md:leading-auto font-semibold font-inter text-center">
               Seamlessly plugs into S3/Open formats with zero-ETL/migration
             </div>
 

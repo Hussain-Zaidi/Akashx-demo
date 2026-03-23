@@ -301,7 +301,7 @@ export default function EnterpriseUseCases() {
                   className={`${getItemAnimationClass(activeTab.animation, idx)} flex items-center justify-center gap-9 md:gap-4 md:items-start`}
                 >
                   <img
-                    className={`flex-[0_0_15rem] w-[15rem] h-[15rem] md:flex-[0_0_6rem] md:w-[6rem] md:h-[6rem] pointer-events-none select-none rounded-[0.625rem] border border-[#75baff9a] `}
+                    className={`flex-[0_0_15rem] w-[15rem] h-[15rem] md:flex-[0_0_6rem] md:w-[6rem] md:h-[6rem] pointer-events-none select-none rounded-[0.625rem]`}
                     src={`/images/cognitive/${item.image}`}
                     alt={`${item.heading} tab`}
                   />
@@ -385,99 +385,99 @@ export default function EnterpriseUseCases() {
         @keyframes fadeOut {
           0% {
             opacity: 1;
-            transform: scale(1);
+            //transform: scale(1);
           }
           100% {
             opacity: 0;
-            transform: scale(0.95);
+            //transform: scale(0.95);
           }
         }
 
         @keyframes fadeInFromBottomRight {
           0% {
             opacity: 0;
-            transform: translate(1.25rem, 1.25rem);
+            //transform: translate(1.25rem, 1.25rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes fadeInFromBottomLeft {
           0% {
             opacity: 0;
-            transform: translate(-1.25rem, 1.25rem);
+            //transform: translate(-1.25rem, 1.25rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes fadeInFromTopRight {
           0% {
             opacity: 0;
-            transform: translate(1.25rem, -1.25rem);
+            //transform: translate(1.25rem, -1.25rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes fadeInFromTopLeft {
           0% {
             opacity: 0;
-            transform: translate(-1.25rem, -1.25rem);
+            //transform: translate(-1.25rem, -1.25rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes slideInFromBottomRight {
           0% {
             opacity: 0;
-            transform: translate(0.9375rem, 0.9375rem);
+            //transform: translate(0.9375rem, 0.9375rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes slideInFromBottomLeft {
           0% {
             opacity: 0;
-            transform: translate(-0.9375rem, 0.9375rem);
+            //transform: translate(-0.9375rem, 0.9375rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes slideInFromTopRight {
           0% {
             opacity: 0;
-            transform: translate(0.9375rem, -0.9375rem);
+            //transform: translate(0.9375rem, -0.9375rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
 
         @keyframes slideInFromTopLeft {
           0% {
             opacity: 0;
-            transform: translate(-0.9375rem, -0.9375rem);
+            //transform: translate(-0.9375rem, -0.9375rem);
           }
           100% {
             opacity: 1;
-            transform: translate(0, 0);
+            //transform: translate(0, 0);
           }
         }
       `}</style>

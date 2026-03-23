@@ -200,16 +200,16 @@ export default function CodeCard() {
 
   return (
     <div className='md:px-6 mb-[7.5rem] md:mb-[7.5rem]'>
-      <h1 className=" mb-14 md:mb-[2rem] bg-gradient1 bg-clip-text text-center font-montserrat text-[3rem] md:text-[1.25rem] font-bold leading-tight md:leading-tight text-transparent  ">
-        Declarative simplicity lets you iterate in <br className='md:hidden' />
+      <h1 className=" mb-14 md:mb-[2rem] bg-gradient1 bg-clip-text text-center font-montserrat text-[3rem] md:text-[1.5rem] font-bold leading-tight md:leading-tight text-transparent  ">
+        Declarative simplicity lets you iterate <br className='md:block hidden' />in <br className='md:hidden' />
         minutes, without RAG-pipelines.
         {/* <span className="blue-green-background-text">Concept-Tree Indexes</span> */}
       </h1>
 
       <div>
-        <div className='w-[56.833125rem] md:w-full mx-auto p-[1.666rem] border border-[#2B7FFF4D] rounded-[1rem]' >
+        <div className='w-[56.833125rem] md:w-full mx-auto p-[1.666rem] md:p-5 border border-[#2B7FFF4D] rounded-[1rem] md:rounded-[0.75rem]' >
           <p className=" text-[#B8D0F2] text-[1.5rem] md:text-[1rem] font-normal font-inter">
-            <span className='text-[1.833rem] font-semibold'>Q.</span> List candidates who had deep backend coding for 3+ years, then
+            <span className='text-[1.833rem] md:text-[1.25rem] font-semibold'>Q.</span> List candidates who had deep backend coding for 3+ years, then
             transitioned to Engineering Management (excluding product/project
             roles)
           </p>
@@ -290,7 +290,7 @@ export default function CodeCard() {
 <div className='className="max-w-[46.666875rem] '>
 <div className='h-[2.5rem] m-auto w-[0.25rem] md:hidden bg-[linear-gradient(to_bottom,#2B7FFF80_50%,transparent_50%)] bg-[length:0.125rem_1rem] bg-repeat-y bg-top' />
           <div
-            className="max-w-[46.666875rem] h-[37.5rem] md:h-auto flex-1 border border-[#2B7FFF4D] rounded-[1.5rem] p-[0rem] overflow-auto  flex flex-col items-center relative"
+            className="max-w-[46.666875rem] h-[37.5rem] md:h-auto flex-1 border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] p-[0rem] overflow-auto  flex flex-col items-center relative"
             // onMouseEnter={handleMouseEnter}
             // onMouseLeave={handleMouseLeave}
           >
@@ -334,32 +334,32 @@ export default function CodeCard() {
             roles)
             </span>
         </div> */}
-            <div className="h-full flex flex-1 flex-col border-gray-700 bg-[linear-gradient(0deg,#5439CC,#30D5C8)] p-3 md:p-1  border border-blue-500/30 rounded-2xl overflow-hidden bg-[#040B2A] shadow-lg">
-              <div className="flex flex-1 flex-col rounded-[1rem] overflow-hidden">
-                <div className="flex items-center gap-2 px-5 py-3 bg-[#1F385F] min-h-[3.5rem]">
-                  <span className="w-4 h-4 rounded-full bg-[#DF4343]"></span>
-                  <span className="w-4 h-4 rounded-full bg-[#FFB703]"></span>
-                  <span className="w-4 h-4 rounded-full bg-[#0CAC77]"></span>
+            <div className="h-full flex flex-1 flex-col border-gray-700 bg-[linear-gradient(0deg,#5439CC,#30D5C8)] p-3 md:p-1  border border-blue-500/30 rounded-2xl md:rounded-[0.75rem] overflow-hidden bg-[#040B2A] shadow-lg">
+              <div className="flex flex-1 flex-col rounded-[1rem] md:rounded-[0.75rem] overflow-hidden">
+                <div className="flex items-center gap-2 px-5 py-3 bg-[#1F385F] min-h-[3.5rem] md:min-h-[2rem]">
+                  <span className="w-4 h-4 md:w-3 md:h-3 rounded-full bg-[#DF4343]"></span>
+                  <span className="w-4 h-4 md:w-3 md:h-3 rounded-full bg-[#FFB703]"></span>
+                  <span className="w-4 h-4 md:w-3 md:h-3 rounded-full bg-[#0CAC77]"></span>
                 </div>
 
-                <div className="p-10 font-inter text-2xl md:text-sm leading-7 bg-[#080C26] flex-1">
+                <div className="p-10 md:p-5 font-inter text-2xl md:text-sm leading-7 bg-[#080C26] flex-1">
                   <p className="text-[#0CAC77]">
                     SELECT{' '}
                     <span className="text-[#0CAC77]">Candidate_Name</span>,
                     resume_url
                   </p>
 
-                  <p className="text-[#B8D0F2] mt-6">
+                  <p className="text-[#B8D0F2] mt-6 md:mt-3">
                     FROM <span className="text-[#B8D0F2]">resume_ontology</span>
                   </p>
 
-                  <p className="text-[#B8D0F2] mt-6">
+                  <p className="text-[#B8D0F2] mt-6 md:mt-3">
                     WHERE{' '}
                     <span className="text-[#866CFF]">cognitive_classify</span>{' '}
                     (
                   </p>
 
-                  <div className="pl-6 py-[.5rem] space-y-[.5rem]">
+                  <div className="pl-6 py-[.5rem] md:py-[.25rem] space-y-[.5rem] md:space-y-[.25rem]">
                     <p className="text-[#B8D0F2]">raw_text,</p>
 
                     <p className="text-[#866CFF]">
@@ -382,7 +382,7 @@ export default function CodeCard() {
                 </div>
               </div>
 
-              <h3 className="uppercase text-[#B8D0F2] text-2xl md:text-base font-bold font-inter p-[1.75rem_1.75rem_.75rem] md:p-[0.75rem_1rem_1rem] m-auto text-center">
+              <h3 className="uppercase text-[#B8D0F2] text-[1.5rem] md:text-[0.875rem] font-bold font-inter p-[1.75rem_1.75rem_.75rem] md:p-[0.75rem_1rem_1rem] m-auto text-center">
                 Single Cognitive SQL Statement
               </h3>
             </div>

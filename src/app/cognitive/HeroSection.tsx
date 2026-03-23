@@ -23,6 +23,7 @@ useEffect(() => {
   const images = [
       '/images/cognitive/Graphics.svg',
     '/images/cognitive/Frame.svg',
+    // '/images/cognitive/Group 1000004520.svg'
   ];
   
   // Get the current index from localStorage
