@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
+import { STRAPI_URL } from "@/utils/url";
 
 interface Article {
   id: number;
@@ -32,7 +33,7 @@ const ProfileBlogCard: React.FC<ProfileBlogCardProps> = ({ excludeId }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const blogRes = await fetch("https://akashx.ai/api/articles?populate=*");
+        const blogRes = await fetch(`${STRAPI_URL}/api/articles?populate=*`);
         const blogJson = await blogRes.json();
         let data = blogJson?.data ?? [];
 
@@ -66,7 +67,7 @@ const ProfileBlogCard: React.FC<ProfileBlogCardProps> = ({ excludeId }) => {
         const categoryName = category?.name || "Uncategorized";
         const authorName = author?.name || "Anonymous";
         const image = cover?.url
-          ? `https://akashx.ai${cover.url}`
+          ? `${STRAPI_URL}${cover.url}`
           : "/default-image.jpg";
 
         const date = new Date(createdAt).toLocaleDateString("en-US", {

@@ -1,7 +1,7 @@
 // app/blog/[documentId]/metadata.ts
+import { STRAPI_URL } from '@/utils/url';
 import type { Metadata, ResolvingMetadata } from 'next';
 
-const STRAPI_URL = 'https://akashx.ai';
 
 async function getPostData(documentId: string) {
   try {

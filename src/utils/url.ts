@@ -1,0 +1,1 @@
+export const STRAPI_URL = `https://strapi.akashx.ai`;

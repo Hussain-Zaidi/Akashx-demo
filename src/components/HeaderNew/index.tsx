@@ -1,0 +1,188 @@
+"use client";
+
+import { Heading, Img } from "./..";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { usePathname } from "next/navigation"; // Import usePathname for active link detection
+
+interface Props {
+  className?: string;
+}
+
+export default function Header({ ...props }: Props) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname(); // Get the current pathname
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  // Detect screen size and update isMobile state
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1050);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Call the handler initially to set the correct state
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className="fixed top-0 z-[100] block w-full origin-top-left border-b border-[#556E94]/30 bg-[#080C26]/90 p-[1.8125rem_0px_1.875rem]" >
+
+    <header
+      {...props}
+      className={`${props.className} flex justify-between items-center ml-[6.25rem] mr-28 gap-5 md:mx-0`}
+      style={{
+        position: isMobile ? "fixed" : "static",
+        borderBottom: isMobile ? "1px solid #556E944D" : "none",
+        padding: isMobile ? "1rem 1.25rem 1rem 1.25rem" : "initial",
+        width: isMobile ? "100%" : "auto",
+        backgroundColor: isMobile ? "#080c26e6" : "transparent",
+        top: isMobile ? 0 : "auto",
+        zIndex: "100",
+      }}
+    >
+      <Link
+      href="/home">
+          <Img
+          src="img_header_logo.svg"
+          width={175.92}
+          height={40.3}
+          alt="Headerlogo"
+          className="h-[2.51875rem] w-[10.995rem] object-contain md:w-[6.5rem] max-w-[10.995rem]"
+          />
+      </Link>
+
+      {/* Hamburger Icon for mobile (only visible below 1050px) */}
+      {isMobile && (
+        <div
+          className="cursor-pointer text-white"
+          onClick={toggleMenu}
+          style={{ zIndex: isMobile && isMenuOpen ? 51 : "auto" }}
+        >
+          {isMenuOpen ? (
+            <FiX  size={30} className="text-white" style={{color:'#fff'}} />
+          ) : (
+            <FiMenu  size={30} className="text-white" style={{color:'#fff'}} />
+          )}
+        </div>
+      )}
+
+      {/* Navigation Menu */}
+      <ul
+  className={`${
+    isMobile
+    ? isMenuOpen
+        ? "fixed w-full h-[100vh] bg-black bg-opacity-75 z-50 flex flex-col backdrop-blur-sm py-[2.5rem]"
+        : "fixed w-full h-[100vh] bg-black bg-opacity-75 z-50 flex flex-col backdrop-blur-sm py-[2.5rem]"
+        : "flex flex-wrap gap-[3.75rem] lg:gap-5 md:gap-5"
+  } transition-[1s]`}
+  style={{
+    color: "white",
+    backgroundColor: isMobile && isMenuOpen ? "#080d26" : "#080d26",
+    // padding: isMobile && isMenuOpen ? "20px" : "",
+    top: isMobile && isMenuOpen ? "3rem" : "3rem",
+    left: isMobile && isMenuOpen ? "0" : "100%",
+  }}
+>
+
+        {/* <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/home" className={`cursor-pointer lg:text-[1.0625rem] ${isMobile ? "border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]" : ""}`}>
+            <Heading
+              size="auto"
+              as="p"
+              className={`text-[1.25rem] font-medium ${
+                pathname === "/home"
+                  ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+                }`}
+            >
+              Home
+            </Heading>
+          </Link>
+        </li> */}
+        <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/cognitive" className={`cursor-pointer lg:text-[1.0625rem] ${isMobile ? "border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]" : ""}`}>
+            <Heading
+              size="auto"
+              as="p"
+              className={`text-[1.25rem] font-medium ${
+                pathname === "/cognitive"
+                ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+                }`}
+            >
+              Cognitive SQL
+            </Heading>
+          </Link>
+        </li>
+                <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/cognitive" className={`cursor-pointer lg:text-[1.0625rem] ${isMobile ? "border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]" : ""}`}>
+            <Heading
+              size="auto"
+              as="p"
+              className={`text-[1.25rem] font-medium ${
+                pathname === "/cognitive#"
+                ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+                }`}
+            >
+              Ontlogy Views
+            </Heading>
+          </Link>
+        </li>
+                <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/cognitive" className={`cursor-pointer lg:text-[1.0625rem] ${isMobile ? "border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]" : ""}`}>
+            <Heading
+              size="auto"
+              as="p"
+              className={`text-[1.25rem] font-medium ${
+                pathname === "/cognitive#"
+                ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+                }`}
+            >
+              Use Cases
+            </Heading>
+          </Link>
+        </li>
+        <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/about" className={`cursor-pointer lg:text-[1.0625rem] ${isMobile ? "border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]" : ""}`}>
+            <Heading
+              size="auto"
+              as="p"
+              className={`text-[1.25rem] font-medium ${
+                pathname === "/about"
+                  ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+              }`}
+            >
+              Company
+            </Heading>
+          </Link>
+        </li>
+        <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/blogs" className={`cursor-pointer lg:text-[1.0625rem] ${isMobile ? "border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]" : ""}`}>
+            <Heading
+              size="auto"
+              as="p"
+              className={`text-[1.25rem] font-medium ${
+                pathname === "/blogs"
+                  ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+              }`}
+            >
+              Blogs
+            </Heading>
+          </Link>
+        </li>
+      </ul>
+    </header>
+                </div>
+  );
+}

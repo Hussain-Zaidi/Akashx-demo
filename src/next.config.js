@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         source: '/', // The root URL
-        destination: '/home', // Redirect to /testhome
+        destination: '/cognitive', // Redirect to /testhome
         permanent: true, // Use true for a 308 redirect (permanent), false for 307 (temporary)
       },
     ];

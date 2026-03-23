@@ -6,13 +6,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'development',
   images: {
-    domains: ['64.227.101.114'], // Add your IP address here
+    domains: ['134.209.180.241'], // Add your IP address here
   },
   async redirects() {
     return [
       {
         source: '/admin', // When the /admin URL is accessed
-        destination: 'http://64.227.101.114:1337/admin', // Redirect to your Strapi admin
+        destination: 'http://134.209.180.241:1337/admin', // Redirect to your Strapi admin
         permanent: true, // Use true for a 308 redirect (permanent)
       },
       {

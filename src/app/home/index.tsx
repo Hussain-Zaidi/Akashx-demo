@@ -8,16 +8,17 @@ import TesthomeRowOne from "./TesthomeRowOne";
 import TesthomeKeyUse from "./TesthomeKeyUse";
 import TesthomeRowquarteryour from "./TesthomeRowquarteryour2";
 import TesthomeRowstorage from "./TesthomeRowstorage";
+import {STRAPI_URL} from '@/utils/url'
 
 export default function TestHomePage() {
   // Use state to hold the fetched section data
   const [fetchedSection, setFetchedSection] = useState<any>(null); // Use `any` if you don't want to define a type
-
+  const apiURl = `${STRAPI_URL}/api/akashx-home-pages`;
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const response = await fetch("/api/home-page-api-data");
-        const response = await fetch("//akashx.ai/api/akashx-home-pages");
+        const response = await fetch(apiURl);
         const jsonData = await response.json();
 
         // Set the fetched data to the state
@@ -33,8 +34,8 @@ export default function TestHomePage() {
 
   return (
     <div className="w-full">
-      <div className="flex min-h-[1000px] md:min-h-[0] flex-col gap-[250px] bg-[url(/images/img_image.webp)] md:bg-[url(/images/mobileHero.png)] bg-cover bg-no-repeat pt-11 pb-8 lg:h-auto lg:gap-[168px] md:h-auto md:gap-[168px] sm:gap-28 sm:py-4 md:bg-[position:-0%_75%] md:bg-contain md:mt-[40px]">
         <Header />
+      <div className="flex min-h-[1000px] md:min-h-[0] flex-col gap-[250px] bg-[url(/images/img_image.webp)] md:bg-[url(/images/mobileHero.png)] bg-cover bg-no-repeat pt-11 pb-8 lg:h-auto lg:gap-[168px] md:h-auto md:gap-[168px] sm:gap-28 sm:py-4 md:bg-[position:-0%_75%] md:bg-contain md:mt-[40px]">
         {fetchedSection && <TesthomeColumnOne fetchedSection={fetchedSection} />}
       </div>
 

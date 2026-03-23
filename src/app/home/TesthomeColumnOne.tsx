@@ -84,39 +84,41 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
   }, [fetchedSection]); // Dependency on fetchedSection
 
   return (
-    <div className="mb-[152px] md:mb-[74px] flex flex-col items-center md:pt-[102px] relative">
-      <div className="container-xs flex flex-col items-center gap-[136px] lg:gap-[102px] lg:px-5 md:gap-[102px] md:px-5 md:gap-[68px] min-h-[486px] md:min-h-[310px] justify-between">
-        <div className="flex flex-col items-center gap-[20px] md:gap-[9px] self-stretch">
+    <div className="mb-[9.5rem] md:mb-[4.625rem] flex flex-col items-center md:pt-[6.375rem] relative">
+      <div className="container-xs flex flex-col items-center gap-[8.5rem] lg:gap-[6.375rem] lg:px-5 md:gap-[6.375rem] md:px-5 md:gap-[4.25rem] min-h-[30.375rem] md:min-h-[19.375rem] justify-between">
+        <div className="flex flex-col items-center gap-[1.25rem] md:gap-[0.5625rem] self-stretch">
 
 
           {/* <div className="bg-gradient3 bg-clip-text flex flex-wrap items-start  gap-[15px] self-stretch overflow-hidden md:justify-center text-center md:block md:w-[99%] md:m-auto"> */}
-          <div className="bg-gradient3 bg-clip-text block flex-wrap items-start  gap-[15px] self-stretch overflow-hidden md:justify-center text-center md:block md:w-[99%] md:m-auto">
+          <div className="bg-gradient3 bg-clip-text block flex-wrap items-start gap-[0.9375rem] self-stretch overflow-hidden md:justify-center text-center md:block md:w-[99%] md:m-auto">
             <Heading
               size="heading2xl"
               as="h1"
-              className="inline self-center  font-montserrat text-[60px] font-extrabold text-transparent lg:text-[51px] md:text-[40px] md:text-[34px] md:inline"
+              className="inline self-center font-montserrat text-[3.75rem] font-extrabold text-transparent lg:text-[3.1875rem] md:text-[2.5rem] md:text-[2.125rem] md:inline"
               style=
                   {{
-                    fontSize: isMobile  ? '29px': "",
+                    fontSize: isMobile  ? '1.8125rem': "",
                   }}
             >
               {section.section1_title + " "}
             </Heading>
 
             
-            <Heading id="flipTheWord" size="heading2xl" as="h2" className=" inline-flex gap-[10px] min-w-[530px] font-montserrat text-[60px] font-extrabold text-gray-50 lg:text-[51px] md:text-[40px] md:text-[34px]  md:inline"
+            <Heading id="flipTheWord" size="heading2xl" as="h2" className=" inline-flex gap-[0.625rem] min-w-[33.125rem] font-montserrat text-[3.75rem] font-extrabold text-gray-50 lg:text-[3.1875rem] md:text-[2.5rem] md:text-[2.125rem] md:inline"
             style={{
               background: (isMobile && 0)
                 ? "inherit"
                 : "linear-gradient(90deg, rgb(117, 87, 255) 30%, rgb(48, 213, 200) 100%)",
               WebkitBackgroundClip: (isMobile && 0) ? "inherit" : "text",
               color: (isMobile && 0) ? "inherit" : "#0000",
-              fontSize: isMobile ? "29px" : "",
+              fontSize: isMobile ? "1.8125rem" : "",
             }}
              >
               <span> Data </span>
               {/* Data Warehouse */}
-              <WordFlip words={flipWords} />
+              <span className='w-[10.9375rem] inline-block back' style={{background:'inherit'}} >
+                  <WordFlip words={flipWords} />
+              </span>
             </Heading>
           </div>
 
@@ -125,16 +127,16 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
           <Heading
             size="text2xl"
             as="h3"
-            className="w-[68%] text-center text-[26px] font-normal leading-9 md:leading-[20px] text-blue-100 lg:w-full lg:text-[22px] md:w-full"
+            className="w-[68%] text-center text-[1.625rem] font-normal leading-9 md:leading-[1.25rem] text-blue-100 lg:w-full lg:text-[1.375rem] md:w-full"
             style=
                   {{
-                    fontSize: isMobile  ? '16px': "",
+                    fontSize: isMobile  ? '1rem': "",
                   }}
           >
             {section.section1_description}
           </Heading>
         </div>
-        <div className="flex w-[50%] flex-col items-center gap-[16px] md:gap-[12px] lg:w-full md:w-full ">
+        <div className="flex w-[50%] flex-col items-center gap-[1rem] md:gap-[0.75rem] lg:w-full md:w-full ">
 
           <div className="flex justify-center self-stretch ">
             <Input
@@ -143,13 +145,13 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
               id="requestDemo"
               placeholder={`Company Email`}
               onChange={handleEmailChange}
-              className="flex h-[100px] md:h-[44px] flex-grow items-center justify-center rounded-bl-[10px] rounded-tl-[10px] bg-[#EBF5FF] px-8 text-[24px] font-medium text-blue_gray-300 md:px-0 md:rounded-bl-[4px] md:rounded-tl-[4px]"
+              className="flex h-[6.25rem] md:h-[2.75rem] flex-grow items-center justify-center rounded-bl-[0.625rem] rounded-tl-[0.625rem] bg-[#EBF5FF] px-8 text-[1.5rem] font-medium text-blue_gray-300 md:px-0 md:rounded-bl-[0.25rem] md:rounded-tl-[0.25rem]"
               style=
               {{
-                fontSize: isMobile  ? '14px': "",
+                fontSize: isMobile  ? '0.875rem': "",
               }}
             />
-            <Button className="flex h-[100px] md:h-[44px] min-w-[278px] md:min-w-[144px] flex-row items-center justify-center rounded-br-[10px] rounded-tr-[10px] md:rounded-br-[4px] md:rounded-tr-[4px] bg-deep_purple-a200 px-[34px] text-center text-[28px] font-medium text-gray-50 lg:text-[23px] md:px-4 md:text-[16px]"
+            <Button className="flex h-[6.25rem] md:h-[2.75rem] min-w-[17.375rem] md:min-w-[9rem] flex-row items-center justify-center rounded-br-[0.625rem] rounded-tr-[0.625rem] md:rounded-br-[0.25rem] md:rounded-tr-[0.25rem] bg-deep_purple-a200 px-[2.125rem] text-center text-[1.75rem] font-medium text-gray-50 lg:text-[1.4375rem] md:px-4 md:text-[1rem]"
             // un comment the below line for mail functionality
             onClick={() => {
               const inputElement = document.getElementById('requestDemo') as HTMLInputElement | null;
@@ -163,10 +165,10 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
              {loading ? "Sending...": 'Request Demo'}
             </Button>
           </div>
-          <Heading as="h4" className="font-montserrat text-[22px] font-medium text-indigo-200 lg:text-[18px] text-center"
+          <Heading as="h4" className="font-montserrat text-[1.375rem] font-medium text-indigo-200 lg:text-[1.125rem] text-center"
           style=
           {{
-            fontSize: isMobile  ? '12px': "",
+            fontSize: isMobile  ? '0.75rem': "",
           }}
           >
           {section.section1_input_desciption}

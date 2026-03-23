@@ -15,7 +15,7 @@ const WordFlip = ({ words, interval = 3000 }) => {
   }, [words, interval]);
 
   return (
-    <span className="md:overflow-hidden md:h-10 align-top md:inline-block md:w-[175px] md:text-left" style={{background:'inherit'}} >
+    <span className="md:overflow-hidden md:h-10 md:align-top md:inline-block md:w-[100%] md:text-left" style={{background:'inherit'}} >
     <span
       key={index} // Add a unique key to force re-render
       className={styles.flipText}

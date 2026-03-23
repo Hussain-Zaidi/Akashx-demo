@@ -1,6 +1,7 @@
 import React from "react";
 
 const sizes = {
+  auto: "",
   textxs: "text-[16px]  lg:text-[13px]",
   textmd: "text-[20px]  lg:text-[17px]",
   textlg: "text-[22px]  lg:text-[18px]",

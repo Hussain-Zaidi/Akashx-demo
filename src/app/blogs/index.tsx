@@ -5,21 +5,21 @@ import Header from "../../components/Header";
 import BlogCard from "./BlogCard";
 import { Heading } from "../../components";
 import TesthomeRowOne from "../home/TesthomeRowOne";
+import { STRAPI_URL } from "@/utils/url";
 
 export default function BlogPage() {
   const [fetchedSection, setFetchedSection] = useState<any>(null);
   const [articles, setArticles] = useState<any[]>([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Fetch homepage section (optional)
-        const homeRes = await fetch("//akashx.ai/api/akashx-home-pages");
+        const homeRes = await fetch(`${STRAPI_URL}/api/akashx-home-pages`);
         const homeJson = await homeRes.json();
         setFetchedSection(homeJson?.data?.[0] ?? null);
 
         // Fetch blog articles
-        const blogRes = await fetch("//akashx.ai/api/articles?populate=*");
+        const blogRes = await fetch(`${STRAPI_URL}/api/articles?populate=*`);
         const blogJson = await blogRes.json();
         setArticles(blogJson?.data ?? []);
       } catch (error) {
@@ -32,7 +32,7 @@ export default function BlogPage() {
 
   // Helper to get full image URL
   const getImageUrl = (article: any) =>
-    `//akashx.ai${article?.cover?.formats?.medium?.url || article?.cover?.url || ""}`;
+    `${STRAPI_URL}${article?.cover?.formats?.medium?.url || article?.cover?.url || ""}`;
 
   return (
     <div className="w-full">

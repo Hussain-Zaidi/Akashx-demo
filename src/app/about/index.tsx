@@ -8,17 +8,18 @@ import TestaboutColumnSix from "./TestaboutColumnSix";
 import TestaboutColumnSeven from "./TestaboutColumnSeven";
 import TestaboutRowakashxis from "./TestaboutRowakashxis";
 import React, { useState, useEffect } from "react";
+import { STRAPI_URL } from "@/utils/url";
 
 export default function TestAboutPage() {
   const [isMobile, setIsMobile] = useState(false);
   // Use state to hold the fetched section data
   const [fetchedSection, setFetchedSection] = useState<any>(null); // Use `any` if you don't want to define a type
-
+  const apiURl = `${STRAPI_URL}/api/akashx-about-pages`;
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const response = await fetch("/api/about-page-api-data");
-        const response = await fetch("//akashx.ai/api/akashx-about-pages");
+        const response = await fetch(apiURl);
         const jsonData = await response.json();
 
         // Set the fetched data to the state

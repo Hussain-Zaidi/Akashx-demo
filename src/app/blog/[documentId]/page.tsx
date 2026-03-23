@@ -9,8 +9,9 @@ import { Button } from "@/components/Button";
 import { Img } from "@/components/Img";
 import ProfileBlogCard from "@/app/blogs/ProfileBlogCard";
 import { Heading } from "../../../components";
+import { STRAPI_URL } from "@/utils/url";
 
-const STRAPI_URL = 'https://akashx.ai';
+// const STRAPI_URL = 'https://akashx.ai';
 
 // Block types
 interface QuoteBlock {

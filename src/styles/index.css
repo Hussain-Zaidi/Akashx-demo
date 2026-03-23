@@ -44,3 +44,18 @@ body{margin:0;padding:0;font-family:Inter;background-color:#080d26;min-width:360
   }
 
     
+#__next_dev_overlay, #__next_devtools {
+  display: none !important;
+}
+[data-nextjs-toast] {
+    display: none;
+}
+nextjs-portal {
+    display: none !important;
+}
+
+
+
+.CognitivePage * {
+  transition: all  .3s;
+}
