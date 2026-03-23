@@ -17,7 +17,7 @@ const nextConfig = {
       },
       {
         source: '/', // The root URL
-        destination: '/home', // Redirect to /home
+        destination: '/cognitive', // Redirect to /home
         permanent: true, // Use true for a 308 redirect (permanent)
       },
     ];

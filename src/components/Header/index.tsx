@@ -46,7 +46,7 @@ export default function Header({ ...props }: Props) {
       }}
     >
       <Link
-      href="/home">
+      href="/cognitive">
           <Img
           src="img_header_logo.svg"
           width={175.92}
