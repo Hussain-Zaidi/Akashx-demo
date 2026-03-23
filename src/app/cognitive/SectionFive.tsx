@@ -45,13 +45,13 @@ export default function StickyStackSection() {
           <div className="">
             <div className=" mx-auto flex gap-[12.625rem] md:gap-[0rem] justify-center items-start md:flex-col">
               {/* LEFT SIDE */}
-              <div className="relative">
+              <div className="relative md:right-[-1.8rem]">
                 {/* Image / Illustration */}
                 <div className="relative">
                   <img
                     src="/images/cognitive/Card.svg" // 🔁 replace with your asset
                     alt="agents"
-                    className="h-[31.660625rem]"
+                    className="h-[31.660625rem] md:h-auto md:w-full"
                   />
                 </div>
 
@@ -71,7 +71,7 @@ export default function StickyStackSection() {
                 <div className="flex items-start gap-5 md:gap-2">
                   {/* Icon */}
                   {/* 🔁 replace with your icon */}
-                  <div className="flex p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+                  <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                       src="/images/cognitive/hugeicons_ai-idea.svg"
@@ -88,7 +88,7 @@ export default function StickyStackSection() {
 
                 {/* Item 2 */}
                 <div className="flex items-start gap-5 md:gap-2">
-                  <div className="flex p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+                  <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                       src="/images/cognitive/mingcute_transformation-line.svg"
@@ -103,7 +103,7 @@ export default function StickyStackSection() {
 
                 {/* Item 3 */}
                 <div className="flex items-start gap-5 md:gap-2">
-                  <div className="flex p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+                  <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                       src="/images/cognitive/Vector.svg"
@@ -127,7 +127,7 @@ export default function StickyStackSection() {
       <div className="">
         <div
           ref={sectionRef}
-          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[6rem]"
+          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[6rem] "
         >
           <div className="text-center mb-32 md:mb-10">
             <Heading
@@ -149,13 +149,13 @@ export default function StickyStackSection() {
           <div className="">
             <div className=" mx-auto flex flex-row-reverse gap-[12.625rem] md:gap-[0rem] justify-center items-start md:flex-col">
               {/* LEFT SIDE */}
-              <div className="relative top-[-5rem] md:top-0">
+              <div className="relative top-[-5rem] md:top-0 md:left-[-1.5rem]">
                 {/* Image / Illustration */}
                 <div className="relative">
                   <img
                     src="/images/cognitive/Group1000004522.svg" // 🔁 replace with your asset
                     alt="agents"
-                    className="h-[39.4075rem]"
+                    className="h-[39.4075rem] md:h-auto md:w-full"
                   />
                 </div>
 
@@ -175,7 +175,7 @@ export default function StickyStackSection() {
                 <div className="flex items-start gap-5 md:gap-2">
                   {/* Icon */}
                   {/* 🔁 replace with your icon */}
-                  <div className="flex p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+                  <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                       src="/images/cognitive/streamline-flex_target.svg"
@@ -191,7 +191,7 @@ export default function StickyStackSection() {
 
                 {/* Item 2 */}
                 <div className="flex items-start gap-5 md:gap-2">
-                  <div className="flex p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+                  <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                       src="/images/cognitive/fluent_document-text-extract-16-regular.svg"
@@ -208,7 +208,7 @@ export default function StickyStackSection() {
 
                 {/* Item 3 */}
                 <div className="flex items-start gap-5 md:gap-2">
-                  <div className="flex p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+                  <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                       src="/images/cognitive/carbon_network-3.svg"

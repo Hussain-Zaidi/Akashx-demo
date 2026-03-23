@@ -101,8 +101,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             }}
           >
             <div
-              className="w-16 h-16 border-4 border-t-4 border-r-white border-b-white border-l-white border-solid rounded-full animate-spin"
+              className="border-4 border-t-4 border-r-white border-b-white border-l-white border-solid rounded-full animate-spin"
               style={{
+                width: '3%',
+                aspectRatio:1,
                 borderTopColor: '#6243ef',
               }}
             ></div>
