@@ -25,7 +25,7 @@ export default function StickyStackSection() {
       <div className="">
         <div
           ref={sectionRef}
-          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[6rem]"
+          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[4rem]" id='OntlogyViews'
         >
           <div className="text-center mb-32 md:mb-10">
             <Heading
@@ -127,7 +127,7 @@ export default function StickyStackSection() {
       <div className="">
         <div
           ref={sectionRef}
-          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[6rem] "
+          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[4rem] "
         >
           <div className="text-center mb-32 md:mb-10">
             <Heading

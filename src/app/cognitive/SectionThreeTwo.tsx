@@ -51,7 +51,7 @@ export default function StickyStackSection() {
   }, []);
 
   return (
-    <div className="">
+    <div className="" id='CognitiveSQL'>
       <div
         ref={sectionRef}
         className="relative mx-auto px-6 mb-[12.5rem] md:mb-[4rem]"

@@ -211,7 +211,7 @@ export default function EnterpriseUseCases() {
   };
 
   return (
-    <div className="px-6 flex items-center justify-center mb-[12.5rem] md:mb-[6rem]">
+    <div className="px-6 flex items-center justify-center mb-[12.5rem] md:mb-[6rem]" id='UseCases'>
       <div className="w-full flex justify-center gap-[8.5rem] md:gap-[2.5rem] md:flex-col">
         {/* Left */}
         <div className="w-full max-w-[33.5rem]">

@@ -89,21 +89,6 @@ export default function Header({ ...props }: Props) {
   }}
 >
 
-        {/* <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/home" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
-            <Heading
-              size="textmd"
-              as="p"
-              className={`text-[20px] font-medium ${
-                pathname === "/home"
-                  ? "text-blue-100"
-                  : "text-blue_gray-300 hover:text-blue-100"
-              }`}
-            >
-              Home
-            </Heading>
-          </Link>
-        </li> */}
         <li onClick={() => setIsMenuOpen(false)}>
           <Link href="/cognitive" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
@@ -111,6 +96,21 @@ export default function Header({ ...props }: Props) {
               as="p"
               className={`text-[20px] font-medium ${
                 pathname === "/cognitive"
+                  ? "text-blue-100"
+                  : "text-blue_gray-300 hover:text-blue-100"
+              }`}
+            >
+              Home
+            </Heading>
+          </Link>
+        </li>
+        <li onClick={() => setIsMenuOpen(false)}>
+          <Link href="/cognitive#OntlogyViews" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+            <Heading
+              size="textmd"
+              as="p"
+              className={`text-[20px] font-medium ${
+                pathname === "/cognitive#OntlogyViews"
                   ? "text-blue-100"
                   : "text-blue_gray-300 hover:text-blue-100"
               }`}
@@ -120,12 +120,12 @@ export default function Header({ ...props }: Props) {
           </Link>
         </li>
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/cognitive#CognitiveSQL" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
               className={`text-[20px] font-medium ${
-                pathname === "/cognitive"
+                pathname === "/cognitive#CognitiveSQL"
                   ? "text-blue-100"
                   : "text-blue_gray-300 hover:text-blue-100"
               }`}
@@ -135,12 +135,12 @@ export default function Header({ ...props }: Props) {
           </Link>
         </li>
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/cognitive#UseCases" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
               className={`text-[20px] font-medium ${
-                pathname === "/cognitive#"
+                pathname === "/cognitive#UseCases"
                   ? "text-blue-100"
                   : "text-blue_gray-300 hover:text-blue-100"
               }`}
