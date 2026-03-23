@@ -220,7 +220,7 @@ export default function EnterpriseUseCases() {
             as="h1"
             className="bg-gradient1 bg-clip-text text-left md:text-center font-montserrat text-[3rem] font-bold leading-tight md:leading-tight text-transparent"
             style={{
-              fontSize: isMobile ? '1.625rem' : '',
+              fontSize: isMobile ? '1.5rem' : '',
             }}
           >
             Enterprise AI <br className='md:hidden' /> Use Cases
@@ -229,10 +229,10 @@ export default function EnterpriseUseCases() {
           <Heading
             size="auto"
             as="h1"
-            className="mt-[4.541875rem] md:mt-[.5rem] bg blue-green-background-text bg-clip-text text-left md:text-center font-montserrat text-[2.333rem] font-bold leading-tight md:leading-tight text-transparent"
+            className="mt-[4.541875rem] md:mt-[1rem] bg blue-green-background-text bg-clip-text text-left md:text-center font-montserrat text-[2.333rem] font-bold leading-tight md:leading-tight text-transparent"
             style={{
               backgroundSize:'60%',
-              fontSize: isMobile ? '1.2rem' : '',
+              fontSize: isMobile ? '1.25rem' : '',
             }}
           >
             Cognitive SQL{' '}
@@ -254,7 +254,7 @@ export default function EnterpriseUseCases() {
         <div
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
-          className="w-full max-w-[39.125rem] overflow-hidden"
+          className="w-full max-w-[39.125rem] overflow-hidden md:overflow-visible"
         >
           {/* Tabs */}
           <div className="flex gap-4 mb-6 justify-between">

@@ -57,7 +57,7 @@ export default function CognitivePage() {
           src="/images/cognitive/Container.svg"
         />
         <img
-          className="w-full absolute md:block hidden pointer-events-none select-none m-t[9rem]"
+          className="w-full absolute md:block hidden pointer-events-none select-none mt-[9rem]"
           src="/images/cognitive/Container-mobile.svg"
         />
         

@@ -24,10 +24,10 @@ export default function StickyStackSection() {
     <div className="bg-[url(/images/cognitive/Frame1000004460.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize: isMobile ? '55rem':'105.166rem'}}>
       <div
         ref={sectionRef}
-        className="relative max-w-[85rem] mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
+        className="relative max-w-[85rem] mx-auto px-6 mb-[12.5rem] md:mb-[4rem]"
       >
         {/* Sticky Heading */}
-        <div className="text-center mb-20 md:mb-10">
+        <div className="text-center mb-20 md:mb-8">
           <Heading
             size="auto"
             as="h1"
@@ -36,10 +36,10 @@ export default function StickyStackSection() {
               fontSize: isMobile ? '1.5rem' : '',
             }}
           >
-            Seamlessly plugs into <br className='md:hidden' />
-            your existing Data Lakehouse
+            Seamlessly plugs <br className='md:block hidden' />into <br className='md:hidden' />
+            your existing <br className='md:block hidden' />Data Lakehouse
           </Heading>
-          <p className="mt-8 md:mt-[.5rem] text-[#B8D0F2] text-[1.666875rem] md:text-[1rem] font-normal font-inter">
+          <p className="mt-8 md:mt-[1rem] text-[#B8D0F2] text-[1.666875rem] md:text-[1rem] font-normal font-inter">
             Connects your <br className=' hidden md:block'/>Data Warehouse / Lakehouse and <br className='md:hidden'/>
             feeds to your Agents via MCP
           </p>

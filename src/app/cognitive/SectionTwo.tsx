@@ -24,7 +24,7 @@ export default function StickyStackSection() {
     <div className="">
       <div
         ref={sectionRef}
-        className="relative max-w-[96rem] mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
+        className="relative max-w-[96rem] mx-auto px-6 mb-[12.5rem] md:mb-[4rem]"
       >
         {/* Sticky Heading */}
         <div className="text-center mb-20 md:mb-8">
@@ -40,11 +40,11 @@ export default function StickyStackSection() {
           </Heading>
         </div>
 
-        <div className="border border-[#2B7FFF4D] rounded-[1.5rem] bg-[#070A20] p-[0_3.5831rem] md:p-[0_1.25rem] flex flex-col items-center">
+        <div className="border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] bg-[#070A20] p-[0_3.5831rem] md:p-[0_1.25rem] flex flex-col items-center">
           <div className="flex w-full gap-14 md:gap-0 md:flex-col items-center">
             <div className="pt-[2.7125rem]  flex flex-col gap-7 md:gap-3 flex-1 md:pt-5">
-              <div className="flex items-center gap-6 md:gap-3 text-[#CDDAED] font-inter text-[1.8333rem] md:text-[0.875rem] font-bold">
-                <div className="p-4 md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_)] border border-[#7557FF4D] rounded-[1rem] md:rounded-[.5rem]">
+              <div className="flex items-center gap-6 md:gap-3 text-[#CDDAED] font-inter text-[1.8333rem] md:text-[1.125rem] font-bold">
+                <div className="p-4 md:p-[.665rem] bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_)] border border-[#7557FF4D] rounded-[1rem] md:rounded-[.5rem]">
                   <img
                     className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                     src={`/images/cognitive/IIcon.svg`}
@@ -52,8 +52,8 @@ export default function StickyStackSection() {
                 </div>
                 RAG
               </div>
-              <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[0.875rem]">
-                RAG does Top-K vector similarity search for <br />
+              <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
+                RAG does Top-K vector similarity search for <br className='md:hidden' />
                 <span className="text-[#FE823D]">probabilistic results.</span>
               </div>
               <div className="flex justify-end">
@@ -67,8 +67,8 @@ export default function StickyStackSection() {
             <div className="h-[28rem] w-[0.125rem] md:w-full md:h-[0.125rem] bg-[linear-gradient(0deg,#41668C1A,#588BBF99,#41668C1A)] md:bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
 
             <div className="pt-[2.7125rem] flex flex-col gap-7 md:gap-3 flex-1 md:pt-5">
-              <div className="flex items-center gap-6 md:gap-3 text-[#CDDAED] font-inter text-[1.8333rem] md:text-[0.875rem] font-bold">
-                <div className="p-4 md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_)] border border-[#7557FF4D] rounded-[1rem] md:rounded-[.5rem]">
+              <div className="flex items-center gap-6 md:gap-3 text-[#CDDAED] font-inter text-[1.8333rem] md:text-[1.125rem] font-bold">
+                <div className="p-4 md:p-[.665rem] bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_)] border border-[#7557FF4D] rounded-[1rem] md:rounded-[.5rem]">
                   <img
                     className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                     src={`/images/cognitive/tickIcon.svg`}
@@ -76,10 +76,10 @@ export default function StickyStackSection() {
                 </div>
                 Cognitive SQL
               </div>
-              <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[0.875rem]">
+              <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
                 Cognitive does{' '}
                 <span className="text-[#1CBC6E]">deterministic inferencing </span>
-                via smart <br />
+                via smart <br className='md:hidden' />
                 brute forcing for <b>accurate results</b>.
               </div>
               <div className="flex justify-end">

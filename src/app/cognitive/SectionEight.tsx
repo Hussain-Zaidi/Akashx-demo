@@ -314,7 +314,7 @@ export default function CodeCard() {
   </div>
 
 <div className="relative rounded-full bg-[linear-gradient(135deg,#41668C66_40%,#28B6F6)] p-[0.125rem]">
-  <div className="bg-[linear-gradient(135deg,#080C26_50%,#75BAFF)] text-[1.5rem] font-bold font-montserrat rounded-full flex items-center justify-center flex-[0_0_5rem] w-[5rem] h-[5rem] md:flex-[0_0_4rem] md:w-[4rem] md:h-[4rem] md:py-[1rem] pointer-events-none select-none py-[2.15rem]">
+  <div className="bg-[linear-gradient(135deg,#080C26_60%,#75BAFF)] text-[1.5rem] md:text-[1rem] font-bold font-montserrat rounded-full flex items-center justify-center flex-[0_0_5rem] w-[5rem] h-[5rem] md:flex-[0_0_4rem] md:w-[4rem] md:h-[4rem] md:py-[1rem] pointer-events-none select-none py-[2.15rem]">
     <span className="bg-gradient1 bg-clip-text text-transparent">
       VS
     </span>
