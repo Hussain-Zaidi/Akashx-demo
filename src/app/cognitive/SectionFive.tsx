@@ -45,7 +45,7 @@ export default function StickyStackSection() {
           <div className="">
             <div className=" mx-auto flex gap-[12.625rem] md:gap-[0rem] justify-center items-start md:flex-col">
               {/* LEFT SIDE */}
-              <div className="relative md:right-[-1.8rem]">
+              <div className="relative md:right-[-1.7rem]">
                 {/* Image / Illustration */}
                 <div className="relative">
                   <img
@@ -68,7 +68,7 @@ export default function StickyStackSection() {
               {/* RIGHT SIDE */}
               <div className="space-y-14 md:space-y-4 w-[37rem] md:w-auto md:mt-[-2rem]">
                 {/* Item 1 */}
-                <div className="flex items-start gap-5 md:gap-2">
+                <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   {/* Icon */}
                   {/* 🔁 replace with your icon */}
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
@@ -78,7 +78,7 @@ export default function StickyStackSection() {
                     />
                   </div>
 
-                  <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
+                  <p className="text-[1.5rem] md:text-[0.875rem] text-[#B8D0F2] leading-auto">
                     <span className="text-[#75BAFF] font-bold">
                       Extract inferred insights and facts
                     </span>{' '}
@@ -87,7 +87,7 @@ export default function StickyStackSection() {
                 </div>
 
                 {/* Item 2 */}
-                <div className="flex items-start gap-5 md:gap-2">
+                <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
@@ -95,14 +95,14 @@ export default function StickyStackSection() {
                     />
                   </div>
 
-                  <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
+                  <p className="text-[1.5rem] md:text-[0.875rem] text-[#B8D0F2] leading-auto">
                     <span className="text-[#75BAFF] font-bold">Reuse</span>{' '}
                     persistent inference-results across many questions
                   </p>
                 </div>
 
                 {/* Item 3 */}
-                <div className="flex items-start gap-5 md:gap-2">
+                <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
@@ -110,7 +110,7 @@ export default function StickyStackSection() {
                     />
                   </div>
 
-                  <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
+                  <p className="text-[1.5rem] md:text-[0.875rem] text-[#B8D0F2] leading-auto">
                     Enable{' '}
                     <span className="text-[#75BAFF] font-bold">
                       millisecond-latency AI
@@ -172,7 +172,7 @@ export default function StickyStackSection() {
               {/* RIGHT SIDE */}
               <div className="space-y-14 md:space-y-4 w-[37rem] md:w-auto md:mt-[-2rem]">
                 {/* Item 1 */}
-                <div className="flex items-start gap-5 md:gap-2">
+                <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   {/* Icon */}
                   {/* 🔁 replace with your icon */}
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
@@ -182,7 +182,7 @@ export default function StickyStackSection() {
                     />
                   </div>
 
-                  <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
+                  <p className="text-[1.5rem] md:text-[0.875rem] text-[#B8D0F2] leading-auto">
                     <span className="text-[#75BAFF] font-bold">98%</span>+
                     accuracy on Finance Bench (3000+ complex questions across
                     many 100+ page 10K filing reports)
@@ -190,7 +190,7 @@ export default function StickyStackSection() {
                 </div>
 
                 {/* Item 2 */}
-                <div className="flex items-start gap-5 md:gap-2">
+                <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
@@ -198,7 +198,7 @@ export default function StickyStackSection() {
                     />
                   </div>
 
-                  <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
+                  <p className="text-[1.5rem] md:text-[0.875rem] text-[#B8D0F2] leading-auto">
                     <span className="text-[#75BAFF] font-bold">
                       Incremental updates
                     </span>{' '}
@@ -207,7 +207,7 @@ export default function StickyStackSection() {
                 </div>
 
                 {/* Item 3 */}
-                <div className="flex items-start gap-5 md:gap-2">
+                <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
@@ -215,7 +215,7 @@ export default function StickyStackSection() {
                     />
                   </div>
 
-                  <p className="text-2xl md:text-[1rem] text-[#B8D0F2] leading-auto">
+                  <p className="text-[1.5rem] md:text-[0.875rem] text-[#B8D0F2] leading-auto">
                     Hierarchical concept indexing that can be combined with 
                     Vector-index based{' '}
                     <span className="text-[#75BAFF] font-bold">
