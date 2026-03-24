@@ -65,7 +65,7 @@ export default function Footer({ ...props }: Props) {
                   <li>
                     <Link href="/cognitive" rel="noreferrer" className="md:text-[14px]">
                       <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                        About
+                        Home
                       </Heading>
                     </Link>
                   </li>
