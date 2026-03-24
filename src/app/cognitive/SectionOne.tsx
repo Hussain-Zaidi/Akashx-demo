@@ -21,11 +21,11 @@ export default function SectionOne() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center mt-[5.125rem] md:mt-[0.8125rem] md:px-5 mb-[13.25rem] md:mb-[4rem]">
+    <div className="flex flex-col items-center mt-[5.125rem] md:mt-[0.8125rem] md:px-5 mb-[13.25rem] md:mb-[6rem]">
       <Heading
         size="auto"
         as="h1"
-        className=" mb-[5.125rem] md:mb-[2rem] text-center bg-[#B8D0F2] bg-clip-text font-inter text-[2.666875rem] font-normal leading-tight md:leading-tight text-transparent"
+        className=" mb-[5.125rem] md:mb-[2rem] text-center bg-[#B8D0F2] bg-clip-text font-inter text-[2.666875rem] font-normal leading-tight md:leading-[2rem] text-transparent"
         style={{
           fontSize: isMobile ? '1.125rem' : '',
           width: isMobile ? '102%' : '',

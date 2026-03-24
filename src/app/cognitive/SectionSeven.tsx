@@ -21,10 +21,10 @@ export default function StickyStackSection() {
   }, []);
 
   return (
-    <div className="bg-[url(/images/cognitive/Frame1000004460.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize: isMobile ? '55rem':'105.166rem'}}>
+    <div className="bg-[url(/images/cognitive/Frame1000004460.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize: isMobile ? '45rem':'105.166rem'}}>
       <div
         ref={sectionRef}
-        className="relative max-w-[85rem] mx-auto px-6 mb-[12.5rem] md:mb-[4rem]"
+        className="relative max-w-[85rem] mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
       >
         {/* Sticky Heading */}
         <div className="text-center mb-20 md:mb-8">
@@ -48,7 +48,7 @@ export default function StickyStackSection() {
           </p>
         </div>
 
-        <div className="shadow-[0_0_3.4375rem_0_#75BAFF33] border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] bg-[#070A20] p-[3.1468rem] md:p-5 flex flex-col items-center">
+        <div className="shadow-[0_0_3.4375rem_0_#75BAFF33] md:shadow-[0_0_1rem_0_#75BAFF33] border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] bg-[#070A20] p-[3.1468rem] md:p-5 flex flex-col items-center">
           <div className="flex w-full gap-11 md:gap-0 md:flex-col items-center mb-[2.5rem] md:mb-6">
             <img
               className="w-full"

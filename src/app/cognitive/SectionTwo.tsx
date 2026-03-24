@@ -24,7 +24,7 @@ export default function StickyStackSection() {
     <div className="">
       <div
         ref={sectionRef}
-        className="relative max-w-[96rem] mx-auto px-6 mb-[12.5rem] md:mb-[4rem]"
+        className="relative max-w-[96rem] mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
       >
         {/* Sticky Heading */}
         <div className="text-center mb-20 md:mb-8">
@@ -36,7 +36,9 @@ export default function StickyStackSection() {
               fontSize: isMobile ? '1.5rem' : '',
             }}
           >
-            Why RAG Fails Enterprises <br className='md:hidden' /><br className='hidden md:block' />going into Production
+            Why RAG Fails Enterprises {' '}
+            {/* <br className='md:hidden' /><br className='hidden md:block' /> */}
+            going into Production
           </Heading>
         </div>
 

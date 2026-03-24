@@ -22,9 +22,10 @@ useEffect(() => {
   // Array of possible images
   const images = [
       '/images/cognitive/Graphics.svg',
-      '/images/cognitive/Graphics.svg',
+      // '/images/cognitive/Graphics.svg',
     // '/images/cognitive/Frame.svg',
-    // '/images/cognitive/Group 1000004520.svg'
+    // '/images/cognitive/vector1.png',
+    '/images/cognitive/vector1.png',
   ];
   
   // Get the current index from localStorage
@@ -86,19 +87,19 @@ useEffect(() => {
         <Heading
           size="auto"
           as="h1"
-          className="mt-[1.8125rem] md:mt-[1rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-normal leading-[3.375rem] md:leading-[1.25rem] text-transparent md:text-[1.875rem]"
+          className="mt-[1.8125rem] md:mt-[1rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-normal leading-[3.375rem] md:leading-normal text-transparent md:text-[1.875rem]"
           style={{
-            fontSize: isMobile ? '1.125rem' : '',
+            fontSize: isMobile ? '1.25rem' : '',
           }}
         >
-          <b>O</b>n<b>L</b>ine <b>C</b>ognitive <b>P</b>rocessing for <br />
+          <b>O</b>n<b>L</b>ine <b>C</b>ognitive <b>P</b>rocessing <br className='hidden md:block' />  for <br className='block md:hidden' />
           Humans and Agents
         </Heading>
       </div>
 
       {imageSrc && (
         <img
-          className="h-[44.25rem] w-[51.166875rem] md:h-[20.625rem] md:w-[22.5rem] pointer-events-none select-none"
+          className="h-[44.25rem] w-[51.166875rem] md:h-[20.625rem] md:w-[22.5rem] pointer-events-none select-none object-contain"
           src={imageSrc}
           alt="Cognitive processing visualization"
           // Add error handling in case image fails to load

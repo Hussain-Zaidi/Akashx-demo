@@ -230,7 +230,7 @@ export default function EnterpriseUseCases() {
           <Heading
             size="auto"
             as="h1"
-            className="mt-[4.541875rem] md:mt-[1rem] bg blue-green-background-text bg-clip-text text-left md:text-center font-montserrat text-[2.333rem] font-bold leading-tight md:leading-tight text-transparent"
+            className="mt-[4.541875rem] md:mt-[1rem] bg blue-green-background-text bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-bold leading-tight md:leading-tight text-transparent"
             style={{
               backgroundSize:'60%',
               fontSize: isMobile ? '1.25rem' : '',
@@ -291,7 +291,7 @@ export default function EnterpriseUseCases() {
             ))}
           </div>
 
-          <div className="border-t-[0.125rem] border-[#41668C4D] pt-11 md:pt-6 relative min-h-[20rem] md:min-h-[12rem]">
+          <div className="border-t-[0.125rem] border-[#41668C4D] pt-11 md:pt-6 relative min-h-[20rem] md:min-h-[8.5rem]">
             <div
               key={activeIndex}
               className={`grid grid-cols-1 gap-8 ${getAnimationClass(activeTab.animation)}`}
@@ -310,7 +310,7 @@ export default function EnterpriseUseCases() {
                     <h3 className="font-semibold text-[#B8D0F2] text-[1.666rem] md:text-base font-inter mb-3">
                       {item.heading}
                     </h3>
-                    <p className="text-[#B8D0F2] text-[1.5rem] md:text-base font-normal font-inter">
+                    <p className="text-[#B8D0F2] text-[1.5rem] md:text-[0.875rem] font-normal font-inter">
                       {item.description}
                     </p>
                   </div>

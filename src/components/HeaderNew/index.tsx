@@ -74,7 +74,7 @@ export default function Header({ ...props }: Props) {
   };
 
   return (
-    <div className="fixed top-0 z-[100] block w-full origin-top-left border-b border-[#556E94]/30 bg-[#080C26]/90 p-[1.8125rem_0px_1.875rem]">
+    <div className="fixed top-0 z-[100] block w-full origin-top-left border-b border-[#556E94]/30 bg-[#080C26]/100 p-[1.8125rem_0px_1.875rem]">
       <header
         {...props}
         className={`${props.className} flex justify-between items-center ml-[6.25rem] mr-28 gap-5 md:mx-0`}

@@ -34,9 +34,11 @@ export default function Footer({ ...props }: Props) {
                   className="bg-gradient bg-clip-text font-montserrat text-[1.25rem] font-extrabold leading-7 text-transparent md:text-[1rem] md:leading-[1.3125rem]"
                 >
                   <>
-                    World’s #1<br />
+                    {/* World’s #1<br />
                     Storage Accelerated <br />
-                    Data Warehouse
+                    Data Warehouse */}
+                    World’s No 1<br />
+OLCP Database
                   </>
                 </Heading>
               </div>
@@ -63,9 +65,9 @@ export default function Footer({ ...props }: Props) {
                 </Heading> */}
                 <ul className="flex flex-col items-start gap-6 md:gap-3">
                   <li>
-                    <Link href="/home" rel="noreferrer" className="md:text-[0.875rem]">
+                    <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
                       <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                        About
+                        Home
                       </Heading>
                     </Link>
                   </li>

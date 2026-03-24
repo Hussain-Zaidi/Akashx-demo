@@ -110,7 +110,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
                 <br className="md:hidden"></br>
                 <span className="hidden md:inline"> </span>
                 {/* {section.section6_title2} */}
-                <span className="text-[3.5rem] md:text-[2rem] leading-[124%] mb-[1.916rem] inline-block">
+                <span className="text-[3.5rem] md:text-[1.5rem] leading-[124%] mb-[1.916rem] inline-block">
                 Fast, With Near-Zero Effort
 
                 </span>
@@ -138,7 +138,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
               name="email"
               onChange={handleEmailChange}
               placeholder={`Company Email`}
-              className="flex h-[5.5rem] md:h-[2.75rem] w-[58%] items-center justify-center rounded-bl-[0.625rem] rounded-tl-[0.625rem] md:rounded-bl-[0.25rem] md:rounded-tl-[0.25rem] bg-[#EBF5FF] px-8 text-[1.5rem] font-medium text-blue_gray-300 md:w-full md:px-0 flex-1"
+              className="flex h-[5.5rem] md:h-[2.75rem] w-[58%] items-center justify-center rounded-bl-[0.625rem] rounded-tl-[0.625rem] md:rounded-bl-[0.25rem] md:rounded-tl-[0.25rem] bg-[#EBF5FF] px-6 text-[1.5rem] font-medium text-blue_gray-300 md:w-full md:px-0 flex-1"
               style={{
                 fontSize: isMobile ? "0.875rem" : "",
               }}
