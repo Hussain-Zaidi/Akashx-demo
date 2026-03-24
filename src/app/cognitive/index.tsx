@@ -49,6 +49,7 @@ export default function CognitivePage() {
       <Header />
       <div
         className="flex md:min-h-fit flex-col gap-[6.5rem] md:h-auto md:gap-[10.375rem] sm:gap-[6.9375rem] mt-[6.25rem]"
+        id='HeroSection'
         style={{ marginTop: isMobile ? '5rem' : '' }}
       >
         {fetchedSection && <HeroSection />}

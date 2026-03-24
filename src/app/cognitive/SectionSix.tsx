@@ -1,7 +1,7 @@
 'use client';
 
 import { Heading } from '@/components/Heading';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 type TabItem = {
   heading: string;
@@ -30,18 +30,6 @@ const tabs: Tab[] = [
           'Detect market-moving announcements by joining earnings transcripts with financial datasets.',
         image: 'Maskgroup.svg',
       },
-      // {
-      //   heading: 'Healthcare Insights',
-      //   description: 'Identify emerging symptom clusters across large clinical note collections.'
-      // },
-      // {
-      //   heading: 'Risk Assessment',
-      //   description: 'Analyze credit risk by combining financial statements with market sentiment data.'
-      // },
-      // {
-      //   heading: 'Fraud Detection',
-      //   description: 'Identify anomalous patterns in transaction data and communication logs.'
-      // }
     ],
   },
   {
@@ -56,18 +44,6 @@ const tabs: Tab[] = [
           'Analyze thousands of sales calls and group them by inferred quality and outcomes.',
         image: 'Maskgroup1.svg',
       },
-      // {
-      //   heading: 'Talent Insights',
-      //   description: 'Analyze resumes to identify career trajectories and leadership transitions.'
-      // },
-      // {
-      //   heading: 'Deal Risk Analysis',
-      //   description: 'Predict deal closure probability by analyzing communication patterns and historical data.'
-      // },
-      // {
-      //   heading: 'Competitive Intelligence',
-      //   description: 'Track competitor mentions and sentiment across sales calls and market reports.'
-      // }
     ],
   },
   {
@@ -82,18 +58,6 @@ const tabs: Tab[] = [
           'Identify emerging symptom clusters across large clinical note collections.',
         image: 'Maskgroup2.svg',
       },
-      // {
-      //   heading: 'Financial Intelligence',
-      //   description: 'Detect patterns in patient billing and insurance claims.'
-      // },
-      // {
-      //   heading: 'Treatment Efficacy',
-      //   description: 'Correlate treatment protocols with patient outcomes across structured and unstructured data.'
-      // },
-      // {
-      //   heading: 'Operational Efficiency',
-      //   description: 'Optimize hospital workflows by analyzing staff schedules, patient flow, and resource allocation.'
-      // }
     ],
   },
   {
@@ -107,19 +71,6 @@ const tabs: Tab[] = [
         description: 'Analyze thousands of resumes to identify career trajectories and leadership transitions.',
         image: 'Maskgroup3.svg',
       },
-      
-      // {
-      //   heading: 'Sales Intelligence',
-      //   description: 'Evaluate sales hiring success patterns.'
-      // },
-      // {
-      //   heading: 'Retention Analysis',
-      //   description: 'Predict employee churn by analyzing performance reviews, engagement surveys, and communication patterns.'
-      // },
-      // {
-      //   heading: 'Skills Gap Analysis',
-      //   description: 'Identify emerging skill requirements by analyzing job descriptions and industry trends.'
-      // }
     ],
   },
 ];
@@ -128,9 +79,11 @@ export default function EnterpriseUseCases() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [paused, setPaused] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const [displayedTab, setDisplayedTab] = useState<Tab>(tabs[0]);
-  const [nextIndex, setNextIndex] = useState<number | null>(null);
+  
+  const isMounted = useRef(true);
+  const animationTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const handleResize = () => {
@@ -141,64 +94,63 @@ export default function EnterpriseUseCases() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      isMounted.current = false;
+      if (animationTimeoutRef.current) {
+        clearTimeout(animationTimeoutRef.current);
+      }
     };
   }, []);
 
+  // Auto-rotate tabs
   useEffect(() => {
-    if (paused) return;
+    if (paused || isAnimating) return;
 
     const interval = setInterval(() => {
-      handleTabChange((activeIndex + 1) % tabs.length);
+      const nextIndex = (activeIndex + 1) % tabs.length;
+      handleTabChange(nextIndex);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [paused, activeIndex]);
+  }, [paused, activeIndex, isAnimating]);
 
   const handleTabChange = (newIndex: number) => {
-    if (isFadingOut || newIndex === activeIndex) return;
+    if (newIndex === activeIndex || isAnimating) return;
 
-    setNextIndex(newIndex);
-    setIsFadingOut(true);
-  };
-
-  // Handle the fade out completion
-  useEffect(() => {
-    if (isFadingOut && nextIndex !== null) {
-      const fadeOutTimer = setTimeout(() => {
-        setActiveIndex(nextIndex);
-        setDisplayedTab(tabs[nextIndex]);
-        setIsFadingOut(false);
-        setNextIndex(null);
-      }, 300); // Match this with animation duration
-
-      return () => clearTimeout(fadeOutTimer);
+    // Start fade out animation
+    setIsAnimating(true);
+    
+    // After fade out, change content and fade in
+    if (animationTimeoutRef.current) {
+      clearTimeout(animationTimeoutRef.current);
     }
-  }, [isFadingOut, nextIndex]);
+    
+    animationTimeoutRef.current = setTimeout(() => {
+      if (isMounted.current) {
+        setActiveIndex(newIndex);
+        setDisplayedTab(tabs[newIndex]);
+        
+        // Start fade in after content change
+        setTimeout(() => {
+          if (isMounted.current) {
+            setIsAnimating(false);
+          }
+        }, 50);
+      }
+    }, 300); // Match fade out duration
+  };
 
   const activeTab = displayedTab;
 
-  const getAnimationClass = (animationType: string) => {
-    if (isFadingOut) {
+  const getContainerAnimationClass = () => {
+    if (isAnimating) {
       return 'animate-fade-out';
     }
-
-    switch (animationType) {
-      case 'bottom-right':
-        return 'animate-fade-in-bottom-right';
-      case 'bottom-left':
-        return 'animate-fade-in-bottom-left';
-      case 'top-right':
-        return 'animate-fade-in-top-right';
-      case 'top-left':
-        return 'animate-fade-in-top-left';
-      default:
-        return 'animate-fade-in-bottom-right';
-    }
+    return 'animate-fade-in';
   };
 
   const getItemAnimationClass = (animationType: string, idx: number) => {
-    if (isFadingOut) return 'fade-item';
-
+    if (isAnimating) return 'fade-item-hidden';
+    
     const baseClass =
       {
         'bottom-right': 'slide-in-bottom-right',
@@ -207,17 +159,18 @@ export default function EnterpriseUseCases() {
         'top-left': 'slide-in-top-left',
       }[animationType] || 'slide-in-bottom-right';
 
-    return `fade-item ${baseClass} delay-${idx}`;
+    return `fade-item-visible ${baseClass} delay-${idx}`;
   };
 
   return (
-    <div className="px-6 flex items-center justify-center mb-[12.5rem] md:mb-[6rem]" id='UseCases'>
+    <div className="px-6 flex items-center justify-center mb-[12.5rem] md:mb-[6rem]">
       <div className="w-full flex justify-center gap-[8.5rem] md:gap-[2.5rem] md:flex-col">
         {/* Left */}
         <div className="w-full max-w-[33.5rem]">
           <Heading
             size="auto"
             as="h1"
+            id='UseCases'
             className="bg-gradient1 bg-clip-text text-left md:text-center font-montserrat text-[3rem] font-bold leading-tight md:leading-tight text-transparent"
             style={{
               fontSize: isMobile ? '1.5rem' : '',
@@ -252,36 +205,35 @@ export default function EnterpriseUseCases() {
 
         {/* Right */}
         <div
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          onPointerEnter={() => setPaused(true)}
+          onPointerLeave={() => setPaused(false)}
           className="w-full max-w-[39.125rem] overflow-hidden md:overflow-visible"
         >
           {/* Tabs */}
           <div className="flex gap-4 mb-6 justify-between">
             {tabs.map((tab, index) => (
-              <div className='relative flex flex-col items-center'>
-              <button
-              key={tab.id}
-                onClick={() => handleTabChange(index)}
-                className={`flex flex-col items-center gap-[1.333rem] px-4 md:px-0 py-3 transition-all duration-300 ${
-                  isFadingOut ? 'pointer-events-none' : ''
-                }`}
-                disabled={isFadingOut}
-              >
-                <img
-                  className={`flex-[0_0_3.5rem] w-[3.5rem] h-[3.5rem] md:flex-[0_0_2.125rem] md:w-[2.125rem] md:h-[2.125rem] md:py-[0.5rem] pointer-events-none select-none py-[0.8125rem] rounded-[0.666875rem] md:rounded-[.3rem] border border-[#75baff9a] ${
-                    activeIndex === index
-                      ? 'border-[#75BAFF99] bg-[#080C26] shadow-[0_0_1rem_0_#75BAFF99]'
-                      : 'border-[#75BAFF66] hover:border-gray-500 opacity-50'
+              <div key={tab.id} className='relative flex flex-col items-center'>
+                <button
+                  onClick={() => handleTabChange(index)}
+                  className={`flex flex-col items-center gap-[1.333rem] px-4 md:px-0 py-3 transition-all duration-300 ${
+                    isAnimating ? 'cursor-pointer' : 'cursor-pointer'
                   }`}
-                  src={tab.image}
-                  alt={`${tab.title} tab`}
-                />
-                <span className="text-[#B8D0F2] text-[1.5rem] md:text-base font-normal font-inter">
-                  {tab.title}
-                </span>
-              </button>
-              <div className={`h-[0.125rem] absolute bottom-[-1.6rem] z-10 w-60 transition-all bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)] ${
+                  disabled={isAnimating}
+                >
+                  <img
+                    className={`flex-[0_0_3.5rem] w-[3.5rem] h-[3.5rem] md:flex-[0_0_2.125rem] md:w-[2.125rem] md:h-[2.125rem] md:py-[0.5rem] pointer-events-none select-none py-[0.8125rem] rounded-[0.666875rem] md:rounded-[.3rem] border border-[#75baff9a] transition-all duration-300 ${
+                      activeIndex === index
+                        ? 'border-[#75BAFF99] bg-[#080C26] shadow-[0_0_1rem_0_#75BAFF99]'
+                        : 'border-[#75BAFF66] hover:border-gray-500 opacity-50'
+                    }`}
+                    src={tab.image}
+                    alt={`${tab.title} tab`}
+                  />
+                  <span className="text-[#B8D0F2] text-[1.5rem] md:text-base font-normal font-inter">
+                    {tab.title}
+                  </span>
+                </button>
+                <div className={`h-[0.125rem] absolute bottom-[-1.6rem] z-10 w-60 transition-all bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)] ${
                     activeIndex === index
                       ? 'scale-100'
                       : 'scale-0'
@@ -291,13 +243,10 @@ export default function EnterpriseUseCases() {
           </div>
 
           <div className="border-t-[0.125rem] border-[#41668C4D] pt-11 md:pt-6 relative min-h-[20rem] md:min-h-[12rem]">
-            <div
-              key={activeIndex}
-              className={`grid grid-cols-1 gap-8 ${getAnimationClass(activeTab.animation)}`}
-            >
+            <div className={`grid grid-cols-1 gap-8 ${getContainerAnimationClass()}`}>
               {activeTab.items.map((item, idx) => (
                 <div
-                  key={idx}
+                  key={`${activeIndex}-${idx}`}
                   className={`${getItemAnimationClass(activeTab.animation, idx)} flex items-center justify-center gap-9 md:gap-4 md:items-start`}
                 >
                   <img
@@ -321,50 +270,38 @@ export default function EnterpriseUseCases() {
       </div>
 
       <style jsx>{`
-        /* Fade Out Animation */
         .animate-fade-out {
           animation: fadeOut 0.3s ease forwards;
         }
 
-        /* Fade In Animations */
-        .animate-fade-in-bottom-right {
-          animation: fadeInFromBottomRight 0.6s ease forwards;
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease forwards;
         }
 
-        .animate-fade-in-bottom-left {
-          animation: fadeInFromBottomLeft 0.6s ease forwards;
-        }
-
-        .animate-fade-in-top-right {
-          animation: fadeInFromTopRight 0.6s ease forwards;
-        }
-
-        .animate-fade-in-top-left {
-          animation: fadeInFromTopLeft 0.6s ease forwards;
-        }
-
-        /* Item animations with delays */
-        .fade-item {
+        .fade-item-hidden {
           opacity: 0;
         }
 
+        .fade-item-visible {
+          opacity: 1;
+        }
+
         .slide-in-bottom-right {
-          animation: slideInFromBottomRight 0.5s ease forwards;
+          animation: slideIn 0.5s ease forwards;
         }
 
         .slide-in-bottom-left {
-          animation: slideInFromBottomLeft 0.5s ease forwards;
+          animation: slideIn 0.5s ease forwards;
         }
 
         .slide-in-top-right {
-          animation: slideInFromTopRight 0.5s ease forwards;
+          animation: slideIn 0.5s ease forwards;
         }
 
         .slide-in-top-left {
-          animation: slideInFromTopLeft 0.5s ease forwards;
+          animation: slideIn 0.5s ease forwards;
         }
 
-        /* Delay classes for headings */
         .delay-0 {
           animation-delay: 0s;
         }
@@ -381,103 +318,32 @@ export default function EnterpriseUseCases() {
           animation-delay: 0.3s;
         }
 
-        /* Keyframes */
         @keyframes fadeOut {
           0% {
             opacity: 1;
-            //transform: scale(1);
           }
           100% {
             opacity: 0;
-            //transform: scale(0.95);
           }
         }
 
-        @keyframes fadeInFromBottomRight {
+        @keyframes fadeIn {
           0% {
             opacity: 0;
-            //transform: translate(1.25rem, 1.25rem);
           }
           100% {
             opacity: 1;
-            //transform: translate(0, 0);
           }
         }
 
-        @keyframes fadeInFromBottomLeft {
+        @keyframes slideIn {
           0% {
             opacity: 0;
-            //transform: translate(-1.25rem, 1.25rem);
+            transform: translateY(10px);
           }
           100% {
             opacity: 1;
-            //transform: translate(0, 0);
-          }
-        }
-
-        @keyframes fadeInFromTopRight {
-          0% {
-            opacity: 0;
-            //transform: translate(1.25rem, -1.25rem);
-          }
-          100% {
-            opacity: 1;
-            //transform: translate(0, 0);
-          }
-        }
-
-        @keyframes fadeInFromTopLeft {
-          0% {
-            opacity: 0;
-            //transform: translate(-1.25rem, -1.25rem);
-          }
-          100% {
-            opacity: 1;
-            //transform: translate(0, 0);
-          }
-        }
-
-        @keyframes slideInFromBottomRight {
-          0% {
-            opacity: 0;
-            //transform: translate(0.9375rem, 0.9375rem);
-          }
-          100% {
-            opacity: 1;
-            //transform: translate(0, 0);
-          }
-        }
-
-        @keyframes slideInFromBottomLeft {
-          0% {
-            opacity: 0;
-            //transform: translate(-0.9375rem, 0.9375rem);
-          }
-          100% {
-            opacity: 1;
-            //transform: translate(0, 0);
-          }
-        }
-
-        @keyframes slideInFromTopRight {
-          0% {
-            opacity: 0;
-            //transform: translate(0.9375rem, -0.9375rem);
-          }
-          100% {
-            opacity: 1;
-            //transform: translate(0, 0);
-          }
-        }
-
-        @keyframes slideInFromTopLeft {
-          0% {
-            opacity: 0;
-            //transform: translate(-0.9375rem, -0.9375rem);
-          }
-          100% {
-            opacity: 1;
-            //transform: translate(0, 0);
+            transform: translateY(0);
           }
         }
       `}</style>

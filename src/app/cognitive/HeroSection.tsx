@@ -49,8 +49,6 @@ useEffect(() => {
   if (!hasSetImage.current) {
     const imageIndex = getImageIndex();
     setImageSrc(images[imageIndex]);
-    console.log('Selected image:', images[imageIndex], 'Index:', imageIndex);
-    console.log('Next image index will be:', localStorage.getItem('imageIndex'));
     hasSetImage.current = true;
   }
   
