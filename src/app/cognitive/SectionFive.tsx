@@ -124,7 +124,7 @@ export default function StickyStackSection() {
         </div>
       </div>
 
-      <div className="">
+     {/* <div className="">
         <div
           ref={sectionRef}
           className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[4rem] "
@@ -146,11 +146,9 @@ export default function StickyStackSection() {
             </Heading>
           </div>
 
-          <div className="">
+           <div className="">
             <div className=" mx-auto flex flex-row-reverse gap-[12.625rem] md:gap-[0rem] justify-center items-start md:flex-col">
-              {/* LEFT SIDE */}
               <div className="relative top-[-5rem] md:top-0 md:left-[-1.5rem]">
-                {/* Image / Illustration */}
                 <div className="relative">
                   <img
                     src="/images/cognitive/Group1000004522.svg" // 🔁 replace with your asset
@@ -159,7 +157,6 @@ export default function StickyStackSection() {
                   />
                 </div>
 
-                {/* Card */}
                 <div className="absolute bottom-[10.4rem] md:bottom-[4.9rem] right-0 w-[85.2%] bg-[linear-gradient(180deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
                   <p className="text-[#B8D0F2] text-[1.8333125rem] md:text-[.85rem] font-inter md:leading-normal font-medium">
                     Deterministic query retrieval <br />
@@ -169,12 +166,8 @@ export default function StickyStackSection() {
                 </div>
               </div>
 
-              {/* RIGHT SIDE */}
               <div className="space-y-14 md:space-y-4 w-[37rem] md:w-auto md:mt-[-2rem]">
-                {/* Item 1 */}
                 <div className="flex items-start gap-5 md:gap-[0.875rem]">
-                  {/* Icon */}
-                  {/* 🔁 replace with your icon */}
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
                       className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
@@ -189,7 +182,6 @@ export default function StickyStackSection() {
                   </p>
                 </div>
 
-                {/* Item 2 */}
                 <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
@@ -206,7 +198,6 @@ export default function StickyStackSection() {
                   </p>
                 </div>
 
-                {/* Item 3 */}
                 <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   <div className="flex flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
                     <img
@@ -227,7 +218,7 @@ export default function StickyStackSection() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

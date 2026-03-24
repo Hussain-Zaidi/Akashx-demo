@@ -8,28 +8,28 @@ const cards = [
     title: 'Cognitive Join',
     desc: 'Reason across documents and relational tables.',
     example:
-      'Detect companies announcing AI initiatives by joining earnings transcripts with market data.',
+      'Spot AI investment signals by joining earnings transcripts with market data',
     image: 'material-symbols-light_join-left.svg'
   },
   {
     title: 'Cognitive Classify',
     desc: 'Apply semantic classification across large datasets.',
     example:
-    'Identify frequent job hoppers across resumes.',
+    'Apply semantic classification across rows and files (audio, video, office, pdf)',
     image: 'streamline-plump_hierarchy-15.svg'
   },
-  {
-    title: 'Cognitive Group By',
-    desc: 'Aggregate records based on inferred attributes.',
-    example:
-    'Group sales calls by inferred quality rating.',
-    image: 'tabler_hierarchy-3.svg'
-  },
+  // {
+  //   title: 'Cognitive Group By',
+  //   desc: 'Aggregate records based on inferred attributes.',
+  //   example:
+  //   'Group sales calls by inferred quality rating.',
+  //   image: 'tabler_hierarchy-3.svg'
+  // },
   {
     title: 'Cognitive Topic Discovery',
-    desc: 'Discover themes across document collections.',
+    desc: 'Discovery topics of interest from existing datasets.',
     example:
-    'Cluster clinical notes by symptom patterns.',
+    'Discover Weight Loss impacts of Diabetes drugs in clinical trials',
     image: 'lets-icons_chat-search.svg'
   },
 ];
@@ -82,10 +82,11 @@ export default function StickyStackSection() {
                 fontSize: isMobile ? '1.5rem' : '',
               }}
             >
-              Query with reasoning <br /> across Petabytes of data
+              SQL with reasoning  <br /> on PB scale data
             </Heading>
             <p className="md:leading-6 mt-[2.125rem] md:mt-[1rem] text-[#B8D0F2] text-[1.666rem] md:text-[0.875rem] font-normal font-inter">
-              No Vector DB <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> No RAG-Pipelines <span className='text-[#556E94] mx-[0.25rem] inline-block md:hidden'>•</span><br className='hidden md:block' /> No LLM Orchestration <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> Just SQL
+              No Vector DB <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> No RAG-Pipelines <span className='text-[#556E94] mx-[0.25rem] inline-block md:hidden'>•</span><br className='hidden md:block' /> No LLM Orchestration 
+              {/* <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> Just SQL */}
             </p>
           </div>
               )}

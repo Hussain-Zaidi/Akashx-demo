@@ -17,6 +17,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
 
+  console.log(pathname);
+
   useEffect(() => {
     const simulateLoading = async () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -127,7 +129,6 @@ function NotificationBox() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  
   return (
     <div
       className={`min-h-[calc(90*(100/1920)*1vw)] md:min-h-[calc(120*(100/1050)*1vw)] fixed bottom-4 left-0 right-0 mx-auto w-[90%] max-w-[calc(880*(100/1920)*1vw)] p-[calc(20*(100/1920)*1vw)] md:p-[calc(20*(100/1050)*1vw)] rounded-lg md:rounded-md shadow-lg bg-[#080c26f2] text-white border border-[#75BAFF] transform

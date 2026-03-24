@@ -60,6 +60,11 @@ nextjs-portal {
   transition: all  .3s;
 }
 body{
-  /* overflow-x:auto; */
   scroll-behavior: smooth;
+}
+
+@media (max-width:1050px){
+  html, body{
+    overflow-x: hidden;
+  }
 }

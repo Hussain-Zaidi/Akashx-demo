@@ -94,7 +94,7 @@ export default function Header({ ...props }: Props) {
             <Heading
               size="textmd"
               as="p"
-              className={`text-[20px] font-medium ${
+              className={`text-[20px] font-medium hidden ${
                 pathname === "/cognitive"
                   ? "text-blue-100"
                   : "text-blue_gray-300 hover:text-blue-100"

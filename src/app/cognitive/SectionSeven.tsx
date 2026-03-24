@@ -37,19 +37,22 @@ export default function StickyStackSection() {
             }}
           >
             Seamlessly plugs <br className='md:block hidden' />into <br className='md:hidden' />
-            your existing <br className='md:block hidden' />Data Lakehouse
+            your {' '}
+            {/* existing <br className='md:block hidden' />Data  */}
+            Lakehouse
           </Heading>
           <p className="mt-8 md:mt-[1rem] text-[#B8D0F2] text-[1.666875rem] md:text-[1rem] font-normal font-inter">
-            Connects your <br className=' hidden md:block'/>Data Warehouse / Lakehouse and <br className='md:hidden'/>
-            feeds to your Agents via MCP
+            {/* Connects your <br className=' hidden md:block'/>Data Warehouse / Lakehouse and <br className='md:hidden'/> */}
+            {/* feeds to your Agents via MCP */}
+            Purpose built for Humans and Agents
           </p>
         </div>
 
         <div className="shadow-[0_0_3.4375rem_0_#75BAFF33] border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] bg-[#070A20] p-[3.1468rem] md:p-5 flex flex-col items-center">
-          <div className="flex w-full gap-11 md:gap-0 md:flex-col items-center mb-[5rem] md:mb-6">
+          <div className="flex w-full gap-11 md:gap-0 md:flex-col items-center mb-[2.5rem] md:mb-6">
             <img
               className="w-full"
-              src="/images/cognitive/Group1000004517.svg"
+              src="/images/cognitive/Group1000004521.svg"
               alt="Databricks"
             />
           </div>

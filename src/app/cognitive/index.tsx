@@ -71,7 +71,7 @@ export default function CognitivePage() {
       {fetchedSection && <SectionFive />}
       {fetchedSection && <SectionSix />}
       {fetchedSection && <SectionSeven />}
-      {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />}
+      {/* {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />} */}
       {fetchedSection && <SectionEight />}
       
 

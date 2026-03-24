@@ -86,35 +86,40 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
 
   return (
     <div className="flex justify-center">
-      <div className="container-xs flex justify-center lg:px-5 md:px-[0.9375rem] max-w-[100%] mx-[6.5625rem] md:mx-auto">
+      <div className="container-xs flex justify-center md:px-[0.9375rem] max-w-[100%] mx-[6.5625rem] md:mx-auto">
         <div
-          className="relative flex h-[40.625rem] md:h-[25rem] w-full flex-col items-center gap-[2.625rem] md:gap-[2rem] rounded-[1.25rem] border border-solid border-blue-a100 bg-[url(/images/img_image_650x1608.webp)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-20 shadow-xs lg:h-auto lg:py-8 md:px-[1.125rem] md:py-[2.5rem] md:mb-[6.25rem]"
+          className="relative flex h-[45rem] md:h-[25rem] w-full flex-col items-center gap-[2.625rem] md:gap-[2rem] rounded-[1.25rem] border border-solid border-blue-a100 bg-[url(/images/img_image_650x1608.webp)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-[6.875rem] shadow-xs  md:px-[1.125rem] md:py-[2.5rem] md:mb-[6.25rem]"
           style={{
             backgroundSize: isMobile ? "140% 150%" : "",
             backgroundPosition: isMobile ? "50% 50%" : "",
           }}
         >
-          <div className="mx-[2.875rem] flex w-[58%] flex-col items-center gap-3.5 lg:w-full md:mx-0 md:w-full">
+          <div className="mx-[2.875rem] flex w-[68%] flex-col items-center gap-3.5 md:mx-0 md:w-full">
             <Heading
               size="auto"
               as="h2"
-              className="bg-gradient1 bg-clip-text text-center font-montserrat text-[3.125rem] font-extrabold uppercase leading-[3.75rem] text-transparent lg:text-[2.625rem] md:text-[2.125rem]"
+              className="bg-gradient1 bg-clip-text text-center font-montserrat text-[2.625rem] font-extrabold uppercase leading-[124%] text-transparent md:text-[2.125rem]"
               style={{
-                fontSize: isMobile ? "1.75rem" : "",
+                fontSize: isMobile ? "1.5rem" : "",
                 lineHeight: isMobile ? "normal" : "",
               }}
             >
               <>
-                {section.section6_title1}
+                {/* {section.section6_title1} */}
+                Go from AI PoC to Production 
                 <br className="md:hidden"></br>
                 <span className="hidden md:inline"> </span>
-                {section.section6_title2}
+                {/* {section.section6_title2} */}
+                <span className="text-[3.5rem] md:text-[2rem] leading-[124%] mb-[1.916rem] inline-block">
+                Fast, With Near-Zero Effort
+
+                </span>
               </>
             </Heading>
-            <Heading
+            {/* <Heading
               size="auto"
               as="h3"
-              className="text-[1.875rem] font-semibold text-gray-50 lg:text-[1.5625rem] md:text-[1.25rem] md:text-center md:w-[15.625rem]"
+              className="text-[1.875rem] font-semibold text-gray-50  md:text-[1.25rem] md:text-center md:w-[15.625rem]"
               style={{
                 fontSize: isMobile ? "1rem" : "",
                 lineHeight: isMobile ? "1.4375rem" : "",
@@ -124,16 +129,16 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
               {section.section6_description_p1}{" "}
               <span style={{ color: "#30D5C8" }}>{section.section6_description_p2}</span>{" "}
               {section.section6_description_p3}
-            </Heading>
+            </Heading> */}
           </div>
-          <div className="mb-[10.875rem] flex w-[43.4375rem] justify-center lg:w-full md:w-full">
+          <div className="mb-[10.875rem] flex w-[43.4375rem] justify-center md:w-full">
             <Input
               type="email"
               id="requestSignUp"
               name="email"
               onChange={handleEmailChange}
               placeholder={`Company Email`}
-              className="flex h-[5.625rem] md:h-[2.75rem] w-[58%] items-center justify-center rounded-bl-[0.625rem] rounded-tl-[0.625rem] md:rounded-bl-[0.25rem] md:rounded-tl-[0.25rem] bg-[#EBF5FF] px-8 text-[1.5rem] font-medium text-blue_gray-300 md:w-full md:px-0 flex-1"
+              className="flex h-[5.5rem] md:h-[2.75rem] w-[58%] items-center justify-center rounded-bl-[0.625rem] rounded-tl-[0.625rem] md:rounded-bl-[0.25rem] md:rounded-tl-[0.25rem] bg-[#EBF5FF] px-8 text-[1.5rem] font-medium text-blue_gray-300 md:w-full md:px-0 flex-1"
               style={{
                 fontSize: isMobile ? "0.875rem" : "",
               }}
@@ -147,7 +152,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
                   showNotification("Please enter a valid email address.", "error",'requestSignUp');
                 }
               }}
-              className="flex h-[5.625rem] md:h-[2.75rem] min-w-[15.125rem] md:min-w-[5.75rem] flex-row items-center justify-center rounded-br-[0.625rem] rounded-tr-[0.625rem] md:rounded-br-[0.25rem] md:rounded-tr-[0.25rem] bg-deep_purple-a200 px-[2.125rem] text-center text-[1.75rem] font-medium text-gray-50 lg:text-[1.4375rem] md:px-4 md:text-[0.875rem]"
+              className="flex h-[5.5rem] md:h-[2.75rem] min-w-[15.125rem] md:min-w-[5.75rem] flex-row items-center justify-center rounded-br-[0.625rem] rounded-tr-[0.625rem] md:rounded-br-[0.25rem] md:rounded-tr-[0.25rem] bg-deep_purple-a200 px-[2.125rem] text-center text-[1.75rem] font-medium text-gray-50 md:px-4 md:text-[0.875rem]"
             >
               {loading ? "Sending..." : "Sign Up"}
             </Button>
