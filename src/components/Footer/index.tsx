@@ -63,16 +63,16 @@ export default function Footer({ ...props }: Props) {
                 </Heading> */}
                 <ul className="flex flex-col items-start gap-6 md:gap-3">
                   <li>
-                    <Link href="/home" rel="noreferrer" className="md:text-[14px]">
+                    <Link href="/cognitive" rel="noreferrer" className="md:text-[14px]">
                       <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                         About
                       </Heading>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                        Home
+                    <Link href="/about" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Company
                       </Heading>
                     </Link>
                   </li>
