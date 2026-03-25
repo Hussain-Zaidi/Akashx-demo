@@ -371,7 +371,7 @@ export default function EnterpriseUseCases() {
                     alt={`${item.heading} tab`}
                   />
                   <div>
-                    <h3 className="font-semibold text-[#B8D0F2] text-[1.666rem] md:text-base font-inter mb-3">
+                    <h3 className="font-semibold text-[#B8D0F2] text-[1.666rem] md:text-base font-inter mb-3 md:mb-1">
                       {item.heading}
                     </h3>
                     <p className="text-[#B8D0F2] text-[1.5rem] md:text-[0.875rem] font-normal font-inter">

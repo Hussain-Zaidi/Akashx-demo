@@ -25,7 +25,7 @@ export default function StickyStackSection() {
       <div className="">
         <div
           ref={sectionRef}
-          className="relative max-w-[105rem] mx-auto px-6 mb-[4.840rem] md:mb-[6rem]" id='OntlogyViews'
+          className="relative max-w-[105rem] mx-auto px-6 mb-[18rem] md:mb-[6rem]" id='OntlogyViews'
         >
           <div className="text-center mb-32 md:mb-10">
             <Heading
@@ -43,7 +43,7 @@ export default function StickyStackSection() {
           </div>
 
           <div className="">
-            <div className=" mx-auto flex gap-[12.625rem] md:gap-[0rem] justify-center items-start md:flex-col">
+            <div className=" mx-auto flex gap-[12.625rem] md:gap-[0rem] justify-center items-center md:flex-col">
               {/* LEFT SIDE */}
               <div className="relative md:right-[-1.7rem]">
                 {/* Image / Illustration */}
@@ -51,12 +51,12 @@ export default function StickyStackSection() {
                   <img
                     src="/images/cognitive/Card.svg" // 🔁 replace with your asset
                     alt="agents"
-                    className="h-[31.660625rem] md:h-auto md:w-full"
+                    className="h-[31.660625rem] md:h-auto md:w-full md:mb-0 mb-[-10rem]"
                   />
                 </div>
 
                 {/* Card */}
-                <div className="absolute bottom-[10.3rem] md:bottom-[4.9rem] left-0 w-[83.5%] bg-[linear-gradient(180deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
+                <div className="absolute bottom-[0.3rem] md:bottom-[4.9rem] left-0 w-[83.5%] bg-[linear-gradient(180deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
                   <p className="text-[#B8D0F2] text-[1.8333125rem] md:text-[.85rem] font-inter md:leading-normal font-medium">
                     Unleash your agents <br />
                     to deterministically query without <br />

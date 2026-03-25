@@ -199,7 +199,7 @@ export default function CodeCard() {
   };
 
   return (
-    <div className='md:px-6 mb-[7.5rem] md:mb-[5rem]'>
+    <div className='md:px-6 mb-[7.5rem] md:mb-[5rem]' id='RAGPipelines'>
       <h1 className=" mb-14 md:mb-[2rem] bg-gradient1 bg-clip-text text-center font-montserrat text-[3rem] md:text-[1.5rem] font-bold leading-tight md:leading-tight text-transparent  ">
         {/* Declarative simplicity lets you iterate <br className='md:block hidden' />in <br className='md:hidden' /> */}
         {/* minutes, without RAG-pipelines. */}

@@ -3,6 +3,7 @@
 import { Heading } from '@/components/Heading';
 import { Img } from '@/components/Img';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-alice-carousel';
 
 export default function StickyStackSection() {
   const sectionRef = useRef(null);
@@ -36,7 +37,7 @@ export default function StickyStackSection() {
               fontSize: isMobile ? '1.5rem' : '',
             }}
           >
-            Why RAG Fails Enterprises {' '}
+            Why RAG Fails Enterprises <br className="md:hidden" />
             {/* <br className='md:hidden' /><br className='hidden md:block' /> */}
             going into Production
           </Heading>
@@ -55,7 +56,8 @@ export default function StickyStackSection() {
                 RAG
               </div>
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
-                RAG does Top-K vector similarity search for <br className='md:hidden' />
+                RAG does Top-K vector similarity search for{' '}
+                <br className="md:hidden" />
                 <span className="text-[#FE823D]">probabilistic results.</span>
               </div>
               <div className="flex justify-end">
@@ -80,8 +82,10 @@ export default function StickyStackSection() {
               </div>
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
                 Cognitive does{' '}
-                <span className="text-[#1CBC6E]">deterministic inferencing </span>
-                via smart <br className='md:hidden' />
+                <span className="text-[#1CBC6E]">
+                  deterministic inferencing{' '}
+                </span>
+                via smart <br className="md:hidden" />
                 brute forcing for <b>accurate results</b>.
               </div>
               <div className="flex justify-end">
@@ -96,11 +100,20 @@ export default function StickyStackSection() {
           <div className="w-11/12 h-[0.125rem] bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
 
           <div className="flex gap-6 py-[3.2293rem] md:py-5">
-            <div className="text-[#7557FF] text-[1.8333rem] md:text-base font-semibold font-inter text-center">
-              Explore More
-            </div>
+            <Link
+              href="/cognitive#RAGPipelines"
+              rel="noreferrer"
+              className="md:text-[14px]"
+            >
+              <div
+                className="blue-green-background-text w-fit bg-clip-text text-transparent text-[1.8333rem] md:text-base font-semibold font-inter text-center"
+                style={{ backgroundSize: '180%' }}
+              >
+                Explore More
+              </div>
+            </Link>
 
-            <div className="flex justify-center items-center flex-row-reverse  md:w-[1rem]">
+            {/* <div className="flex justify-center items-center flex-row-reverse  md:w-[1rem]">
               <Img
                 src="cognitive/Vector5C85EB.svg"
                 width={20}
@@ -133,7 +146,7 @@ export default function StickyStackSection() {
                 className="md:h-[1rem] md:w-[1rem] h-[1.8rem] w-[1.8rem] object-contain fade-in-sequence4 "
                 style={{ margin: isMobile ? '0px 0px' : '0px -4px' }}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

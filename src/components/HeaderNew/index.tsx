@@ -32,6 +32,7 @@ export default function Header({ ...props }: Props) {
     'CognitiveSQL',
     'OntlogyViews',
     'UseCases',
+    'RAGPipelines',
   ];
 
   // Use scroll spy for active section highlighting

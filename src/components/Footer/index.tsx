@@ -17,8 +17,8 @@ export default function Footer({ ...props }: Props) {
     >
       <div className="container-xs flex justify-center lg:px-5 md:px-5  ml-[100px] mr-28 max-w-full md:ml-0 md:mr-0">
         <div className="flex w-full flex-col items-center">
-          <div className="flex w-[60%] items-start justify-between gap-5 md:gap-[60px] self-start lg:w-full md:w-full md:flex-col">
-            <div className="flex w-[23%] flex-col gap-8 md:gap-[18px] md:w-full">
+          <div className="flex w-[100%] items-start justify-between gap-5 md:gap-[60px] self-start lg:w-full md:w-full md:flex-col">
+            <div className="flex w-fit whitespace-nowrap flex-col gap-8 md:gap-[18px] md:w-full">
               <div className="flex flex-col items-start gap-4 md:gap-[6px]">
                 <Img
                   // src="img_footer_logo.svg"
@@ -33,11 +33,13 @@ export default function Footer({ ...props }: Props) {
                   as="h5"
                   className="bg-gradient bg-clip-text font-montserrat text-[20px] font-extrabold leading-7 text-transparent  md:text-[16px] md:leading-[21px]"
                 >
-                  <>
+                  {/* <>
                     World’s #1<br />
                     Storage Accelerated <br />
                     Data Warehouse
-                  </>
+                  </> */}
+                   World’s No 1<br />
+OLCP Database
                 </Heading>
               </div>
               <div className="flex gap-[26px] md:gap-[18px]">
@@ -52,23 +54,69 @@ export default function Footer({ ...props }: Props) {
               </div>
 
             </div>
-            <div className="flex w-[38%] items-start justify-between gap-[160px] md:gap-[60px] md:w-full md:flex-col">
-              <div className="flex w-[70%] flex-col items-start gap-[26px] md:gap-[23px] self-center md:w-full">
-                {/* <Heading
+            <div className="flex w-[100%] items-start justify-center gap-[160px] md:gap-[60px] md:w-full md:flex-col">
+              <div className="flex w-fit flex-col items-start gap-[26px] md:gap-[23px] self-center md:w-full">
+                <Heading
                   size="headingxs"
                   as="h6"
                   className="font-montserrat text-[16px] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[14px]"
                 >
                   PLATFORM
-                </Heading> */}
+                </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-3">
                   <li>
+                    <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                        Cognitive SQL
+                      </Heading>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/cognitive#OntlogyViews" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Ontlogy Views
+                      </Heading>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/cognitive#UseCases" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Use Cases
+                      </Heading>
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <Link href="Works" target="_blank" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="font-poppins text-[18px] font-medium text-indigo-50">
+                        Works
+                      </Heading>
+                    </Link>
+                  </li> */}
+                  {/* <li>
+                    <Link href="Team" target="_blank" rel="noreferrer" className="md:text-[14px]">
+                      <Heading size="textxs" as="p" className="font-poppins text-[18px] font-medium text-indigo-50">
+                        Team
+                      </Heading>
+                    </Link>
+                  </li> */}
+                </ul>
+              </div>
+              <div className="flex w-fit flex-col items-start gap-[26px] md:gap-[23px] self-start md:w-full">
+                <Heading
+                  size="headingxs"
+                  as="h6"
+                  className="font-montserrat text-[16px] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[14px]"
+                >
+                  COMPANY
+                </Heading>
+                <ul className="flex flex-col items-start gap-6 md:gap-3">
+                  {/* <li>
                     <Link href="/cognitive" rel="noreferrer" className="md:text-[14px]">
                       <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                         Home
                       </Heading>
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link href="/about" rel="noreferrer" className="md:text-[14px]">
                       <Heading size="textxs" as="p" className="uppercase font-poppins text-[18px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">

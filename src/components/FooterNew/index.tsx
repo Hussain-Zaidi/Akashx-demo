@@ -17,8 +17,8 @@ export default function Footer({ ...props }: Props) {
     >
       <div className="container-xs flex justify-center lg:px-5 md:px-5 ml-[6.25rem] mr-28 max-w-full md:ml-0 md:mr-0">
         <div className="flex w-full flex-col items-center">
-          <div className="flex w-[60%] items-start justify-between gap-5 md:gap-[3.75rem] self-start lg:w-full md:w-full md:flex-col">
-            <div className="flex w-[23%] flex-col gap-8 md:gap-[1.125rem] md:w-full">
+          <div className="flex w-[100%] items-start justify-between gap-5 md:gap-[3.75rem] self-start lg:w-full md:w-full md:flex-col">
+            <div className="flex w-fit whitespace-nowrap flex-col gap-8 md:gap-[1.125rem] md:w-full">
               <div className="flex flex-col items-start gap-4 md:gap-[0.375rem]">
                 <Img
                   // src="img_footer_logo.svg"
@@ -54,72 +54,121 @@ OLCP Database
               </div>
 
             </div>
-            <div className="flex w-[38%] items-start justify-between gap-[10rem] md:gap-[3.75rem] md:w-full md:flex-col">
-              <div className="flex w-[70%] flex-col items-start gap-[1.625rem] md:gap-[1.4375rem] self-center md:w-full">
-                {/* <Heading
+            <div className="flex w-[100%] items-start justify-center gap-[9rem] md:gap-[3.75rem] md:w-full md:flex-col">
+              <div className="flex w-fit flex-col items-start gap-[1.625rem] md:gap-[1.4375rem] self-center md:w-full whitespace-nowrap">
+                <Heading
                   size="headingxs"
                   as="h6"
-                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[0.875rem]"
+                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[1rem]"
                 >
                   PLATFORM
-                </Heading> */}
+                </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-3">
                   <li>
-                    <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                        Home
+                    <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                        Cognitive SQL          
                       </Heading>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                       Company
+                    <Link href="/cognitive#OntlogyViews" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Ontlogy Views 
                       </Heading>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blogs" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                       Blogs
+                    <Link href="/cognitive#UseCases" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Use Cases
                       </Heading>
                     </Link>
                   </li>
                   {/* <li>
                     <Link href="Works" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         Works
                       </Heading>
                     </Link>
                   </li> */}
                   {/* <li>
                     <Link href="Team" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         Team
                       </Heading>
                     </Link>
                   </li> */}
                 </ul>
               </div>
+
+              <div className="flex w-fit flex-col items-start gap-[1.625rem] md:gap-[1.4375rem] self-start md:w-full">
+                <Heading
+                  size="headingxs"
+                  as="h6"
+                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[1rem]"
+                >
+                  COMPANY
+                </Heading>
+                <ul className="flex flex-col items-start gap-6 md:gap-3">
+                  {/* <li>
+                    <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                        Home
+                      </Heading>
+                    </Link>
+                  </li> */}
+                  <li>
+                    <Link href="/about" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Company
+                      </Heading>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blogs" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       Blogs
+                      </Heading>
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <Link href="Works" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                        Works
+                      </Heading>
+                    </Link>
+                  </li> */}
+                  {/* <li>
+                    <Link href="Team" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
+                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                        Team
+                      </Heading>
+                    </Link>
+                  </li> */}
+                </ul>
+              </div>
+
+
               <div className="flex flex-col gap-[1.625rem] md:gap-3 whitespace-nowrap">
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[0.875rem]"
+                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[1rem]"
                 >
                   Contact us
                 </Heading>
                 <ul className="flex flex-col items-start gap-6">
                   <li>
                     <Link href="mailto:contact@akashx.ai" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                       contact@akashx.ai
                       </Heading>
                     </Link>
                   </li>
                   {/* <li>
                     <Link href="#" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         How it Works
                       </Heading>
                     </Link>

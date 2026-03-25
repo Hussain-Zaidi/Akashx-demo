@@ -68,7 +68,7 @@ export default function StickyStackSection() {
               key={i}
               className="sticky top-[26.4rem] md:sticky "
               style={{
-                top: isMobile ? i==0 ? '6rem' :`${16.2 + i * 3.5}rem` : i==0 ? '7rem' :`${21.5 + i * 5.5}rem`,
+                top: isMobile ? i==0 ? '6rem' :`${16.2 + i * 3.5}rem` : i==0 ? '10rem' :`${25 + i * 5.5}rem`,
                 zIndex: 10 + i,
               }}
             >
