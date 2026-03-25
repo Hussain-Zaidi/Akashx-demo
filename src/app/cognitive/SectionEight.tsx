@@ -389,12 +389,12 @@ export default function CodeCard() {
                       <p className="text-[#866CFF] inline">
                         Engineering Management (exclude product/project
                       </p>
-                      <p className="text-[#866CFF]">roles)."</p>
+                      <p className="text-[#866CFF]">roles).",</p>
 
                       <p className="text-[#B8D0F2] mt-2">['Yes','No']</p>
                     </div>
 
-                    <p className="text-[#B8D0F2]">) = 'Ye</p>
+                    <p className="text-[#B8D0F2]">) = 'Yes';</p>
 
                     {/* <div className="border-t border-blue-500/20 mt-6 pt-4 flex items-center gap-2 text-blue-400 text-sm">
               <span>✨</span>
