@@ -9,8 +9,6 @@ export default function CodeCard() {
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const animationRef = useRef<number | null>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [showVideoControls, setShowVideoControls] = useState(false);
 
   const segmentPairs = [
     {
@@ -78,38 +76,6 @@ export default function CodeCard() {
       },
     },
   ];
-
-  const tryAutoplay = () => {
-    const video = videoRef.current;
-    if (video == null) return;
-
-    video.muted = true;
-    video.defaultMuted = true;
-
-    const playPromise = video.play();
-
-    if (playPromise && typeof playPromise.then === 'function') {
-      playPromise
-        .then(() => setShowVideoControls(false))
-        .catch(() => setShowVideoControls(true));
-    }
-  };
-
-  useEffect(() => {
-    tryAutoplay();
-
-    const retryAutoplay = () => {
-      tryAutoplay();
-    };
-
-    window.addEventListener('focus', retryAutoplay);
-    document.addEventListener('visibilitychange', retryAutoplay);
-
-    return () => {
-      window.removeEventListener('focus', retryAutoplay);
-      document.removeEventListener('visibilitychange', retryAutoplay);
-    };
-  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -322,40 +288,74 @@ export default function CodeCard() {
           </div>
         </div>
       </div> */}
-<div className='className="max-w-[46.666875rem] '>
-<div className='h-[2.5rem] m-auto w-[0.25rem] md:hidden bg-[linear-gradient(to_bottom,#2B7FFF80_50%,transparent_50%)] bg-[length:0.125rem_1rem] bg-repeat-y bg-top' />
-          <div
-            className="max-w-[46.666875rem] h-[37.5rem] md:h-auto flex-1 border border-[#2B7FFF4D] rounded-[1.5rem] md:rounded-[0.75rem] p-[0rem] overflow-auto  flex flex-col items-center relative"
-            // onMouseEnter={handleMouseEnter}
-            // onMouseLeave={handleMouseLeave}
-          >
-            
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              controls={showVideoControls}
-              poster="/images/cognitive/Group1000004503.svg"
-              onCanPlay={tryAutoplay}
-              onLoadedMetadata={tryAutoplay}
-              onError={() => setShowVideoControls(true)}
-              className="w-[46.666875rempx] h-[37.5rem] md:h-auto"
-            >
-              <source
-                src={'/images/cognitive/cognitive-rag-pipeline-demo.webm'}
-                type="video/webm"
-              />
-              <source
-                src={'/images/cognitive/cognitive-rag-pipeline-demo.mp4'}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+<div
+  className="max-w-[46.666875rem] h-[37.5rem] flex-1 border border-[#2B7FFF4D] rounded-[1.5rem] bg-[#070A20] p-[0rem_1.666rem_1.666rem] md:p-5 flex flex-col items-center relative"
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+>
+  <div
+    className="absolute top-[12.4rem] flex items-center justify-between px-6 w-full pointer-events-none z-10 gap-[14.875rem]"
+    style={{
+      opacity: isAnimating ? 0 : 1,
+      transition: 'opacity 0.2s ease-in-out',
+    }}
+  >
+    <div className="w-[40%] text-left transition-all duration-500 flex gap-7 items-start relative top-[-2.42rem]">
+      <div className="h-0">
+        <p className="text-[#B8D0F2] text-lg mt-1">
+          {segmentPairs[currentSegment]?.left.description}
+        </p>
+        <p className="text-[#B8D0F2] text-lg mt-3">
+          <img
+            className="inline-block mr-2 w-[1.6rem] h-auto"
+            src={segmentPairs[currentSegment]?.left.image}
+          />
+          {segmentPairs[currentSegment]?.left.subtitle}
+        </p>
+      </div>
+      <h3 className="shadow-[0px_0px_.5rem_.5rem_#B8D0F2] text-[#B8D0F2] text-[1.666875rem] font-semibold flex items-center justify-center w-[2.7rem] h-[2.7rem] flex-[0_0_2.7rem] bg-[#4D72A8] rounded-full">
+        {segmentPairs[currentSegment]?.left.title}
+      </h3>
+    </div>
+
+    <div className="w-[40%] text-left transition-all duration-500 flex gap-7 items-start relative top-[2.22rem]">
+      <h3 className="shadow-[0px_0px_.5rem_.5rem_#B8D0F2] text-[#B8D0F2] text-[1.666875rem] font-semibold flex items-center justify-center w-[2.7rem] h-[2.7rem] flex-[0_0_2.7rem] bg-[#4D72A8] rounded-full">
+        {segmentPairs[currentSegment]?.right.title}
+      </h3>
+      <div className="h-0">
+        <p className="text-[#B8D0F2] text-lg mt-1">
+          {segmentPairs[currentSegment]?.right.description}
+        </p>
+        <p className="text-[#B8D0F2] text-lg mt-3">
+          <img
+            className="inline-block mr-2 w-[1.6rem] h-auto"
+            src={segmentPairs[currentSegment]?.right.image}
+          />
+          {segmentPairs[currentSegment]?.right.subtitle}
+        </p>
+      </div>
+    </div>
   </div>
+
+  <div
+    ref={scrollContainerRef}
+    className="flex-1 overflow-auto scrollbar-hide relative"
+  >
+    <img
+      src="/images/cognitive/Group1000004503.svg"
+      alt="Cognitive"
+      className="w-[24.0381125rem] mx-auto"
+    />
+  </div>
+
+  <div className="w-11/12 h-[0.125rem] bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
+
+  <div className="flex gap-6 pt-[1.666rem] md:pt-5">
+    <div className="text-[#75BAFF] text-[1.333rem] md:text-sm font-normal font-inter text-center">
+      RAG Pipelines
+    </div>
+  </div>
+</div>
 
 <div className="relative rounded-full bg-[linear-gradient(135deg,#41668C66_40%,#28B6F6)] p-[0.125rem]">
   <div className="bg-[linear-gradient(135deg,#080C26_60%,#75BAFF)] text-[1.5rem] md:text-[1rem] font-bold font-montserrat rounded-full flex items-center justify-center flex-[0_0_5rem] w-[5rem] h-[5rem] md:flex-[0_0_4rem] md:w-[4rem] md:h-[4rem] md:py-[1rem] pointer-events-none select-none py-[2.15rem]">
