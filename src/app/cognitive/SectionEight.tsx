@@ -208,10 +208,9 @@ export default function CodeCard() {
       </h1>
 
       <div>
-        <div className="w-[56.833125rem] md:w-full mx-auto p-[1.666rem] border border-[#2B7FFF4D] rounded-[1rem]">
-          <p className=" text-[#B8D0F2] text-[1.5rem] md:text-[1rem] font-normal font-inter">
-            <span className="text-[1.833rem] font-semibold">Q.</span> List
-            candidates who had deep backend coding for 3+ years, then
+         <div className='w-[56.833125rem] md:w-full mx-auto p-[1.666rem] md:p-5 border border-[#2B7FFF4D] rounded-[1rem] md:rounded-[0.75rem]' >
+          <p className=" text-[#B8D0F2] text-[1.5rem] md:text-[.875rem] font-normal font-inter">
+            <span className='text-[1.833rem] md:text-[.875rem] font-semibold'>Q.</span> List candidates who had deep backend coding for 3+ years, then
             transitioned to Engineering Management (excluding product/project
             roles)
           </p>
@@ -229,7 +228,7 @@ export default function CodeCard() {
           <div className="w-[46.666875rem]">
             <div className=" h-[2.5rem] m-auto w-[0.25rem] md:hidden bg-[linear-gradient(to_bottom,#2B7FFF80_50%,transparent_50%)] bg-[length:0.125rem_1rem] bg-repeat-y bg-top" />
             <div
-              className=" md:scale-[42.5%] md:my-[-21.25% 0] max-w-[100%] pointer-events-none1  h-[37.5rem] md:h-[42.5rem] flex-1 border md:border-[4px] border-[#2B7FFF4D] rounded-[1.5rem] bg-[#070A20] p-[0rem_1.666rem_1.666rem] md:px-5 md:py-0 flex flex-col items-center relative"
+              className=" md:scale-[42.5%] md:my-[-26.25%] max-w-[100%] pointer-events-none  h-[37.5rem] md:h-[42.5rem] flex-1 border md:border-[4px] border-[#2B7FFF4D] rounded-[1.5rem] bg-[#070A20] p-[0rem_1.666rem_1.666rem] md:px-5 md:py-0 flex flex-col items-center relative"
               // onMouseEnter={handleMouseEnter}
               // onMouseLeave={handleMouseLeave}
             >
