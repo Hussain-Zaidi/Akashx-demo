@@ -16,16 +16,16 @@ export default function Header({ ...props }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
-  const [offset, setOffset] = useState(100); // fallback
+  // const [offset, setOffset] = useState(100); // fallback
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+  // useEffect(() => {
+  //   if (typeof window === 'undefined') return;
 
-    const rootFontSize =
-      parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+  //   const rootFontSize =
+  //     parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
 
-    setOffset(10 * rootFontSize);
-  }, []);
+  //   setOffset(10 * rootFontSize);
+  // }, []);
   // Define section IDs for scroll spy (order matters for highlighting priority)
   const sectionIds = [
     'HeroSection',
@@ -39,7 +39,7 @@ export default function Header({ ...props }: Props) {
   const activeSection = useScrollSpy(sectionIds, 100);
 
   // Use hash navigation for smooth scrolling
-  useHashNavigation(offset);
+  useHashNavigation();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 

@@ -1,32 +1,36 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
-export default function useHashNavigation(offset = 112) {
+export default function useHashNavigation() {
+  const [offset, setOffset] = useState(0);
   const hasScrolled = useRef(false);
   const isScrolling = useRef(false);
 
+  // Calculate offset once on mount
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    setOffset(10 * rootFontSize);
+  }, []);
+
   const scrollToElement = useCallback((hash: string) => {
+    if (!offset) return false; // ⛔ Important guard
+    
     const element = document.getElementById(hash);
     if (element && !isScrolling.current) {
       isScrolling.current = true;
-      
-      // Use requestAnimationFrame for better timing
+
       requestAnimationFrame(() => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-        
-        // Reset scrolling flag after animation
+        const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+
         setTimeout(() => {
           isScrolling.current = false;
         }, 1000);
       });
-      
+
       return true;
     }
     return false;
@@ -37,31 +41,29 @@ export default function useHashNavigation(offset = 112) {
     
     // Small delay to ensure DOM is ready
     setTimeout(() => {
-      const element = document.getElementById(hash);
-      if (element) {
-        scrollToElement(hash);
-      } else {
-        // Retry with increasing delays
-        const retryDelays = [200, 400, 800];
-        retryDelays.forEach(delay => {
-          setTimeout(() => {
-            if (document.getElementById(hash)) {
-              scrollToElement(hash);
-            }
-          }, delay);
-        });
-      }
+      if (scrollToElement(hash)) return;
+      
+      // Retry with increasing delays if element not found
+      const retryDelays = [200, 400, 800];
+      retryDelays.forEach(delay => {
+        setTimeout(() => scrollToElement(hash), delay);
+      });
     }, 100);
   }, [scrollToElement]);
 
+  // 🔥 Step 1: Wait until offset is ready before handling initial hash
   useEffect(() => {
-    // Handle initial hash on page load
+    if (!offset) return; // ⛔ Wait until offset is calculated
+    
     const initialHash = window.location.hash.replace("#", "");
     if (initialHash && !hasScrolled.current) {
       hasScrolled.current = true;
       handleNavigation(initialHash);
     }
+  }, [offset, handleNavigation]);
 
+  // 🔥 Step 2: Handle hash changes and click events
+  useEffect(() => {
     // Handle hash changes
     const onHashChange = () => {
       const hash = window.location.hash.replace("#", "");
@@ -70,7 +72,7 @@ export default function useHashNavigation(offset = 112) {
       }
     };
 
-    // Handle click events for anchor tags
+    // 🔥 Step 3: Fixed anchor click handler with better path comparison
     const onAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
@@ -82,14 +84,18 @@ export default function useHashNavigation(offset = 112) {
           const currentPath = window.location.pathname;
           const targetPath = url.pathname;
           
-          // Check if it's an internal hash link on the same page
-          if (hash && (targetPath === currentPath || (!targetPath || targetPath === '/'))) {
-            e.preventDefault();
-            
+          // Check if it's an internal hash link
+          if (hash) {
             const elementId = hash.replace("#", "");
-            // Update URL without triggering page reload
-            window.history.pushState(null, '', hash);
-            handleNavigation(elementId);
+            
+            // ✅ Only prevent default if it's the same page
+            if (targetPath === currentPath) {
+              e.preventDefault();
+              window.history.pushState(null, "", hash);
+              handleNavigation(elementId);
+            }
+            // For different pages, let the navigation happen normally
+            // The page will load and the initial hash effect will handle scrolling
           }
         } catch (error) {
           console.error('Error handling anchor click:', error);
@@ -97,7 +103,6 @@ export default function useHashNavigation(offset = 112) {
       }
     };
 
-    // Add event listeners
     window.addEventListener('hashchange', onHashChange);
     document.addEventListener('click', onAnchorClick);
     
@@ -105,7 +110,7 @@ export default function useHashNavigation(offset = 112) {
       window.removeEventListener('hashchange', onHashChange);
       document.removeEventListener('click', onAnchorClick);
     };
-  }, [handleNavigation, offset]);
+  }, [handleNavigation]);
 
   return null;
 }

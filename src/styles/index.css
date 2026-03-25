@@ -69,3 +69,8 @@ body{
 @media (min-width:1050px){
   [type='text'], input:where(:not([type])), [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select{font-size:inherit !important}
 }
+
+
+[id] {
+  scroll-margin-top: 10rem; /* Or whatever offset you need */
+}
