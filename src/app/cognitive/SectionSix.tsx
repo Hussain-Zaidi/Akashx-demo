@@ -129,9 +129,6 @@ export default function EnterpriseUseCases() {
   const [paused, setPaused] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [canHover, setCanHover] = useState<boolean>(false);
-  const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
-  const [displayedTab, setDisplayedTab] = useState<Tab>(tabs[0]);
-  const [nextIndex, setNextIndex] = useState<number | null>(null);
   const hoverSafetyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -172,11 +169,11 @@ export default function EnterpriseUseCases() {
     if (paused) return;
 
     const interval = setInterval(() => {
-      handleTabChange((activeIndex + 1) % tabs.length);
+      setActiveIndex((prevIndex) => (prevIndex + 1) % tabs.length);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [paused, activeIndex]);
+  }, [paused]);
 
   useEffect(() => {
     if (!paused || !canHover) return;
@@ -209,27 +206,11 @@ export default function EnterpriseUseCases() {
   }, []);
 
   const handleTabChange = (newIndex: number) => {
-    if (isFadingOut || newIndex === activeIndex) return;
-
-    setNextIndex(newIndex);
-    setIsFadingOut(true);
+    if (newIndex === activeIndex) return;
+    setActiveIndex(newIndex);
   };
 
-  // Handle the fade out completion
-  useEffect(() => {
-    if (isFadingOut && nextIndex !== null) {
-      const fadeOutTimer = setTimeout(() => {
-        setActiveIndex(nextIndex);
-        setDisplayedTab(tabs[nextIndex]);
-        setIsFadingOut(false);
-        setNextIndex(null);
-      }, 300); // Match this with animation duration
-
-      return () => clearTimeout(fadeOutTimer);
-    }
-  }, [isFadingOut, nextIndex]);
-
-  const activeTab = displayedTab;
+  const activeTab = tabs[activeIndex];
 
   const handlePointerEnter = (event: PointerEvent<HTMLDivElement>) => {
     if (!canHover || event.pointerType !== 'mouse') return;
@@ -242,10 +223,6 @@ export default function EnterpriseUseCases() {
   };
 
   const getAnimationClass = (animationType: string) => {
-    if (isFadingOut) {
-      return 'animate-fade-out';
-    }
-
     switch (animationType) {
       case 'bottom-right':
         return 'animate-fade-in-bottom-right';
@@ -261,8 +238,6 @@ export default function EnterpriseUseCases() {
   };
 
   const getItemAnimationClass = (animationType: string, idx: number) => {
-    if (isFadingOut) return 'fade-item';
-
     const baseClass =
       {
         'bottom-right': 'slide-in-bottom-right',
@@ -328,10 +303,7 @@ export default function EnterpriseUseCases() {
               <div key={tab.id} className='relative flex flex-col items-center'>
               <button
                 onClick={() => handleTabChange(index)}
-                className={`flex flex-col items-center gap-[1.333rem] px-4 md:px-0 py-3 transition-all duration-300 ${
-                  isFadingOut ? 'pointer-events-none' : ''
-                }`}
-                disabled={isFadingOut}
+                className="flex flex-col items-center gap-[1.333rem] px-4 md:px-0 py-3 transition-all duration-300"
               >
                 <img
                   className={`flex-[0_0_3.5rem] w-[3.5rem] h-[3.5rem] md:flex-[0_0_2.125rem] md:w-[2.125rem] md:h-[2.125rem] md:py-[0.5rem] pointer-events-none select-none py-[0.8125rem] rounded-[0.666875rem] md:rounded-[.3rem] border border-[#75baff9a] ${
@@ -386,11 +358,6 @@ export default function EnterpriseUseCases() {
       </div>
 
       <style jsx>{`
-        /* Fade Out Animation */
-        .animate-fade-out {
-          animation: fadeOut 0.3s ease forwards;
-        }
-
         /* Fade In Animations */
         .animate-fade-in-bottom-right {
           animation: fadeInFromBottomRight 0.6s ease forwards;
@@ -447,17 +414,6 @@ export default function EnterpriseUseCases() {
         }
 
         /* Keyframes */
-        @keyframes fadeOut {
-          0% {
-            opacity: 1;
-            //transform: scale(1);
-          }
-          100% {
-            opacity: 0;
-            //transform: scale(0.95);
-          }
-        }
-
         @keyframes fadeInFromBottomRight {
           0% {
             opacity: 0;
