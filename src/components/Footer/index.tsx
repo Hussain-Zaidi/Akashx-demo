@@ -63,24 +63,24 @@ OLCP Database
                 >
                   PLATFORM
                 </Heading>
-                <ul className="flex flex-col items-start gap-6 md:gap-3">
+                <ul className="flex flex-col items-start gap-6 md:gap-4">
                   <li>
                     <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-normal  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                         Cognitive SQL
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/cognitive#OntlogyViews" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-normal  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        Ontlogy Views
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/cognitive#UseCases" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-normal  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        Use Cases
                       </Heading>
                     </Link>
@@ -109,24 +109,24 @@ OLCP Database
                 >
                   COMPANY
                 </Heading>
-                <ul className="flex flex-col items-start gap-6 md:gap-3">
+                <ul className="flex flex-col items-start gap-6 md:gap-4">
                   {/* <li>
                     <Link href="/cognitive" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className="uppercase font-inter text-[22px] md:text-[14px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="uppercase font-inter text-[22px] md:text-[14px] font-normal  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                         Home
                       </Heading>
                     </Link>
                   </li> */}
                   <li>
                     <Link href="/about" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-normal  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        About
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/blogs" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-medium  text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[22px] md:text-[14px] font-normal  text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        Blogs
                       </Heading>
                     </Link>
@@ -147,18 +147,18 @@ OLCP Database
                   </li> */}
                 </ul>
               </div>
-              <div className="flex flex-col  gap-[26px] md:gap-3 whitespace-nowrap">
+              <div className="flex flex-col  gap-[26px] md:gap-4 whitespace-nowrap">
                 <Heading
                   size="auto"
                   as="h6"
                   className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[14px]"
                 >
-                  Contat us
+                  Contact us
                 </Heading>
                 <ul className="flex flex-col items-start gap-6">
                   <li>
                     <Link href="mailto:contact@akashx.ai" rel="noreferrer" className="md:text-[14px]">
-                      <Heading size="auto" as="p" className="font-inter text-[22px] md:text-[14px] font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="font-inter text-[22px] md:text-[14px] font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
                       contact@akashx.ai
                       </Heading>
                     </Link>
