@@ -24,7 +24,7 @@ export default function Header({ ...props }: Props) {
     const rootFontSize =
       parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
 
-    setOffset(7 * rootFontSize);
+    setOffset(10 * rootFontSize);
   }, []);
   // Define section IDs for scroll spy (order matters for highlighting priority)
   const sectionIds = [

@@ -137,7 +137,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <NotificationProvider>
       <html lang="en">
         <head>
-          <Script id="leadfeeder-script" strategy="afterInteractive">
+          <Script id="leadfeeder" strategy="afterInteractive">
             {`
               (function(ss,ex){
                 window.ldfdr=window.ldfdr||function(){
@@ -151,11 +151,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     cs.async=1;
                     fs.parentNode.insertBefore(cs,fs);
                   };
-                  ce('https://sc.lfeeder.com/lftracker_v1_lAxoEaK3yvAaOYGd.js');
+                  ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
                 })(document,'script');
-              })('lAxoEaK3yvAaOYGd');
+              })('YEgkB8ldENy8ep3Z');
             `}
           </Script>
+
+          
 
           <meta charSet="utf-8" />
           <meta
@@ -211,6 +213,16 @@ function NotificationBox() {
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+  if (!notification.visible) return;
+
+  const timer = setTimeout(() => {
+    hideNotification();
+  }, 5000); // 5 sec
+
+  return () => clearTimeout(timer);
+}, [notification.visible]);
 
   return (
     <div
