@@ -48,7 +48,7 @@ export default function TestAboutPage() {
 
   return (
     <div className="w-full">
-      <div className="flex h-[1000px] flex-col gap-[222px] bg-[url(/images/img_image_1000x1920.webp)] md:bg-[url(/images/Frame.svg)] bg-cover bg-no-repeat py-9 lg:h-auto lg:gap-[166px] md:h-auto md:gap-[166px] sm:gap-[111px] sm:py-4"
+      <div className="flex h-[1000px] flex-col justify-end gap-[222px] bg-[url(/images/img_image_1000x1920.webp)] md:bg-[url(/images/Frame.svg)] bg-cover bg-no-repeat py-9 lg:h-auto lg:gap-[166px] md:h-auto md:gap-[166px] sm:gap-[111px] sm:py-4"
       style=
       {{
         backgroundSize: isMobile  ? '275px': "",
