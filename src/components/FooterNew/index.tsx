@@ -63,7 +63,7 @@ OLCP Database
                 >
                   PLATFORM
                 </Heading>
-                <ul className="flex flex-col items-start gap-6 md:gap-3">
+                <ul className="flex flex-col items-start gap-6 md:gap-4">
                   <li>
                     <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[0.875rem]">
                       <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
@@ -110,7 +110,7 @@ OLCP Database
                 >
                   COMPANY
                 </Heading>
-                <ul className="flex flex-col items-start gap-6 md:gap-3">
+                <ul className="flex flex-col items-start gap-6 md:gap-4">
                   {/* <li>
                     <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
                       <Heading size="auto" as="p" className="uppercase font-inter text-[1.125rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
@@ -150,7 +150,7 @@ OLCP Database
               </div>
 
 
-              <div className="flex flex-col gap-[1.625rem] md:gap-3 whitespace-nowrap">
+              <div className="flex flex-col gap-[1.625rem] md:gap-4 whitespace-nowrap">
                 <Heading
                   size="auto"
                   as="h6"
