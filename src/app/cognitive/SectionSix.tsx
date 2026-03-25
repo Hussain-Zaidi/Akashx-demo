@@ -1,7 +1,7 @@
 'use client';
 
 import { Heading } from '@/components/Heading';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, type PointerEvent } from 'react';
 
 type TabItem = {
   heading: string;
@@ -128,9 +128,11 @@ export default function EnterpriseUseCases() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [paused, setPaused] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [canHover, setCanHover] = useState<boolean>(false);
   const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
   const [displayedTab, setDisplayedTab] = useState<Tab>(tabs[0]);
   const [nextIndex, setNextIndex] = useState<number | null>(null);
+  const hoverSafetyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -145,6 +147,28 @@ export default function EnterpriseUseCases() {
   }, []);
 
   useEffect(() => {
+    const hoverMediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    const updateCanHover = () => {
+      setCanHover(hoverMediaQuery.matches);
+    };
+
+    updateCanHover();
+    hoverMediaQuery.addEventListener('change', updateCanHover);
+
+    return () => {
+      hoverMediaQuery.removeEventListener('change', updateCanHover);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (canHover) return;
+
+    // On touch/coarse-pointer devices, never stay in paused mode.
+    setPaused(false);
+  }, [canHover]);
+
+  useEffect(() => {
     if (paused) return;
 
     const interval = setInterval(() => {
@@ -153,6 +177,36 @@ export default function EnterpriseUseCases() {
 
     return () => clearInterval(interval);
   }, [paused, activeIndex]);
+
+  useEffect(() => {
+    if (!paused || !canHover) return;
+
+    // Safety net: if leave/cancel is missed, auto-resume after a short delay.
+    hoverSafetyTimeoutRef.current = setTimeout(() => {
+      setPaused(false);
+    }, 8000);
+
+    return () => {
+      if (hoverSafetyTimeoutRef.current) {
+        clearTimeout(hoverSafetyTimeoutRef.current);
+        hoverSafetyTimeoutRef.current = null;
+      }
+    };
+  }, [paused, canHover]);
+
+  useEffect(() => {
+    const handleVisibilityOrBlur = () => {
+      setPaused(false);
+    };
+
+    window.addEventListener('blur', handleVisibilityOrBlur);
+    document.addEventListener('visibilitychange', handleVisibilityOrBlur);
+
+    return () => {
+      window.removeEventListener('blur', handleVisibilityOrBlur);
+      document.removeEventListener('visibilitychange', handleVisibilityOrBlur);
+    };
+  }, []);
 
   const handleTabChange = (newIndex: number) => {
     if (isFadingOut || newIndex === activeIndex) return;
@@ -176,6 +230,16 @@ export default function EnterpriseUseCases() {
   }, [isFadingOut, nextIndex]);
 
   const activeTab = displayedTab;
+
+  const handlePointerEnter = (event: PointerEvent<HTMLDivElement>) => {
+    if (!canHover || event.pointerType !== 'mouse') return;
+    setPaused(true);
+  };
+
+  const handlePointerLeave = (event: PointerEvent<HTMLDivElement>) => {
+    if (!canHover || event.pointerType !== 'mouse') return;
+    setPaused(false);
+  };
 
   const getAnimationClass = (animationType: string) => {
     if (isFadingOut) {
@@ -253,16 +317,16 @@ export default function EnterpriseUseCases() {
 
         {/* Right */}
         <div
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          onPointerEnter={handlePointerEnter}
+          onPointerLeave={handlePointerLeave}
+          onPointerCancel={() => setPaused(false)}
           className="w-full max-w-[39.125rem] overflow-hidden md:overflow-visible"
         >
           {/* Tabs */}
           <div className="flex gap-4 mb-6 justify-between">
             {tabs.map((tab, index) => (
-              <div className='relative flex flex-col items-center'>
+              <div key={tab.id} className='relative flex flex-col items-center'>
               <button
-              key={tab.id}
                 onClick={() => handleTabChange(index)}
                 className={`flex flex-col items-center gap-[1.333rem] px-4 md:px-0 py-3 transition-all duration-300 ${
                   isFadingOut ? 'pointer-events-none' : ''
