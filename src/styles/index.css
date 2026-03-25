@@ -56,9 +56,7 @@ nextjs-portal {
 
 
 
-.CognitivePage * {
-  transition: all  .3s;
-}
+
 body{
   scroll-behavior: smooth;
 }
