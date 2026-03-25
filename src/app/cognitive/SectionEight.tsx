@@ -391,7 +391,7 @@ export default function CodeCard() {
                       </p>
                       <p className="text-[#866CFF] md:inline">roles).",</p>
 
-                      <p className="text-[#B8D0F2] mt-2 md:inline">['Yes','No']</p>
+                      <p className="text-[#B8D0F2] mt-2 ">['Yes','No']</p>
                     </div>
 
                     <p className="text-[#B8D0F2]">) = 'Yes';</p>
