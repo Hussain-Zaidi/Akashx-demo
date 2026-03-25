@@ -269,9 +269,9 @@ export default function EnterpriseUseCases() {
           <Heading
             size="auto"
             as="h1"
-            className="mt-[4.541875rem] md:mt-[1rem] bg blue-green-background-text bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-bold leading-tight md:leading-tight text-transparent"
+            className="mt-[4.541875rem] md:mt-[1rem] md:mx-auto w-fit blue-green-background-text bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-bold leading-tight md:leading-tight text-transparent"
             style={{
-              backgroundSize:'60%',
+              backgroundSize:'100%',
               fontSize: isMobile ? '1.25rem' : '',
             }}
           >
@@ -280,7 +280,7 @@ export default function EnterpriseUseCases() {
           <Heading
             size="auto"
             as="h1"
-            className="mt-[.5rem] md:mt-[.5rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[1.833rem] font-normal leading-tight md:leading-[1.25rem] text-transparent md:text-[1.875rem]"
+            className="mt-[.5rem] md:mt-[0rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[1.833rem] font-normal leading-tight md:leading-[1.25rem] text-transparent md:text-[1.875rem]"
             style={{
               fontSize: isMobile ? '1.125rem' : '',
             }}
@@ -295,18 +295,18 @@ export default function EnterpriseUseCases() {
           onPointerEnter={handlePointerEnter}
           onPointerLeave={handlePointerLeave}
           onPointerCancel={() => setPaused(false)}
-          className="w-full max-w-[39.125rem] overflow-hidden md:overflow-visible"
+          className="w-full max-w-[39.125rem] overflow-hidden md:overflow-hidden md:pt-[2rem] md:mt-[-2rem]"
         >
           {/* Tabs */}
-          <div className="flex gap-4 mb-6 justify-between">
+          <div className="flex gap-4 mb-6 md:mb-[1rem] justify-between">
             {tabs.map((tab, index) => (
               <div key={tab.id} className='relative flex flex-col items-center'>
               <button
                 onClick={() => handleTabChange(index)}
-                className="flex flex-col items-center gap-[1.333rem] px-4 md:px-0 py-3 transition-all duration-300"
+                className="flex flex-col items-center gap-[1.333rem] md:gap-4 px-4 md:px-0 md:py-0 transition-all duration-300"
               >
                 <img
-                  className={`flex-[0_0_3.5rem] w-[3.5rem] h-[3.5rem] md:flex-[0_0_2.125rem] md:w-[2.125rem] md:h-[2.125rem] md:py-[0.5rem] pointer-events-none select-none py-[0.8125rem] rounded-[0.666875rem] md:rounded-[.3rem] border border-[#75baff9a] ${
+                  className={`flex-[0_0_3.5rem] w-[3.5rem] h-[3.5rem] md:flex-[0_0_2.125rem] md:w-[2.125rem] md:h-[2.125rem] md:py-[0.5rem] pointer-events-none select-none py-[0.8125rem] rounded-[0.666875rem] md:rounded-[.4rem] border border-[#75baff9a] ${
                     activeIndex === index
                       ? 'border-[#75BAFF99] bg-[#080C26] shadow-[0_0_1rem_0_#75BAFF99]'
                       : 'border-[#75BAFF66] hover:border-gray-500 opacity-50'
@@ -318,7 +318,7 @@ export default function EnterpriseUseCases() {
                   {tab.title}
                 </span>
               </button>
-              <div className={`h-[0.125rem] absolute bottom-[-1.6rem] z-10 w-60 transition-all bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)] ${
+              <div className={`h-[0.125rem] absolute bottom-[-1.45rem] md:bottom-[-1.1rem] z-10 w-60 transition-all bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)] ${
                     activeIndex === index
                       ? 'scale-100'
                       : 'scale-0'

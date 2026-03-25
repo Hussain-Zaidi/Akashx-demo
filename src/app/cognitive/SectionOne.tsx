@@ -96,14 +96,14 @@ export default function SectionOne() {
         {features.map((feature) => (
           <div
             key={feature.id}
-            className={`md:w-[100%] w-[25rem] text-[#CDDAED] font-inter text-[1.5rem] md:text-[0.875rem] flex flex-col md:flex-row items-statrt gap-[1.375rem] md:gap-[1rem] justify-center `}
+            className={`md:w-[100%] w-[24rem] text-[#CDDAED] font-inter text-[1.5rem] md:text-[1rem] flex flex-col md:flex-row items-statrt gap-[1.375rem] md:gap-[1rem] justify-center `}
           >
             {/* <img
               className="w-[2rem] h-[2rem] md:w-[1.5rem] md:h-[1.5rem] pointer-events-none select-none"
               src={feature.icon}
               alt={feature.text}
             /> */}
-            <div className="flex w-fit h-fit flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.3rem]">
+            <div className="flex w-fit h-fit flex-shrink-0 p-[0.620625rem] md:p-2 bg-[linear-gradient(135deg,#2B7FFF33_20%,#7557FF33)] border border-[#75BAFF80] rounded-[0.666875rem] md:rounded-[.5rem]">
               <img
                 className="flex-[0_0_2rem] w-[2rem] h-[2rem] md:flex-[0_0_1rem] md:w-[1rem] md:h-[1rem] pointer-events-none select-none"
                 src={feature.icon}

@@ -88,10 +88,10 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
     <div className="flex justify-center">
       <div className="container-xs flex justify-center md:px-[0.9375rem] max-w-[100%] mx-[6.5625rem] md:mx-auto">
         <div
-          className="relative flex h-[45rem] md:h-[25rem] w-full flex-col items-center gap-[2.625rem] md:gap-[2rem] rounded-[1.25rem] border border-solid border-blue-a100 bg-[url(/images/img_image_650x1608.webp)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-[6.875rem] shadow-xs  md:px-[1.125rem] md:py-[2.5rem] md:mb-[6.25rem]"
+          className="relative flex h-[45rem] md:h-[22rem] w-full flex-col items-center gap-[2.625rem] md:gap-[2rem] rounded-[1.25rem] border border-solid border-blue-a100 bg-[url(/images/img_image_650x1608.webp)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-[6.875rem] shadow-xs  md:px-[1.125rem] md:py-[2.5rem] md:mb-[6.25rem]"
           style={{
             backgroundSize: isMobile ? "140% 150%" : "",
-            backgroundPosition: isMobile ? "50% 50%" : "",
+            backgroundPosition: isMobile ? "50% 60%" : "",
           }}
         >
           <div className="mx-[2.875rem] flex w-[68%] flex-col items-center gap-3.5 md:mx-0 md:w-full">
@@ -106,11 +106,11 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
             >
               <>
                 {/* {section.section6_title1} */}
-                Go from AI PoC to Production 
+                Go from AI PoC <br className="md:block hidden" />to Production 
                 <br className="md:hidden"></br>
                 <span className="hidden md:inline"> </span>
                 {/* {section.section6_title2} */}
-                <span className="text-[3.5rem] md:text-[1.5rem] leading-[124%] mb-[1.916rem] inline-block">
+                <span className="text-[3.5rem] md:text-[1.5rem] leading-[124%] mb-[1.916rem] md:mb-0 inline-block">
                 Fast, With Near-Zero Effort
 
                 </span>
@@ -131,7 +131,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
               {section.section6_description_p3}
             </Heading> */}
           </div>
-          <div className="mb-[10.875rem] flex w-[43.4375rem] justify-center md:w-full">
+          <div className="mb-[10.875rem] flex w-[46rem] justify-center md:w-full">
             <Input
               type="email"
               id="requestSignUp"

@@ -139,7 +139,7 @@ export default function Header({ ...props }: Props) {
           <li onClick={() => setIsMenuOpen(false)}>
             <Link
               href="/cognitive#HeroSection"
-              className={`cursor-pointer lg:text-[1.0625rem] ${
+              className={`hidden cursor-pointer lg:text-[1.0625rem] ${
                 isMobile
                   ? 'border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]'
                   : ''
@@ -148,7 +148,7 @@ export default function Header({ ...props }: Props) {
               <Heading
                 size="auto"
                 as="p"
-                className={`text-[1.25rem] font-medium hidden ${
+                className={`text-[1.25rem] font-medium  ${
                   isLinkActive()
                     ? 'text-blue-100'
                     : 'text-blue_gray-300 hover:text-blue-100'

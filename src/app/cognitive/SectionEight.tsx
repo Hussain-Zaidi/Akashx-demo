@@ -88,7 +88,7 @@ export default function CodeCard() {
     let segmentIndex = 0;
     let isScrollingUp = false;
 
-    const stopDuration = 3000;
+    const stopDuration = 2000;
     const scrollDuration = 1000;
 
     const smoothScrollTo = (
@@ -200,7 +200,7 @@ export default function CodeCard() {
   };
 
   return (
-    <div className="md:px-6 mb-[7.5rem] md:mb-[7.5rem]">
+    <div className="md:px-6 mb-[7.5rem] md:mb-[6rem]" id='RAGPipelines'>
        <h1 className=" mb-14 md:mb-[2rem] bg-gradient1 bg-clip-text text-center font-montserrat text-[3rem] md:text-[1.5rem] font-bold leading-tight md:leading-tight text-transparent  ">
         {/* Declarative simplicity lets you iterate <br className='md:block hidden' />in <br className='md:hidden' /> */}
         {/* minutes, without RAG-pipelines. */}
@@ -226,7 +226,7 @@ export default function CodeCard() {
 
 
         <div className="flex gap-16 md:gap-8 m-auto justify-center items-center md:flex-col md:mt-8">
-          <div className="w-[46.666875rem]">
+          <div className="w-[47.666875rem]">
             <div className=" h-[2.5rem] m-auto w-[0.25rem] md:hidden bg-[linear-gradient(to_bottom,#2B7FFF80_50%,transparent_50%)] bg-[length:0.125rem_1rem] bg-repeat-y bg-top" />
             <div
               className=" md:scale-[42.5%] md:my-[-26.25%] max-w-[100%] pointer-events-none  h-[37.5rem] md:h-[42.5rem] flex-1 border md:border-[4px] border-[#2B7FFF4D] rounded-[1.5rem] bg-[#070A20] p-[0rem_1.666rem_1.666rem] md:px-5 md:py-0 flex flex-col items-center relative"
@@ -234,17 +234,17 @@ export default function CodeCard() {
               // onMouseLeave={handleMouseLeave}
             >
               <div
-                className="absolute top-[12.4rem] flex items-center justify-between px-6 w-full z-10 gap-[25rem]"
+                className="absolute top-[12.4rem] flex items-center justify-between px-6 w-full z-10 gap-[26rem]"
                 style={{
                   opacity: isAnimating ? 0 : 1,
                   transition: 'opacity 0.2s ease-in-out',
                 }}
               >
                 <div className="flex-[1] text-left transition-all duration-1000 flex flex-col gap-1 items-start relative top-[-2.42rem]">
-                  <p className="text-[#B8D0F2] text-[1.165rem] mt-1 font-inter font-medium">
+                  <p className="text-[#B8D0F2] text-[1.165rem] mt-1 font-inter font-normal">
                     {segmentPairs[currentSegment]?.left.description}
                   </p>
-                  <p className="text-[#B8D0F2] text-[1.165rem] mt-3 font-inter font-medium flex gap-1 items-center">
+                  <p className="text-[#B8D0F2] text-[1.165rem] mt-3 font-inter font-normal flex gap-1 items-center">
                     <img
                       className="block mr-2 w-[2rem] h-auto"
                       src={segmentPairs[currentSegment]?.left.image}
@@ -254,10 +254,10 @@ export default function CodeCard() {
                 </div>
 
                 <div className="flex-[1] text-left transition-all duration-1000 flex flex-col gap-1 items-start relative top-[2.22rem]">
-                  <p className="text-[#B8D0F2] text-[1.165rem] mt-1 font-inter font-medium">
+                  <p className="text-[#B8D0F2] text-[1.165rem] mt-1 font-inter font-normal">
                     {segmentPairs[currentSegment]?.right.description}
                   </p>
-                  <p className="text-[#B8D0F2] text-[1.165rem] mt-3 font-inter font-medium flex gap-1 items-center">
+                  <p className="text-[#B8D0F2] text-[1.165rem] mt-3 font-inter font-normal flex gap-1 items-center">
                     <img
                       className="block mr-2 w-[2rem] h-auto"
                       src={segmentPairs[currentSegment]?.right.image}
@@ -275,25 +275,25 @@ export default function CodeCard() {
                   <img
                     src="/images/cognitive/step1.svg"
                     alt="Cognitive"
-                    className="w-[24.0381125rem] mx-auto absolute transition-all duration-1000"
+                    className="w-full mx-auto absolute transition-all duration-1000"
                     style={{ opacity: currentSegment == 0 ? 1 : 0 }}
                   />
                   <img
                     src="/images/cognitive/step2.svg"
                     alt="Cognitive"
-                    className="w-[24.0381125rem] mx-auto absolute transition-all duration-1000"
+                    className="w-full mx-auto absolute transition-all duration-1000"
                     style={{ opacity: currentSegment == 1 ? 1 : 0 }}
                   />
                   <img
                     src="/images/cognitive/step3.svg"
                     alt="Cognitive"
-                    className="w-[24.0381125rem] mx-auto absolute transition-all duration-1000"
+                    className="w-full mx-auto absolute transition-all duration-1000"
                     style={{ opacity: currentSegment == 2 ? 1 : 0 }}
                   />
                   <img
                     src="/images/cognitive/step4.svg"
                     alt="Cognitive"
-                    className="w-[24.0381125rem] mx-auto absolute transition-all duration-1000"
+                    className="w-full mx-auto absolute transition-all duration-1000"
                     style={{ opacity: currentSegment == 3 ? 1 : 0 }}
                   />
                 </div>
@@ -334,8 +334,8 @@ export default function CodeCard() {
             </video>
           </div>
   </div>  */}
-          <div className="relative rounded-full bg-[linear-gradient(135deg,#41668C66_40%,#28B6F6)] p-[0.125rem]">
-            <div className="bg-[linear-gradient(135deg,#080C26_60%,#75BAFF)] text-[1.5rem] md:text-[1rem] font-bold font-montserrat rounded-full flex items-center justify-center flex-[0_0_5rem] w-[5rem] h-[5rem] md:flex-[0_0_4rem] md:w-[4rem] md:h-[4rem] md:py-[1rem] pointer-events-none select-none py-[2.15rem]">
+          <div className="relative rounded-full bg-[linear-gradient(135deg,#41668C66_40%,#28B6F6)] p-[1.5px]">
+            <div className="bg-[linear-gradient(135deg,#080C26_50%,#75BAFF)] text-[1.5rem] md:text-[1rem] font-bold font-montserrat rounded-full flex items-center justify-center flex-[0_0_5rem] w-[5rem] h-[5rem] md:flex-[0_0_4rem] md:w-[4rem] md:h-[4rem] md:py-[1rem] pointer-events-none select-none py-[2.15rem]">
               <span className="bg-gradient1 bg-clip-text text-transparent">
                 VS
               </span>
@@ -384,7 +384,7 @@ export default function CodeCard() {
                       <p className="text-[#B8D0F2]">raw_text,</p>
 
                       <p className="text-[#866CFF] inline">
-                        "{'>'}=3y deep backend coding, then transitioned to
+                        "{'>'}=3y deep backend coding, then transitioned to{' '}
                       </p>
                       <p className="text-[#866CFF] inline">
                         Engineering Management (exclude product/project

@@ -57,7 +57,7 @@ export default function StickyStackSection() {
 
                 {/* Card */}
                 <div className="absolute bottom-[0.3rem] md:bottom-[4.9rem] left-0 w-[83.5%] bg-[linear-gradient(180deg,black,rgb(0_0_0_/_70%))] rounded-[0.8rem_0.8rem_0rem_0rem] md:rounded-[0.4rem_0.4rem_0rem_0rem] p-8 md:p-2">
-                  <p className="text-[#B8D0F2] text-[1.8333125rem] md:text-[.85rem] font-inter md:leading-normal font-medium">
+                  <p className="text-[#B8D0F2] text-[1.8333125rem] md:text-[.875rem] font-inter md:leading-tight font-medium">
                     <b>Unleash</b> your agents <br />
                     to deterministically query without <br />
                     probabilistic vector search.
@@ -66,7 +66,7 @@ export default function StickyStackSection() {
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="space-y-14 md:space-y-4 w-[37rem] md:w-auto md:mt-[-2rem]">
+              <div className="space-y-14 md:space-y-[1.5rem] w-[37rem] md:w-auto md:mt-[-2rem]">
                 {/* Item 1 */}
                 <div className="flex items-start gap-5 md:gap-[0.875rem]">
                   {/* Icon */}

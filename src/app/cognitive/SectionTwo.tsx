@@ -68,7 +68,7 @@ export default function StickyStackSection() {
               </div>
             </div>
 
-            <div className="h-[28rem] w-[0.125rem] md:w-full md:h-[0.125rem] bg-[linear-gradient(0deg,#41668C1A,#588BBF99,#41668C1A)] md:bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
+            <div className="h-[36rem] w-[0.125rem] md:w-full md:h-[0.125rem] bg-[linear-gradient(0deg,#41668C1A,#588BBF99,#41668C1A)] md:bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
 
             <div className="pt-[2.7125rem] flex flex-col gap-7 md:gap-3 flex-1 md:pt-5">
               <div className="flex items-center gap-6 md:gap-3 text-[#CDDAED] font-inter text-[1.8333rem] md:text-[1.125rem] font-bold">
@@ -97,7 +97,7 @@ export default function StickyStackSection() {
             </div>
           </div>
 
-          <div className="w-11/12 h-[0.125rem] bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
+          <div className="w-full h-[0.125rem] bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
 
           <div className="flex gap-6 py-[3.2293rem] md:py-5">
             <Link

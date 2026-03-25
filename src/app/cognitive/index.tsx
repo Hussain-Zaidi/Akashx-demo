@@ -75,7 +75,7 @@ export default function CognitivePage() {
       {/* {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />} */}
       
 
-      <div className="bg-gray-900 py-[7.5rem] lg:py-8 md:py-5 sm:py-4 mb-[3.5rem] md:mb-0">
+      <div className="bg-gray-900 py-[7.5rem] md:py-0 mb-[3.5rem] md:mb-0">
         {fetchedSection && <TesthomeRowOne fetchedSection={fetchedSection} />}
       </div>
 
