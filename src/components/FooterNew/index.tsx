@@ -31,13 +31,13 @@ export default function Footer({ ...props }: Props) {
                 <Heading
                   size="auto"
                   as="h5"
-                  className="bg-gradient bg-clip-text font-montserrat text-[1.25rem] font-extrabold leading-7 text-transparent md:text-[1rem] md:leading-[1.3125rem]"
+                  className="bg-gradient bg-clip-text font-montserrat text-[1.25rem] font-extrabold leading-7 text-transparent md:text-[1.375rem] md:leading-[1.3125rem]"
                 >
                   <>
                     {/* World’s #1<br />
                     Storage Accelerated <br />
                     Data Warehouse */}
-                    World’s No 1<br />
+                    World’s #1<br />
 OLCP Database
                   </>
                 </Heading>
@@ -57,44 +57,44 @@ OLCP Database
             <div className="flex w-[100%] items-start justify-center gap-[9rem] md:gap-[3.75rem] md:w-full md:flex-col">
               <div className="flex w-fit flex-col items-start gap-[1.625rem] md:gap-[1.4375rem] self-center md:w-full whitespace-nowrap">
                 <Heading
-                  size="headingxs"
+                  size="auto"
                   as="h6"
-                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[1rem]"
+                  className="font-montserrat text-[1.375rem] font-bold md:font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[.875rem]"
                 >
                   PLATFORM
                 </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-3">
                   <li>
                     <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                         Cognitive SQL          
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/cognitive#OntlogyViews" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        Ontlogy Views 
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/cognitive#UseCases" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        Use Cases
                       </Heading>
                     </Link>
                   </li>
                   {/* <li>
                     <Link href="Works" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-inter text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         Works
                       </Heading>
                     </Link>
                   </li> */}
                   {/* <li>
                     <Link href="Team" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-inter text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         Team
                       </Heading>
                     </Link>
@@ -104,44 +104,44 @@ OLCP Database
 
               <div className="flex w-fit flex-col items-start gap-[1.625rem] md:gap-[1.4375rem] self-start md:w-full">
                 <Heading
-                  size="headingxs"
+                  size="auto"
                   as="h6"
-                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[1rem]"
+                  className="font-montserrat text-[1.375rem] font-bold md:font-semibolduppercase tracking-[1.00px] text-blue_gray-100 md:text-[0.875rem]"
                 >
                   COMPANY
                 </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-3">
                   {/* <li>
                     <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="uppercase font-inter text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                         Home
                       </Heading>
                     </Link>
                   </li> */}
                   <li>
                     <Link href="/about" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
-                       Company
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                       About
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/blogs" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                        Blogs
                       </Heading>
                     </Link>
                   </li>
                   {/* <li>
                     <Link href="Works" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-inter text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         Works
                       </Heading>
                     </Link>
                   </li> */}
                   {/* <li>
                     <Link href="Team" target="_blank" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-inter text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         Team
                       </Heading>
                     </Link>
@@ -154,21 +154,21 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[1rem] font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[1rem]"
+                  className="font-montserrat text-[1.375rem] font-bold md:font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[0.875rem]"
                 >
                   Contact us
                 </Heading>
                 <ul className="flex flex-col items-start gap-6">
                   <li>
                     <Link href="mailto:contact@akashx.ai" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="font-inter text-[1.375rem] md:text-[.875rem]  font-medium text-blue_gray-100 hover:text-indigo-50 hover:underline">
                       contact@akashx.ai
                       </Heading>
                     </Link>
                   </li>
                   {/* <li>
                     <Link href="#" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-poppins text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
+                      <Heading size="auto" as="p" className="font-inter text-[1.125rem] md:text-[.875rem]  font-medium text-indigo-50">
                         How it Works
                       </Heading>
                     </Link>
@@ -181,7 +181,7 @@ OLCP Database
           <Heading
             size="auto"
             as="p"
-            className="mt-[2.375rem] md:mt-[1rem] font-montserrat text-[1rem] font-normal text-blue_gray-300 md:text-[0.75rem]"
+            className="mt-[2.375rem] md:mt-[1rem] font-montserrat text-[1.375rem] font-normal text-blue_gray-300 md:text-[0.75rem]"
           >
             © Copyright 2025, All Rights Reserved by AkashX
           </Heading>
