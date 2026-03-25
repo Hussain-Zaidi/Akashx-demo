@@ -176,10 +176,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <NotificationBox />
           <div
             id="loading-overlay"
-            className={`fixed top-0 left-0 w-full h-full bg-[#080d26] flex justify-center items-center z-50 transform transition-all duration-1000 ease-out `}
+            className="fixed top-0 left-0 w-full h-full bg-[#080d26] flex justify-center items-center z-50"
             style={{
               zIndex: 100,
-              transform: isLoading ? 'translateX(0%)' : 'translateX(100%)',
+              pointerEvents: isLoading ? 'auto' : 'none',
               opacity: isLoading ? '1' : '0',
             }}
           >
