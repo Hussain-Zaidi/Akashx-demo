@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['64.227.101.114'], // Add your IP address here
+    domains: ['64.227.37.208'], // Add your IP address here
   },
   async redirects() {
     return [

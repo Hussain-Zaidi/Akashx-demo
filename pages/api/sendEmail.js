@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
     try {
       // Fetch recipients dynamically from the API
-      const response = await fetch("http://64.227.101.114/api/akashx-home-pages");
+      const response = await fetch("https://strapi.akashx.ai/api/akashx-home-pages");
       if (!response.ok) {
         throw new Error("Failed to fetch recipient emails");
       }
