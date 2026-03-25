@@ -31,7 +31,7 @@ export default function Footer({ ...props }: Props) {
                 <Heading
                   size="auto"
                   as="h5"
-                  className="bg-gradient bg-clip-text font-montserrat text-[1.25rem] font-extrabold leading-7 text-transparent md:text-[1rem] md:leading-[1.3125rem]"
+                  className="bg-gradient bg-clip-text font-montserrat text-[1.375rem] font-extrabold leading-7 text-transparent md:text-[1rem] md:leading-[1.3125rem]"
                 >
                   <>
                     {/* World’s #1<br />

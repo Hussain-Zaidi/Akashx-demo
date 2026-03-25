@@ -87,7 +87,7 @@ useEffect(() => {
         <Heading
           size="auto"
           as="h1"
-          className="mt-[1.8125rem] md:mt-[1rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-normal leading-normal md:leading-tight text-transparent md:text-[1.875rem]"
+          className="mt-[1.8125rem] md:mt-[1rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-normal leading-tight md:leading-tight text-transparent md:text-[1.875rem]"
           style={{
             fontSize: isMobile ? '1.25rem' : '',
           }}

@@ -318,7 +318,7 @@ export default function EnterpriseUseCases() {
                   {tab.title}
                 </span>
               </button>
-              <div className={`h-[0.125rem] absolute bottom-[-1.45rem] md:bottom-[-1.1rem] z-10 w-60 transition-all bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)] ${
+              <div className={`h-[0.125rem] absolute bottom-[-1.55rem] md:bottom-[-1.1rem] z-10 w-60 transition-all bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)] ${
                     activeIndex === index
                       ? 'scale-100'
                       : 'scale-0'
