@@ -9,6 +9,8 @@ export default function CodeCard() {
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const animationRef = useRef<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showVideoControls, setShowVideoControls] = useState(false);
 
   const segmentPairs = [
     {
@@ -76,6 +78,38 @@ export default function CodeCard() {
       },
     },
   ];
+
+  const tryAutoplay = () => {
+    const video = videoRef.current;
+    if (video == null) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const playPromise = video.play();
+
+    if (playPromise && typeof playPromise.then === 'function') {
+      playPromise
+        .then(() => setShowVideoControls(false))
+        .catch(() => setShowVideoControls(true));
+    }
+  };
+
+  useEffect(() => {
+    tryAutoplay();
+
+    const retryAutoplay = () => {
+      tryAutoplay();
+    };
+
+    window.addEventListener('focus', retryAutoplay);
+    document.addEventListener('visibilitychange', retryAutoplay);
+
+    return () => {
+      window.removeEventListener('focus', retryAutoplay);
+      document.removeEventListener('visibilitychange', retryAutoplay);
+    };
+  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -297,16 +331,25 @@ export default function CodeCard() {
           >
             
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
+              controls={showVideoControls}
+              poster="/images/cognitive/Group1000004503.svg"
+              onCanPlay={tryAutoplay}
+              onLoadedMetadata={tryAutoplay}
+              onError={() => setShowVideoControls(true)}
               className="w-[46.666875rempx] h-[37.5rem] md:h-auto"
             >
               <source
-                src={
-                  '/images/cognitive/WhatsApp Video 2026-03-21 at 6.17.20 PM.mp4'
-                }
+                src={'/images/cognitive/cognitive-rag-pipeline-demo.webm'}
+                type="video/webm"
+              />
+              <source
+                src={'/images/cognitive/cognitive-rag-pipeline-demo.mp4'}
                 type="video/mp4"
               />
               Your browser does not support the video tag.
