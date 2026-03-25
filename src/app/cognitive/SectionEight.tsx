@@ -3,25 +3,28 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function CodeCard() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isScrolling, setIsScrolling] = useState(true);
   const [currentSegment, setCurrentSegment] = useState(0);
+  const [nextSegment, setNextSegment] = useState(1);
+  const [isSliding, setIsSliding] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const animationRef = useRef<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [imagesReady, setImagesReady] = useState(false);
+  const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isAnimatingRef = useRef(false);
+  const currentSegmentRef = useRef(0);
 
   const segmentPairs = [
     {
       id: 1,
       y: 0,
       left: {
-        title: '1',
+        title: '',
         subtitle: 'S3',
         description: 'Resume ingestion from storage ',
         image: '/images/cognitive/Group1.svg',
       },
       right: {
-        title: '2',
+        title: '',
         subtitle: 'Unstructured',
         description: 'Extract text + OCR + metadata (layout-aware)',
         image: '/images/cognitive/Group2.svg',
@@ -31,13 +34,13 @@ export default function CodeCard() {
       id: 2,
       y: 10.7,
       left: {
-        title: '3',
+        title: '',
         subtitle: 'OpenAI',
         description: 'Convert text to high-dimensional vectors',
         image: '/images/cognitive/Group1.svg',
       },
       right: {
-        title: '4',
+        title: '',
         subtitle: 'Pinecone',
         description: 'Store embeddings in vector database for fast retrieval',
         image: '/images/cognitive/Group1.svg',
@@ -47,13 +50,13 @@ export default function CodeCard() {
       id: 3,
       y: 20,
       left: {
-        title: '5',
+        title: '',
         subtitle: 'Similarity',
         description: 'Find most relevant context based on query',
         image: '/images/cognitive/Group1.svg',
       },
       right: {
-        title: '6',
+        title: '',
         subtitle: 'Prompt',
         description: 'Enhance prompts with retrieved context',
         image: '/images/cognitive/Group1.svg',
@@ -77,125 +80,104 @@ export default function CodeCard() {
     },
   ];
 
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
-
-    const scrollContent = scrollContainer.firstChild as HTMLElement;
-    if (!scrollContent) return;
-
-    let segmentIndex = 0;
-    let isScrollingUp = false;
-
-    const stopDuration = 3000;
-    const scrollDuration = 1000;
-
-    const smoothScrollTo = (
-      targetTop: number,
-      duration: number = scrollDuration,
-    ): Promise<void> => {
-      return new Promise((resolve) => {
-        const startTop = scrollContainer.scrollTop;
-        const distance = targetTop - startTop;
-        const startTime = performance.now();
-
-        const animateScroll = (currentTime: number) => {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-
-          const easeInOutCubic =
-            progress < 0.5
-              ? 4 * progress * progress * progress
-              : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-          scrollContainer.scrollTop = startTop + distance * easeInOutCubic;
-
-          if (progress < 1) {
-            animationRef.current = requestAnimationFrame(animateScroll);
-          } else {
-            setIsAnimating(false);
-            resolve();
-          }
-        };
-
-        if (animationRef.current) {
-          cancelAnimationFrame(animationRef.current);
-        }
-        setIsAnimating(true);
-        animationRef.current = requestAnimationFrame(animateScroll);
-      });
-    };
-
-    const scrollNextSegment = async () => {
-      const rootFontSize =
-        parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      if (!scrollContainer || !isScrolling) return;
-
-      if (!isScrollingUp) {
-        const nextIndex = segmentIndex + 1;
-
-        if (nextIndex < segmentPairs.length) {
-          segmentIndex = nextIndex;
-          const targetY = segmentPairs[segmentIndex].y * rootFontSize;
-          console.log(`targetY ${segmentIndex}`, targetY);
-          await smoothScrollTo(targetY);
-          setCurrentSegment(segmentIndex);
-
-          timeoutRef.current = setTimeout(scrollNextSegment, stopDuration);
-        } else {
-          // Reset to top
-          isScrollingUp = true;
-
-          await smoothScrollTo(1.5 * rootFontSize, 1000);
-
-          segmentIndex = 0;
-          setCurrentSegment(0);
-
-          isScrollingUp = false;
-
-          timeoutRef.current = setTimeout(scrollNextSegment, stopDuration);
-        }
-      }
-    };
-
-    const startScrolling = () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      scrollNextSegment();
-    };
-
-    if (isScrolling) startScrolling();
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    };
-  }, [isScrolling]);
+  const stepImages = [
+    '/images/cognitive/rag_pipeline_img_1.svg',
+    '/images/cognitive/rag_pipeline_img_2.svg',
+    '/images/cognitive/rag_pipeline_img_3.svg',
+    '/images/cognitive/rag_pipeline_img_4.svg',
+  ];
+  const textPositions = [
+    { left: '8.75rem', right: '12.25rem' },
+    { left: '15rem', right: '18.5rem' },
+    { left: '21.25rem', right: '24.75rem' },
+    { left: '27.5rem', right: '31rem' },
+  ];
 
   useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
+    let cancelled = false;
+
+    const preloadImages = async () => {
+      await Promise.all(
+        stepImages.map((src) => {
+          return new Promise<void>((resolve) => {
+            const image = new Image();
+            image.src = src;
+
+            if (typeof image.decode === 'function') {
+              image.decode().then(() => resolve()).catch(() => resolve());
+              return;
+            }
+
+            image.onload = () => resolve();
+            image.onerror = () => resolve();
+          });
+        }),
+      );
+
+      if (!cancelled) {
+        setImagesReady(true);
       }
-      .scrollbar-hide {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-    `;
-    document.head.appendChild(style);
+    };
+
+    preloadImages();
+
     return () => {
-      document.head.removeChild(style);
+      cancelled = true;
     };
   }, []);
 
+  useEffect(() => {
+    isAnimatingRef.current = isAnimating;
+  }, [isAnimating]);
+
+  useEffect(() => {
+    currentSegmentRef.current = currentSegment;
+  }, [currentSegment]);
+
+  useEffect(() => {
+    if (isPaused || !imagesReady) return;
+
+    const interval = setInterval(() => {
+      if (isAnimatingRef.current) return;
+      if (transitionTimerRef.current) {
+        clearTimeout(transitionTimerRef.current);
+      }
+
+      const upcomingSegment = (currentSegmentRef.current + 1) % segmentPairs.length;
+      const followingSegment = (upcomingSegment + 1) % segmentPairs.length;
+
+      setNextSegment(upcomingSegment);
+      setIsAnimating(true);
+      setIsSliding(true);
+      isAnimatingRef.current = true;
+
+      transitionTimerRef.current = setTimeout(() => {
+        setCurrentSegment(upcomingSegment);
+        currentSegmentRef.current = upcomingSegment;
+        setNextSegment(followingSegment);
+        setIsSliding(false);
+        setIsAnimating(false);
+        isAnimatingRef.current = false;
+        transitionTimerRef.current = null;
+      }, 500);
+    }, 2500);
+
+    return () => {
+      clearInterval(interval);
+      if (transitionTimerRef.current) {
+        clearTimeout(transitionTimerRef.current);
+        transitionTimerRef.current = null;
+      }
+    };
+  }, [isPaused, imagesReady, segmentPairs.length]);
+
+
   const handleMouseEnter = () => {
-    setIsScrolling(false);
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    setIsPaused(true);
   };
 
   const handleMouseLeave = () => {
-    setIsScrolling(true);
+    setIsPaused(false);
   };
 
   return (
@@ -269,16 +251,14 @@ export default function CodeCard() {
           </div>
         </div>
         
-        <div
-          ref={scrollContainerRef}
-          className="flex-1 overflow-auto scrollbar-hide relative"
-          >
-        <img
-            src="/images/cognitive/Group1000004503.svg"
-            alt="Cognitive"
-            className="w-[24.0381125rem] mx-auto"
-            />
-        </div>
+  <div className="flex-1 w-full relative flex items-center justify-center overflow-hidden">
+    <img
+      key={currentSegment}
+      src={stepImages[currentSegment]}
+      alt={`RAG pipeline step ${currentSegment + 1}`}
+      className={`w-full h-full object-contain transition-opacity duration-300 ${isAnimating ? 'opacity-70' : 'opacity-100'}`}
+    />
+  </div>
 
         <div className="w-11/12 h-[0.125rem] bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
         
@@ -293,59 +273,98 @@ export default function CodeCard() {
   onMouseEnter={handleMouseEnter}
   onMouseLeave={handleMouseLeave}
 >
-  <div
-    className="absolute top-[12.4rem] flex items-center justify-between px-6 w-full pointer-events-none z-10 gap-[14.875rem]"
-    style={{
-      opacity: isAnimating ? 0 : 1,
-      transition: 'opacity 0.2s ease-in-out',
-    }}
-  >
-    <div className="w-[40%] text-left transition-all duration-500 flex gap-7 items-start relative top-[-2.42rem]">
-      <div className="h-0">
-        <p className="text-[#B8D0F2] text-lg mt-1">
-          {segmentPairs[currentSegment]?.left.description}
-        </p>
-        <p className="text-[#B8D0F2] text-lg mt-3">
-          <img
-            className="inline-block mr-2 w-[1.6rem] h-auto"
-            src={segmentPairs[currentSegment]?.left.image}
-          />
-          {segmentPairs[currentSegment]?.left.subtitle}
-        </p>
-      </div>
-      <h3 className="shadow-[0px_0px_.5rem_.5rem_#B8D0F2] text-[#B8D0F2] text-[1.666875rem] font-semibold flex items-center justify-center w-[2.7rem] h-[2.7rem] flex-[0_0_2.7rem] bg-[#4D72A8] rounded-full">
-        {segmentPairs[currentSegment]?.left.title}
-      </h3>
+  <div className="absolute inset-0 pointer-events-none z-10 md:hidden">
+    <div
+      className="absolute left-6 w-[11.5rem] transition-opacity duration-300"
+      style={{
+        top: textPositions[currentSegment]?.left,
+        opacity: isAnimating ? 0 : 1,
+      }}
+    >
+      <p className="text-[#B8D0F2] text-[2rem] leading-[1.2]">
+        {segmentPairs[currentSegment]?.left.description}
+      </p>
+      <p className="text-[#B8D0F2] text-[2rem] mt-3">
+        <img
+          className="inline-block mr-2 w-[1.6rem] h-auto"
+          src={segmentPairs[currentSegment]?.left.image}
+        />
+        {segmentPairs[currentSegment]?.left.subtitle}
+      </p>
     </div>
 
-    <div className="w-[40%] text-left transition-all duration-500 flex gap-7 items-start relative top-[2.22rem]">
-      <h3 className="shadow-[0px_0px_.5rem_.5rem_#B8D0F2] text-[#B8D0F2] text-[1.666875rem] font-semibold flex items-center justify-center w-[2.7rem] h-[2.7rem] flex-[0_0_2.7rem] bg-[#4D72A8] rounded-full">
-        {segmentPairs[currentSegment]?.right.title}
-      </h3>
-      <div className="h-0">
-        <p className="text-[#B8D0F2] text-lg mt-1">
-          {segmentPairs[currentSegment]?.right.description}
-        </p>
-        <p className="text-[#B8D0F2] text-lg mt-3">
-          <img
-            className="inline-block mr-2 w-[1.6rem] h-auto"
-            src={segmentPairs[currentSegment]?.right.image}
-          />
-          {segmentPairs[currentSegment]?.right.subtitle}
-        </p>
+    <div
+      className="absolute right-6 w-[11.5rem] transition-opacity duration-300"
+      style={{
+        top: textPositions[currentSegment]?.right,
+        opacity: isAnimating ? 0 : 1,
+      }}
+    >
+      <p className="text-[#B8D0F2] text-[2rem] leading-[1.2]">
+        {segmentPairs[currentSegment]?.right.description}
+      </p>
+      <p className="text-[#B8D0F2] text-[2rem] mt-3">
+        <img
+          className="inline-block mr-2 w-[1.6rem] h-auto"
+          src={segmentPairs[currentSegment]?.right.image}
+        />
+        {segmentPairs[currentSegment]?.right.subtitle}
+      </p>
+    </div>
+  </div>
+
+  <div className="flex-1 w-full relative overflow-hidden">
+    <div
+      className={`h-[200%] w-full will-change-transform ${
+        isSliding ? 'transition-transform duration-500 ease-in-out -translate-y-1/2' : 'transition-none translate-y-0'
+      }`}
+    >
+      <div className="h-1/2 w-full flex items-center justify-center">
+        <img
+          src={stepImages[currentSegment]}
+          alt={`RAG pipeline step ${currentSegment + 1}`}
+          className="w-[78%] h-full object-contain md:w-full"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div className="h-1/2 w-full flex items-center justify-center">
+        <img
+          src={stepImages[nextSegment]}
+          alt={`RAG pipeline step ${nextSegment + 1}`}
+          className="w-[78%] h-full object-contain md:w-full"
+          loading="eager"
+          decoding="async"
+        />
       </div>
     </div>
   </div>
 
-  <div
-    ref={scrollContainerRef}
-    className="flex-1 overflow-auto scrollbar-hide relative"
-  >
-    <img
-      src="/images/cognitive/Group1000004503.svg"
-      alt="Cognitive"
-      className="w-[24.0381125rem] mx-auto"
-    />
+  <div className="hidden md:flex w-full justify-between gap-5 mt-4">
+    <div className="w-[48%]">
+      <p className="text-[#B8D0F2] text-[0.875rem] leading-[1.3]">
+        {segmentPairs[currentSegment]?.left.description}
+      </p>
+      <p className="text-[#B8D0F2] text-[0.875rem] mt-2">
+        <img
+          className="inline-block mr-2 w-[1rem] h-auto"
+          src={segmentPairs[currentSegment]?.left.image}
+        />
+        {segmentPairs[currentSegment]?.left.subtitle}
+      </p>
+    </div>
+    <div className="w-[48%]">
+      <p className="text-[#B8D0F2] text-[0.875rem] leading-[1.3]">
+        {segmentPairs[currentSegment]?.right.description}
+      </p>
+      <p className="text-[#B8D0F2] text-[0.875rem] mt-2">
+        <img
+          className="inline-block mr-2 w-[1rem] h-auto"
+          src={segmentPairs[currentSegment]?.right.image}
+        />
+        {segmentPairs[currentSegment]?.right.subtitle}
+      </p>
+    </div>
   </div>
 
   <div className="w-11/12 h-[0.125rem] bg-[linear-gradient(90deg,#41668C1A,#588BBF99,#41668C1A)]"></div>
