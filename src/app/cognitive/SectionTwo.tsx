@@ -56,7 +56,7 @@ export default function StickyStackSection() {
                 Probabilistic RAG
               </div>
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
-                RAG does Top-K vector similarity search for{' '}
+                RAG does <span className='font-semibold'>Top-K vector similarity search</span> for{' '}
                 <br className="md:hidden" />
                 <span className="text-[#FE823D] font-semibold">probabilistic results.</span>
               </div>
