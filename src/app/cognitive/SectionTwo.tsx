@@ -63,7 +63,7 @@ export default function StickyStackSection() {
               <div className="flex justify-end">
                 <img
                   className="w-auto h-[25rem]  md:flex-[0_0_6rem] md:w-auto md:h-[9.375rem] pointer-events-none select-none"
-                  src={`/images/cognitive/Group1000004489.svg`}
+                  src={`/images/cognitive/Group1000004496.svg`}
                 />
               </div>
             </div>

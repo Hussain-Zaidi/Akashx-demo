@@ -58,7 +58,7 @@ useEffect(() => {
 
   return (
     <div
-      className="mt-[7.1875rem] md:mt-[5rem] mb-[7.1875rem] md:mb-[3.5rem] flex items-center justify-center px-14 md:flex-col md:px-5 "
+      className="mt-[7.1875rem] md:mt-[2.5rem] mb-[7.1875rem] md:mb-[4rem] flex items-center justify-center px-14 md:flex-col md:px-5 "
       style={{
         gap: isMobile ? '1.875rem' : '15rem',
       }}
@@ -87,7 +87,7 @@ useEffect(() => {
         <Heading
           size="auto"
           as="h1"
-          className="mt-[1.8125rem] md:mt-[1rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-normal leading-[3.375rem] md:leading-normal text-transparent md:text-[1.875rem]"
+          className="mt-[1.8125rem] md:mt-[1rem] bg-gradient1 bg-clip-text text-left md:text-center font-inter text-[2.333rem] font-normal leading-[3.375rem] md:leading-tight text-transparent md:text-[1.875rem]"
           style={{
             fontSize: isMobile ? '1.25rem' : '',
           }}

@@ -21,7 +21,7 @@ export default function StickyStackSection() {
   }, []);
 
   return (
-    <div className="bg-[url(/images/cognitive/Frame1000004460.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize: isMobile ? '45rem':'105.166rem'}}>
+    <div className="bg-[url(/images/cognitive/Group1000004528.svg)] bg-[center_-1rem] bg-no-repeat" style={{backgroundSize: isMobile ? '45rem':'113rem'}}>
       <div
         ref={sectionRef}
         className="relative max-w-[85rem] mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"

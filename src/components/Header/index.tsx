@@ -43,6 +43,7 @@ export default function Header({ ...props }: Props) {
         backgroundColor: isMobile ? "#080c26e6" : "transparent",
         top: isMobile ? 0 : "auto",
         zIndex: "100",
+        height:isMobile ? '64px' : '',
       }}
     >
       <Link
@@ -90,11 +91,11 @@ export default function Header({ ...props }: Props) {
 >
 
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive#HeroSection" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/cognitive#HeroSection" className={`hidden cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
-              className={`text-[20px] font-medium hidden ${
+              className={`text-[20px] font-medium  ${
                 pathname === "/cognitive"
                   ? "text-blue-100"
                   : "text-blue_gray-300 hover:text-blue-100"

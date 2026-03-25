@@ -111,7 +111,7 @@ export default function StickyStackSection() {
                     </div>
 
                     <img
-                      className="self-end bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_60%)] flex-[0_0_8.9rem] w-[8.9rem] h-[8.9rem] md:flex-[0_0_3.125rem] md:w-[3.125rem] md:h-[3.125rem] md:py-[1rem] pointer-events-none select-none py-[2.15rem] rounded-[0.625rem]"
+                      className="self-end bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_60%)] flex-[0_0_8.9rem] w-[8.9rem] h-[8.9rem] md:flex-[0_0_3.125rem] md:w-[3.125rem] md:h-[3.125rem] md:py-[.5rem] pointer-events-none select-none py-[2.15rem] rounded-[0.625rem] md:rounded-[0.25rem]"
                       src={`/images/cognitive/${card.image}`}
                     />
                   </div>

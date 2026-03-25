@@ -50,7 +50,7 @@ export default function CognitivePage() {
       <div
         className="flex md:min-h-fit flex-col gap-[6.5rem] md:h-auto md:gap-[10.375rem] sm:gap-[6.9375rem] mt-[6.25rem]"
         id='HeroSection'
-        style={{ marginTop: isMobile ? '5rem' : '' }}
+        style={{ marginTop: isMobile ? '4rem' : '' }}
       >
         {fetchedSection && <HeroSection />}
         <img
@@ -66,13 +66,13 @@ export default function CognitivePage() {
 
       {fetchedSection && <SectionOne />}
       {fetchedSection && <SectionTwo />}
-      {/* {fetchedSection && <SectionThreeOne />} */}
       {fetchedSection && <SectionThree />}
       {fetchedSection && <SectionFive />}
       {fetchedSection && <SectionSix />}
       {fetchedSection && <SectionSeven />}
-      {/* {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />} */}
       {fetchedSection && <SectionEight />}
+      {/* {fetchedSection && <SectionThreeOne />} */}
+      {/* {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />} */}
       
 
       <div className="bg-gray-900 py-[7.5rem] lg:py-8 md:py-5 sm:py-4 mb-[3.5rem] md:mb-0">

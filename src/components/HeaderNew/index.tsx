@@ -87,6 +87,7 @@ export default function Header({ ...props }: Props) {
           backgroundColor: isMobile ? '#080c26e6' : 'transparent',
           top: isMobile ? 0 : 'auto',
           zIndex: '100',
+          height:isMobile ? '4rem' : '',
         }}
       >
         <Link href="/cognitive#HeroSection">
