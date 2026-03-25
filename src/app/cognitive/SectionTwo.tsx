@@ -53,7 +53,7 @@ export default function StickyStackSection() {
                     src={`/images/cognitive/IIcon.svg`}
                   />
                 </div>
-                RAG
+                Probabilistic RAG
               </div>
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
                 RAG does Top-K vector similarity search for{' '}

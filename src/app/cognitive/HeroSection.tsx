@@ -22,10 +22,11 @@ useEffect(() => {
   // Array of possible images
   const images = [
       '/images/cognitive/Graphics.svg',
+      '/images/cognitive/Graphics.svg',
       // '/images/cognitive/Graphics.svg',
     // '/images/cognitive/Frame.svg',
     // '/images/cognitive/vector1.png',
-    '/images/cognitive/vector1.png',
+    // '/images/cognitive/vector1.png',
   ];
   
   // Get the current index from localStorage
