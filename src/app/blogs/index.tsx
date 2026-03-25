@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import BlogCard from "./BlogCard";
 import { Heading } from "../../components";
 import TesthomeRowOne from "../home/TesthomeRowOne";
@@ -36,8 +35,6 @@ export default function BlogPage() {
 
   return (
     <div className="w-full">
-      <Header />
-
       <div className="flex flex-col items-center gap-1 m-[220px_0_100px] md:m-[120px_0_42px]">
         <Heading
           size="text4xl"

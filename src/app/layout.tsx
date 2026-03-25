@@ -1,6 +1,7 @@
 'use client';
 import Header from '../components/Header';
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import '@/styles/tailwind.css';
 import '../styles/index.css';
 import '../styles/font.css';
@@ -16,19 +17,101 @@ import Script from 'next/script';
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
+  const isFirstLoadRef = useRef(true);
+  const navFallbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   console.log(pathname);
 
   useEffect(() => {
-    const simulateLoading = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setTimeout(() => {
+    // Keep first-load intro duration, but for route changes hide only after the new page paints.
+    if (isFirstLoadRef.current) {
+      setIsLoading(true);
+      const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 0);
+      }, 1800);
+      isFirstLoadRef.current = false;
+      return () => clearTimeout(timer);
+    }
+
+    let raf1 = 0;
+    let raf2 = 0;
+    let hideTimer: ReturnType<typeof setTimeout> | null = null;
+    raf1 = window.requestAnimationFrame(() => {
+      raf2 = window.requestAnimationFrame(() => {
+        // Keep loader visible for an extra 1s on every route change.
+        hideTimer = setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(raf1);
+      window.cancelAnimationFrame(raf2);
+      if (hideTimer) clearTimeout(hideTimer);
+    };
+  }, [pathname]);
+
+  useEffect(() => {
+    // Trigger loader immediately on internal link interaction (before pathname updates).
+    const handleNavigationIntent = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+
+      const anchor = target.closest('a');
+      if (!anchor) return;
+      if (anchor.target === '_blank') return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href || href.startsWith('#')) return;
+
+      let destination: URL;
+      try {
+        destination = new URL(href, window.location.origin);
+      } catch {
+        return;
+      }
+
+      if (destination.origin !== window.location.origin) return;
+
+      const destinationPath = `${destination.pathname}${destination.search}`;
+      const currentPath = `${window.location.pathname}${window.location.search}`;
+      if (destinationPath === currentPath) return;
+
+      // Force immediate paint of loader so next page content doesn't flash first.
+      flushSync(() => {
+        setIsLoading(true);
+      });
+
+      // Safety: if navigation is cancelled/blocked and pathname does not change,
+      // do not keep the loader open indefinitely.
+      if (navFallbackTimerRef.current) {
+        clearTimeout(navFallbackTimerRef.current);
+      }
+      navFallbackTimerRef.current = setTimeout(() => {
+        setIsLoading(false);
+        navFallbackTimerRef.current = null;
+      }, 1800);
     };
 
-    simulateLoading();
+    document.addEventListener('click', handleNavigationIntent, true);
+    return () => {
+      document.removeEventListener('click', handleNavigationIntent, true);
+      if (navFallbackTimerRef.current) {
+        clearTimeout(navFallbackTimerRef.current);
+        navFallbackTimerRef.current = null;
+      }
+    };
   }, []);
+
+  useEffect(() => {
+    // Route changed successfully: clear any pending fallback timer.
+    if (navFallbackTimerRef.current) {
+      clearTimeout(navFallbackTimerRef.current);
+      navFallbackTimerRef.current = null;
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (!isLoading && pathname !== '/cognitive') {

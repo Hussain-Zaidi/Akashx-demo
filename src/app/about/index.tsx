@@ -1,6 +1,5 @@
 "use client";
 import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import TestaboutColumnOne from "./TestaboutColumnOne";
 import TestaboutColumnTwo from "./TestaboutColumnTwo";
 import TestaboutColumnThree from "./TestaboutColumnThree";
@@ -58,7 +57,6 @@ export default function TestAboutPage() {
         marginTop: isMobile  ? '80px': "",
       }}
       >
-        <Header />
         {fetchedSection && <TestaboutRowakashxis fetchedSection={fetchedSection} />}
       </div>
       <div className="bg-gray-900 py-[128px] lg:py-8 md:py-[55px]">

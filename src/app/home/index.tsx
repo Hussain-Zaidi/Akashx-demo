@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import TesthomeColumnFive from "./TesthomeColumnFive";
 import TesthomeColumnOne from "./TesthomeColumnOne";
 import TesthomeRowOne from "./TesthomeRowOne";
@@ -34,7 +33,6 @@ export default function TestHomePage() {
 
   return (
     <div className="w-full">
-        <Header />
       <div className="flex min-h-[1000px] md:min-h-[0] flex-col gap-[250px] bg-[url(/images/img_image.webp)] md:bg-[url(/images/mobileHero.png)] bg-cover bg-no-repeat pt-11 pb-8 lg:h-auto lg:gap-[168px] md:h-auto md:gap-[168px] sm:gap-28 sm:py-4 md:bg-[position:-0%_75%] md:bg-contain md:mt-[40px]">
         {fetchedSection && <TesthomeColumnOne fetchedSection={fetchedSection} />}
       </div>
