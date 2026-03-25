@@ -85,8 +85,7 @@ export default function StickyStackSection() {
                 <span className="text-[#1CBC6E] font-semibold">
                   deterministic inferencing{' '}
                 </span>
-                via smart <br className="md:hidden" />
-                brute forcing for <span className='font-semibold'>accurate results</span>.
+                via smart brute forcing for <span className='font-semibold'>accurate results</span>.
               </div>
               <div className="flex justify-end">
                 <img
