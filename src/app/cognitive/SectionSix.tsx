@@ -170,7 +170,7 @@ export default function EnterpriseUseCases() {
 
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % tabs.length);
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [paused]);

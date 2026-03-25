@@ -96,7 +96,7 @@ export default function SectionOne() {
         {features.map((feature) => (
           <div
             key={feature.id}
-            className={`md:w-[100%] w-[24rem] text-[#CDDAED] font-inter text-[1.5rem] md:text-[1rem] flex flex-col md:flex-row items-statrt gap-[1.375rem] md:gap-[1rem] justify-center `}
+            className={`md:w-[96%] w-[24rem] text-[#CDDAED] font-inter text-[1.5rem] md:text-[1rem] flex flex-col md:flex-row items-statrt gap-[1.375rem] md:gap-[1rem] justify-center `}
           >
             {/* <img
               className="w-[2rem] h-[2rem] md:w-[1.5rem] md:h-[1.5rem] pointer-events-none select-none"

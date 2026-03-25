@@ -58,7 +58,7 @@ export default function StickyStackSection() {
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
                 RAG does Top-K vector similarity search for{' '}
                 <br className="md:hidden" />
-                <span className="text-[#FE823D]">probabilistic results.</span>
+                <span className="text-[#FE823D] font-semibold">probabilistic results.</span>
               </div>
               <div className="flex justify-end">
                 <img
@@ -82,11 +82,11 @@ export default function StickyStackSection() {
               </div>
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
                 Cognitive does{' '}
-                <span className="text-[#1CBC6E]">
+                <span className="text-[#1CBC6E] font-semibold">
                   deterministic inferencing{' '}
                 </span>
                 via smart <br className="md:hidden" />
-                brute forcing for <b>accurate results</b>.
+                brute forcing for <span className='font-semibold'>accurate results</span>.
               </div>
               <div className="flex justify-end">
                 <img
