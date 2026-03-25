@@ -81,7 +81,7 @@ export default function StickyStackSection() {
                 Cognitive SQL
               </div>
               <div className="text-[#B8D0F2] font-inter text-[1.5rem] md:text-[1rem]">
-                Cognitive does{' '}
+                Cognitive SQL does{' '}
                 <span className="text-[#1CBC6E] font-semibold">
                   deterministic inferencing{' '}
                 </span>

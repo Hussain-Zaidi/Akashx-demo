@@ -15,7 +15,7 @@ const cards = [
     title: 'Cognitive Classify',
     desc: 'Apply semantic classification across large datasets.',
     example:
-    'Apply semantic classification across rows and files (audio, video, office, pdf)',
+    'Classify rows and documents into fraud risk, complaint type, or renewal intent.',
     image: 'streamline-plump_hierarchy-15.svg'
   },
   // {

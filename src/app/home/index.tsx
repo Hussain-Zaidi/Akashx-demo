@@ -8,6 +8,7 @@ import TesthomeKeyUse from "./TesthomeKeyUse";
 import TesthomeRowquarteryour from "./TesthomeRowquarteryour2";
 import TesthomeRowstorage from "./TesthomeRowstorage";
 import {STRAPI_URL} from '@/utils/url'
+import { useRouter } from "next/navigation";
 
 export default function TestHomePage() {
   // Use state to hold the fetched section data
@@ -29,6 +30,12 @@ export default function TestHomePage() {
     };
 
     fetchData();
+  }, []);
+
+const router = useRouter();
+  
+  useEffect(() => {
+    router.replace("/cognitive"); // no back button history
   }, []);
 
   return (

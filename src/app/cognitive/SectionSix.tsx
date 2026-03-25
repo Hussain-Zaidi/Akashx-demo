@@ -79,7 +79,7 @@ const tabs: Tab[] = [
      {
         heading: 'Healthcare Insights',
         description:
-          'Identify emerging symptom clusters across large clinical note collections.',
+          'Uncover emerging symptom topics across vast clinical notes.',
         image: 'Maskgroup2.svg',
       },
       // {
@@ -104,7 +104,7 @@ const tabs: Tab[] = [
     items: [
       {
         heading: 'Talent Insights',
-        description: 'Analyze thousands of resumes to identify career trajectories and leadership transitions.',
+        description: 'Identify high-potential candidates by analyzing skills, experience, and role progression across 100s of thousands of resumes.',
         image: 'Maskgroup3.svg',
       },
       
