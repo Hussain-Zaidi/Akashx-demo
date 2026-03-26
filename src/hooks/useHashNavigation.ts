@@ -6,6 +6,14 @@ export default function useHashNavigation() {
   const [offset, setOffset] = useState(0);
   const hasScrolled = useRef(false);
   const isScrolling = useRef(false);
+  const retryTimeouts = useRef<NodeJS.Timeout[]>([]);
+  const activeRetry = useRef<{ hash: string; attempt: number } | null>(null);
+
+  // Clear all pending retries
+  const clearRetries = useCallback(() => {
+    retryTimeouts.current.forEach(timeout => clearTimeout(timeout));
+    retryTimeouts.current = [];
+  }, []);
 
   // Calculate offset once on mount
   useEffect(() => {
@@ -15,11 +23,17 @@ export default function useHashNavigation() {
     setOffset(10 * rootFontSize);
   }, []);
 
-  const scrollToElement = useCallback((hash: string) => {
-    if (!offset) return false; // ⛔ Important guard
+  const scrollToElement = useCallback((hash: string): boolean => {
+    if (!offset) return false;
     
     const element = document.getElementById(hash);
     if (element && !isScrolling.current) {
+      // Clear any ongoing retry for this hash
+      if (activeRetry.current?.hash === hash) {
+        clearRetries();
+        activeRetry.current = null;
+      }
+
       isScrolling.current = true;
 
       requestAnimationFrame(() => {
@@ -34,26 +48,54 @@ export default function useHashNavigation() {
       return true;
     }
     return false;
-  }, [offset]);
+  }, [offset, clearRetries]);
+
+  const retryScroll = useCallback((hash: string, attempt: number = 0) => {
+    // Maximum 20 retries (about 10 seconds total with increasing delays)
+    if (attempt >= 20) {
+      console.warn(`Failed to scroll to ${hash} after ${attempt} attempts`);
+      activeRetry.current = null;
+      return;
+    }
+
+    // Check if element exists
+    if (scrollToElement(hash)) {
+      activeRetry.current = null;
+      return;
+    }
+
+    // Exponential backoff: 200ms, 300ms, 450ms, 675ms, etc. (capped at 2 seconds)
+    const delay = Math.min(200 * Math.pow(1.5, attempt), 2000);
+    
+    const timeout = setTimeout(() => {
+      retryScroll(hash, attempt + 1);
+    }, delay);
+    
+    retryTimeouts.current.push(timeout);
+  }, [scrollToElement]);
 
   const handleNavigation = useCallback((hash: string) => {
     if (!hash) return;
     
-    // Small delay to ensure DOM is ready
-    setTimeout(() => {
-      if (scrollToElement(hash)) return;
-      
-      // Retry with increasing delays if element not found
-      const retryDelays = [200, 400, 800];
-      retryDelays.forEach(delay => {
-        setTimeout(() => scrollToElement(hash), delay);
-      });
-    }, 100);
-  }, [scrollToElement]);
+    // Clear any existing retries for different hash
+    if (activeRetry.current && activeRetry.current.hash !== hash) {
+      clearRetries();
+      activeRetry.current = null;
+    }
+    
+    // Cancel any ongoing scroll
+    if (isScrolling.current) {
+      isScrolling.current = false;
+    }
+    
+    // Start retry mechanism
+    activeRetry.current = { hash, attempt: 0 };
+    retryScroll(hash);
+  }, [retryScroll, clearRetries]);
 
-  // 🔥 Step 1: Wait until offset is ready before handling initial hash
+  // Wait until offset is ready before handling initial hash
   useEffect(() => {
-    if (!offset) return; // ⛔ Wait until offset is calculated
+    if (!offset) return;
     
     const initialHash = window.location.hash.replace("#", "");
     if (initialHash && !hasScrolled.current) {
@@ -62,7 +104,7 @@ export default function useHashNavigation() {
     }
   }, [offset, handleNavigation]);
 
-  // 🔥 Step 2: Handle hash changes and click events
+  // Handle hash changes and click events
   useEffect(() => {
     // Handle hash changes
     const onHashChange = () => {
@@ -72,7 +114,7 @@ export default function useHashNavigation() {
       }
     };
 
-    // 🔥 Step 3: Fixed anchor click handler with better path comparison
+    // Handle anchor clicks
     const onAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
@@ -84,18 +126,14 @@ export default function useHashNavigation() {
           const currentPath = window.location.pathname;
           const targetPath = url.pathname;
           
-          // Check if it's an internal hash link
           if (hash) {
             const elementId = hash.replace("#", "");
             
-            // ✅ Only prevent default if it's the same page
             if (targetPath === currentPath) {
               e.preventDefault();
               window.history.pushState(null, "", hash);
               handleNavigation(elementId);
             }
-            // For different pages, let the navigation happen normally
-            // The page will load and the initial hash effect will handle scrolling
           }
         } catch (error) {
           console.error('Error handling anchor click:', error);
@@ -103,14 +141,32 @@ export default function useHashNavigation() {
       }
     };
 
+    // Handle dynamic content mutations (for content that loads asynchronously)
+    const observer = new MutationObserver((mutations) => {
+      // If we have an active retry, check if the element appeared
+      if (activeRetry.current) {
+        const element = document.getElementById(activeRetry.current.hash);
+        if (element) {
+          scrollToElement(activeRetry.current.hash);
+        }
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
     window.addEventListener('hashchange', onHashChange);
     document.addEventListener('click', onAnchorClick);
     
     return () => {
       window.removeEventListener('hashchange', onHashChange);
       document.removeEventListener('click', onAnchorClick);
+      observer.disconnect();
+      clearRetries();
     };
-  }, [handleNavigation]);
+  }, [handleNavigation, scrollToElement, clearRetries]);
 
   return null;
 }

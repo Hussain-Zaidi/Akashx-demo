@@ -18,22 +18,22 @@ import TesthomeRowquarteryour from './TesthomeRowquarteryour2';
 
 export default function CognitivePage() {
   const [isMobile, setIsMobile] = useState(false);
-  const [fetchedSection, setFetchedSection] = useState<any>(null); // Use `any` if you don't want to define a type
-  const apiURl = `${STRAPI_URL}/api/akashx-home-pages`;
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(apiURl);
-        const jsonData = await response.json();
-        const sectionData = jsonData?.data?.[0] ?? null;
-        setFetchedSection(sectionData);
-      } catch (error) {
-        console.error('Error fetching API data:', error);
-      }
-    };
+  // const [fetchedSection, setFetchedSection] = useState<any>(null); // Use `any` if you don't want to define a type
+  // const apiURl = `${STRAPI_URL}/api/akashx-home-pages`;
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(apiURl);
+  //       const jsonData = await response.json();
+  //       const sectionData = jsonData?.data?.[0] ?? null;
+  //       setFetchedSection(sectionData);
+  //     } catch (error) {
+  //       console.error('Error fetching API data:', error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,7 +52,8 @@ export default function CognitivePage() {
         id='HeroSection'
         style={{ marginTop: isMobile ? '4rem' : '' }}
       >
-        {fetchedSection && <HeroSection />}
+        {/* {fetchedSection && <HeroSection />} */}
+        <HeroSection />
         <img
           className="w-full absolute block md:hidden   pointer-events-none select-none"
           src="/images/cognitive/Container.svg"
@@ -64,19 +65,30 @@ export default function CognitivePage() {
         
       </div>
 
-      {fetchedSection && <SectionOne />}
+      {/* {fetchedSection && <SectionOne />}
       {fetchedSection && <SectionTwo />}
       {fetchedSection && <SectionThree />}
       {fetchedSection && <SectionFive />}
       {fetchedSection && <SectionSix />}
       {fetchedSection && <SectionSeven />}
-      {fetchedSection && <SectionEight />}
+      {fetchedSection && <SectionEight />} */}
+
+
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFive />
+      <SectionSix />
+      <SectionSeven />
+      <SectionEight />
+
       {/* {fetchedSection && <SectionThreeOne />} */}
       {/* {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />} */}
       
 
       <div className="bg-gray-900 py-[7.5rem] md:py-0 mb-[3.5rem] md:mb-0">
-        {fetchedSection && <TesthomeRowOne fetchedSection={fetchedSection} />}
+        {/* {fetchedSection && <TesthomeRowOne fetchedSection={fetchedSection} />} */}
+        <TesthomeRowOne fetchedSection={[]} />
       </div>
 
       <div>
