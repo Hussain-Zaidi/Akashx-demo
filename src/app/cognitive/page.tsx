@@ -4,11 +4,11 @@ import Page from ".";
 
 export const metadata: Metadata = {
   title: "Cognitive",
-  description: "World’s #1 Storage Accelerated Data Warehouse",
+  description: "World’s #1 OLCP Database.",
   //ogTitle:'...'
   openGraph: {
     title: "Cognitive",
-    description: "World’s #1 Storage Accelerated Data Warehouse",
+    description: "World’s #1 OLCP Database.",
     images: [
       {
         url: "/images/akashx.png", // replace with your actual image URL
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cognitive",
-    description: "World’s #1 Storage Accelerated Data Warehouse",
+    description: "World’s #1 OLCP Database.",
     images: ["/images/akashx.png"], // same image
   },
 };
