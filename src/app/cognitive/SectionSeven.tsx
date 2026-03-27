@@ -57,7 +57,7 @@ export default function StickyStackSection() {
             />
           </div>
 
-          <div className="w-[80%] md:w-11/12 h-[0.1rem] bg-[linear-gradient(90deg,#2941591A,#41668C,#2941591A)]"></div>
+          <div className="w-[80%] md:w-11/12 h-[0.1rem] md:h-[1px] bg-[linear-gradient(90deg,#2941591A,#41668C,#2941591A)]"></div>
 
           <div className="flex gap-6 pt-[2.7rem] md:pt-4">
             <div className="text-[#75BAFF] text-[1.5rem] md:text-[0.875rem] md:leading-auto font-semibold md:font-medium font-inter text-center">
