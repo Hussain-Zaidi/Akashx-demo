@@ -39,30 +39,31 @@ const router = useRouter();
   }, []);
 
   return (
-    <div className="w-full">
-      <div className="flex min-h-[1000px] md:min-h-[0] flex-col gap-[250px] bg-[url(/images/img_image.webp)] md:bg-[url(/images/mobileHero.png)] bg-cover bg-no-repeat pt-11 pb-8 lg:h-auto lg:gap-[168px] md:h-auto md:gap-[168px] sm:gap-28 sm:py-4 md:bg-[position:-0%_75%] md:bg-contain md:mt-[40px]">
-        {fetchedSection && <TesthomeColumnOne fetchedSection={fetchedSection} />}
-      </div>
+    <div></div>
+    // <div className="w-full">
+    //   <div className="flex min-h-[1000px] justify-end md:min-h-[0] flex-col gap-[250px] bg-[url(/images/img_image.webp)] md:bg-[url(/images/mobileHero.png)] bg-cover bg-no-repeat pt-11 pb-8 lg:h-auto lg:gap-[168px] md:h-auto md:gap-[168px] sm:gap-28 sm:py-4 md:bg-[position:-0%_75%] md:bg-contain md:mt-[40px]">
+    //     {fetchedSection && <TesthomeColumnOne fetchedSection={fetchedSection} />}
+    //   </div>
 
-      {fetchedSection && <TesthomeRowstorage fetchedSection={fetchedSection} />}
+    //   {fetchedSection && <TesthomeRowstorage fetchedSection={fetchedSection} />}
 
-      {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />}
+    //   {fetchedSection && <TesthomeRowquarteryour fetchedSection={fetchedSection} />}
 
-      <div className="min-h-[1140px] md:min-h-[0] bg-[url(/images/img_image_1140x1920.webp)] bg-cover bg-no-repeat py-[120px] lg:h-auto lg:py-8 md:h-auto md:py-5 sm:py-4 bg-[position:40%_20px]  md:bg-[position:80%_0px] md:bg-[size:350%]">
-        {fetchedSection && <TesthomeColumnFive fetchedSection={fetchedSection} />}
-      </div>
+    //   <div className="min-h-[1140px] md:min-h-[0] bg-[url(/images/img_image_1140x1920.webp)] bg-cover bg-no-repeat py-[120px] lg:h-auto lg:py-8 md:h-auto md:py-5 sm:py-4 bg-[position:40%_20px]  md:bg-[position:80%_0px] md:bg-[size:350%]">
+    //     {fetchedSection && <TesthomeColumnFive fetchedSection={fetchedSection} />}
+    //   </div>
 
-      <div className="bg-gray-900 py-[120px] lg:py-8 md:py-5 sm:py-4">
-        {fetchedSection && <TesthomeKeyUse fetchedSection={fetchedSection} />}
-      </div>
+    //   <div className="bg-gray-900 py-[120px] lg:py-8 md:py-5 sm:py-4">
+    //     {fetchedSection && <TesthomeKeyUse fetchedSection={fetchedSection} />}
+    //   </div>
 
-      <div className="bg-gray-900 py-[120px] lg:py-8 md:py-5 sm:py-4 mb-[56px] md:mb-0">
-      {fetchedSection && <TesthomeRowOne fetchedSection={fetchedSection} />}
-      </div>
+    //   <div className="bg-gray-900 py-[120px] lg:py-8 md:py-5 sm:py-4 mb-[56px] md:mb-0">
+    //   {fetchedSection && <TesthomeRowOne fetchedSection={fetchedSection} />}
+    //   </div>
 
-      <div>
-        <Footer />
-      </div>
-    </div>
+    //   <div>
+    //     <Footer />
+    //   </div>
+    // </div>
   );
 }

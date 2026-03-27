@@ -26,12 +26,12 @@ export default function Footer({ ...props }: Props) {
                   width={166}
                   height={38}
                   alt="Footerlogo"
-                  className="h-[2.375rem] w-[10.375rem] object-contain md:w-[6.5rem]"
+                  className="h-[3.25rem] w-[13.875rem] object-contain md:w-[6.5rem] md:h-auto"
                 />
                 <Heading
                   size="auto"
                   as="h5"
-                  className="bg-gradient bg-clip-text font-montserrat text-[1.375rem] font-extrabold leading-7 text-transparent md:text-[1rem] md:leading-[1.3125rem]"
+                  className="bg-gradient bg-clip-text font-montserrat text-[1.666rem] font-extrabold leading-[2.33135rem] text-transparent md:text-[1rem] md:leading-[1.3125rem]"
                 >
                   <>
                     {/* World’s #1<br />
@@ -59,28 +59,28 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[1.375rem] font-bold md:font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[.875rem]"
+                  className="font-montserrat text-[1.375rem] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#B8D0F2] md:text-[.875rem]"
                 >
                   PLATFORM
                 </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-4">
                   <li>
                     <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                         Cognitive SQL          
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/cognitive#OntlogyViews" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                        Ontlogy Views 
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/cognitive#UseCases" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                        Use Cases
                       </Heading>
                     </Link>
@@ -106,28 +106,28 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[1.375rem] font-bold md:font-semibolduppercase tracking-[1.00px] text-blue_gray-100 md:text-[0.875rem]"
+                  className="font-montserrat text-[1.375rem] font-bold md:font-semibolduppercase tracking-[1.00px] text-[#B8D0F2] md:text-[0.875rem]"
                 >
                   COMPANY
                 </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-4">
                   {/* <li>
                     <Link href="/cognitive" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="uppercase font-inter text-[1.125rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="uppercase font-inter text-[1.125rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                         Home
                       </Heading>
                     </Link>
                   </li> */}
                   <li>
                     <Link href="/about" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                        About
                       </Heading>
                     </Link>
                   </li>
                   <li>
                     <Link href="/blogs" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                        Blogs
                       </Heading>
                     </Link>
@@ -154,14 +154,14 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[1.375rem] font-bold md:font-semibold uppercase tracking-[1.00px] text-blue_gray-100 md:text-[0.875rem]"
+                  className="font-montserrat text-[1.375rem] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#B8D0F2] md:text-[0.875rem]"
                 >
                   Contact us
                 </Heading>
                 <ul className="flex flex-col items-start gap-6">
                   <li>
                     <Link href="mailto:contact@akashx.ai" rel="noreferrer" className="md:text-[0.875rem]">
-                      <Heading size="auto" as="p" className="font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-blue_gray-100 hover:text-indigo-50 hover:underline">
+                      <Heading size="auto" as="p" className="font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                       contact@akashx.ai
                       </Heading>
                     </Link>

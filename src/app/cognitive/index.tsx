@@ -48,16 +48,20 @@ export default function CognitivePage() {
     <div className="w-full relative CognitivePage">
       <Header />
       <div
-        className="flex md:min-h-fit flex-col gap-[6.5rem] md:h-auto md:gap-[10.375rem] sm:gap-[6.9375rem] mt-[6.25rem]"
+        className="flex items-center md:min-h-fit flex-col gap-[6.5rem] md:h-auto md:gap-[10.375rem] sm:gap-[6.9375rem] mt-[6.25rem]"
         id='HeroSection'
         style={{ marginTop: isMobile ? '4rem' : '' }}
       >
         {/* {fetchedSection && <HeroSection />} */}
         <HeroSection />
         <img
+          className="w-[60rem] h-[64rem] opacity-20 absolute block md:hidden   pointer-events-none select-none"
+          src="/images/cognitive/Group1000004535.svg"
+        />
+        {/* <img
           className="w-full absolute block md:hidden   pointer-events-none select-none"
           src="/images/cognitive/Container.svg"
-        />
+        /> */}
         <img
           className="w-full absolute md:block hidden pointer-events-none select-none mt-[9rem]"
           src="/images/cognitive/Container-mobile.svg"

@@ -9,14 +9,14 @@ const cards = [
     desc: 'Reason across documents and relational tables.',
     example:
       'Spot AI investment signals by joining earnings transcripts with market data',
-    image: 'material-symbols-light_join-left.svg'
+    image: 'material-symbols-light_join-left.svg',
   },
   {
     title: 'Cognitive Classify',
     desc: 'Apply semantic classification across large datasets.',
     example:
-    'Classify rows and documents into fraud risk, complaint type, or renewal intent.',
-    image: 'streamline-plump_hierarchy-15.svg'
+      'Classify rows and documents into fraud risk, complaint type, or renewal intent.',
+    image: 'streamline-plump_hierarchy-15.svg',
   },
   // {
   //   title: 'Cognitive Group By',
@@ -29,8 +29,8 @@ const cards = [
     title: 'Cognitive Topic Discovery',
     desc: 'Discovery topics of interest from existing datasets.',
     example:
-    'Discover Weight Loss impacts of Diabetes drugs in clinical trials',
-    image: 'lets-icons_chat-search.svg'
+      'Discover Weight Loss impacts of Diabetes drugs in clinical trials',
+    image: 'lets-icons_chat-search.svg',
   },
 ];
 
@@ -51,14 +51,14 @@ export default function StickyStackSection() {
   }, []);
 
   return (
-    <div className="" id='CognitiveSQL'>
+    <div className="" id="CognitiveSQL">
       <div
         ref={sectionRef}
         className="relative mx-auto px-6 mb-[12.5rem] md:mb-[6rem]"
       >
         {/* Sticky Heading */}
         {/* <div className="sticky top-28 z-9 text-center mb-[7.833rem] md:mb-12"> */}
-          
+
         {/* </div> */}
 
         {/* Cards */}
@@ -68,34 +68,51 @@ export default function StickyStackSection() {
               key={i}
               className="sticky top-[26.4rem] md:sticky "
               style={{
-                top: isMobile ? i==0 ? '6rem' :`${16.2 + i * 3.5}rem` : i==0 ? '10rem' :`${25 + i * 5.5}rem`,
+                top: isMobile
+                  ? i == 0
+                    ? '6rem'
+                    : `${16.2 + i * 3.5}rem`
+                  : i == 0
+                    ? '10rem'
+                    : `${25 + i * 5.5}rem`,
                 zIndex: 10 + i,
               }}
             >
-              {i == 0 &&(
-                <div className="text-center mb-12 md:mb-10" style={{width:'110%', marginLeft:'-5%'}}>
-            <Heading
-              size="auto"
-              as="h1"
-              className="bg-gradient1 bg-clip-text text-center font-montserrat text-[3rem] font-bold leading-tight md:leading-tight text-transparent "
-              style={{
-                fontSize: isMobile ? '1.5rem' : '',
-              }}
-            >
-              SQL with reasoning  <br /> on PB scale data
-            </Heading>
-            <p className="md:leading-6 mt-[2.125rem] md:mt-[1rem] text-[#B8D0F2] text-[1.666rem] md:text-[0.875rem] font-normal font-inter">
-              No Vector DB <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> No RAG-Pipelines <span className='text-[#556E94] mx-[0.25rem] inline-block md:hidden'>•</span><br className='hidden md:block' /> No LLM Orchestration 
-              {/* <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> Just SQL */}
-            </p>
-          </div>
+              {i == 0 && (
+                <div
+                  className="text-center mb-12 md:mb-10"
+                  style={{ width: '110%', marginLeft: '-5%' }}
+                >
+                  <Heading
+                    size="auto"
+                    as="h1"
+                    className="bg-gradient1 bg-clip-text text-center font-montserrat text-[3rem] font-bold leading-tight md:leading-tight text-transparent "
+                    style={{
+                      fontSize: isMobile ? '1.5rem' : '',
+                    }}
+                  >
+                    SQL with reasoning <br /> on PB scale data
+                  </Heading>
+                  <p className="md:leading-6 mt-[2.125rem] md:mt-[1rem] text-[#B8D0F2] text-[1.666rem] md:text-[0.875rem] font-normal font-inter">
+                    No Vector DB{' '}
+                    <span className="text-[#556E94] mx-[0.25rem] inline-block">
+                      •
+                    </span>{' '}
+                    No RAG-Pipelines{' '}
+                    <span className="text-[#556E94] mx-[0.25rem] inline-block md:hidden">
+                      •
+                    </span>
+                    <br className="hidden md:block" /> No LLM Orchestration
+                    {/* <span className='text-[#556E94] mx-[0.25rem] inline-block'>•</span> Just SQL */}
+                  </p>
+                </div>
               )}
               <div className="shadow-[0_0_2.5rem_0_#75BAFF33] md:shadow-[0_0_1rem_0_#75BAFF33] rounded-[2.5rem] md:rounded-[1.25rem]  bg-[linear-gradient(180deg,#5439CC_50%,#30D5C8)] p-2 md:p-1 ">
                 <h3 className="uppercase text-[#CDDAED] text-[1.833125rem] md:text-base font-bold font-inter p-[1.65rem_2.15rem_2.15rem] md:p-[0.75rem_1rem_1rem] m-auto text-center">
                   {card.title}
                 </h3>
 
-                <div className='bg-[#080C26] p-[0_3.5rem] md:p-4 rounded-[2.5rem] md:rounded-[1.25rem] shadow-[0_0_3.4375rem_0_#75BAFF33] md:shadow-[0_0_1.5rem_0_#75BAFF33] h-[19.9168rem] md:h-[10rem] md:flex md:flex-col' >
+                <div className="bg-[#080C26] p-[0_3.5rem] md:p-4 rounded-[2.5rem] md:rounded-[1.25rem] shadow-[0_0_3.4375rem_0_#75BAFF33] md:shadow-[0_0_1.5rem_0_#75BAFF33] h-[19.9168rem] md:h-[10rem] md:flex md:flex-col">
                   <p className="p-[3.166875rem_0_2.666875rem] md:p-0 text-[#B8D0F2] text-[1.666875rem] md:text-[1rem] font-normal font-inter md:mb-4">
                     {card.desc}
                   </p>
@@ -109,11 +126,14 @@ export default function StickyStackSection() {
                         {card.example}
                       </p>
                     </div>
-
-                    <img
-                      className="self-end bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_60%)] flex-[0_0_8.9rem] w-[8.9rem] h-[8.9rem] md:flex-[0_0_3.125rem] md:w-[3.125rem] md:h-[3.125rem] md:py-[.5rem] pointer-events-none select-none py-[2.15rem] rounded-[0.625rem] md:rounded-[0.25rem]"
-                      src={`/images/cognitive/${card.image}`}
-                    />
+                    <div className="bg-[linear-gradient(135deg,#7657ff9f,#080c26_70%)] p-[1px] rounded-[0.625rem] md:rounded-[0.25rem] overflow-hidden" >
+                    <div className="bg-[#080c26] rounded-[0.625rem] md:rounded-[0.25rem]" >
+                      <img
+                        className="self-end bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_60%)] flex-[0_0_8.9rem] w-[8.9rem] h-[8.9rem] md:flex-[0_0_3.125rem] md:w-[3.125rem] md:h-[3.125rem] md:py-[.5rem] pointer-events-none select-none py-[2.15rem] rounded-[0.625rem] md:rounded-[0.25rem]"
+                        src={`/images/cognitive/${card.image}`}
+                      />
+                    </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -105,7 +105,7 @@ export default function StickyStackSection() {
               className="md:text-[14px]"
             >
               <div
-                className="blue-green-background-text text-left w-[200%] hover:w-[100%] hover:underline underline-offset-4 bg-clip-text text-transparent text-[1.8333rem] md:text-base font-semibold font-inter"
+                className="blue-green-background-text text-left w-[200%] hover:w-[150%] hover:underline underline-offset-4 bg-clip-text text-transparent text-[1.8333rem] md:text-base font-semibold font-inter"
               >
                 Explore More
               </div>

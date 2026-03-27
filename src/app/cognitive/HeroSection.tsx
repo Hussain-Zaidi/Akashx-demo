@@ -21,8 +21,8 @@ useEffect(() => {
   
   // Array of possible images
   const images = [
-      '/images/cognitive/Graphics.svg',
-      '/images/cognitive/Graphics.svg',
+      '/images/cognitive/Graphics1.svg',
+      '/images/cognitive/Graphics1.svg',
       // '/images/cognitive/Graphics.svg',
     // '/images/cognitive/Frame.svg',
     // '/images/cognitive/vector1.png',

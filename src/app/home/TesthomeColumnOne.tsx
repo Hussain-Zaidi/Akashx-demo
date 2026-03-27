@@ -51,7 +51,7 @@ export default function TesthomeColumnOne({ fetchedSection }: TesthomeColumnOneP
   
         if (response.ok) {
           showNotification(
-            "Your request has been received successfully, and we will get back to you soon.",
+            "We have received your request. Will get back to you soon.",
             "success",
             'requestDemo'
           );

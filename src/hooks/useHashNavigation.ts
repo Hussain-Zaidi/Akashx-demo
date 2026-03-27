@@ -20,7 +20,7 @@ export default function useHashNavigation() {
     if (typeof window === 'undefined') return;
     
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-    setOffset(10 * rootFontSize);
+    setOffset(14 * rootFontSize);
   }, []);
 
   const scrollToElement = useCallback((hash: string): boolean => {
