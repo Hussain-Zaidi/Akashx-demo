@@ -57,7 +57,7 @@ export default function CognitivePage() {
         <div className='absolute w-full overflow-hidden h-[80rem] flex justify-center'>
 
         <img
-          className="w-[160rem] h-[100rem] opacity-[.3] absolute left-[7rem] top-[-20rem] block md:hidden   pointer-events-none select-none"
+          className="w-[100rem] h-[90rem] opacity-[.26] absolute left-[15rem] top-[-5rem] block md:hidden   pointer-events-none select-none"
           src="/images/cognitive/Group1000004535.svg"
           />
           </div>
