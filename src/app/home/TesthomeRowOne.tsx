@@ -251,7 +251,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
       <div className="container-xs flex justify-center lg:px-5 md:px-[15px] max-w-[100%] mx-[105px] md:mx-auto">
         <div
           // className="relative flex h-[650px] md:h-[400px] w-full flex-col items-center gap-[42px] md:gap-[32px] rounded-[20px] border border-solid border-blue-a100 bg-[url(/images/img_image_650x1608.webp)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-20 shadow-xs lg:h-auto lg:py-8 md:px-[18px] md:py-[40px] md:mb-[100px]"
-          className="relative flex h-[650px] md:h-[352px] w-full flex-col items-center gap-[42px] md:gap-[32px] rounded-[20px] border border-solid border-[rgb(117_186_255_/_60%)] bg-[url(/images/cognitive/Group1000004448.svg)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-20 shadow-xs md:px-[18px] md:py-[40px] md:mb-[100px]"
+          className="relative flex h-[720px] md:h-[352px] w-full flex-col items-center gap-[42px] md:gap-[32px] rounded-[20px] border border-solid border-[rgb(117_186_255_/_60%)] bg-[url(/images/cognitive/Group1000004448.svg)] md:bg-[url(/images/sign.svg)] bg-cover bg-no-repeat px-14 py-20 shadow-xs md:px-[18px] md:py-[40px] md:mb-[100px]"
           style={{
             backgroundSize: isMobile ? "140% 150%" : "110%",
             backgroundPosition: isMobile ? "50% 60%" : "50% 50%",
@@ -259,7 +259,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
         >
           <div className="mx-[46px] flex w-[68%] flex-col items-center gap-3.5 lg:w-full md:mx-0 md:w-full">
             <Heading
-              size="headingxl"
+              size="auto"
               as="h2"
               className="bg-gradient1 bg-clip-text text-center font-montserrat text-[42px] font-extrabold uppercase leading-[60px] text-transparent md:text-[34px]"
               style={{
