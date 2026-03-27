@@ -54,10 +54,13 @@ export default function CognitivePage() {
       >
         {/* {fetchedSection && <HeroSection />} */}
         <HeroSection />
+        <div className='absolute w-full overflow-hidden h-[80rem] flex justify-center'>
+
         <img
           className="w-[115rem] h-[80rem] opacity-20 absolute left-[9rem] block md:hidden   pointer-events-none select-none"
           src="/images/cognitive/Group1000004535.svg"
-        />
+          />
+          </div>
         {/* <img
           className="w-full absolute block md:hidden   pointer-events-none select-none"
           src="/images/cognitive/Container.svg"
