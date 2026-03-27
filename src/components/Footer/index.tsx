@@ -19,14 +19,14 @@ export default function Footer({ ...props }: Props) {
         <div className="flex w-full flex-col items-center">
           <div className="flex w-[100%] items-start justify-between gap-5 md:gap-[60px] self-start lg:w-full md:w-full md:flex-col">
             <div className="flex w-fit whitespace-nowrap flex-col gap-8 md:gap-[18px] md:w-full">
-              <div className="flex flex-col items-start gap-4 md:gap-[6px]">
+              <div className="flex flex-col items-start gap-[24px] md:gap-[16px]">
                 <Img
                   // src="img_footer_logo.svg"
                   src="img_header_logo.svg"
                   width={166}
                   height={38}
                   alt="Footerlogo"
-                  className="h-[52px] w-[222px] object-contain md:w-[104px] md:h-auto"
+                  className="h-[42px] w-[184px] object-contain md:w-[104px] md:h-auto"
                 />
                 <Heading
                   size="auto"
@@ -59,7 +59,7 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#B8D0F2] md:text-[14px]"
+                  className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#CDDAED] md:text-[14px]"
                 >
                   PLATFORM
                 </Heading>
@@ -105,7 +105,7 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#B8D0F2] md:text-[14px]"
+                  className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#CDDAED] md:text-[14px]"
                 >
                   COMPANY
                 </Heading>
@@ -151,7 +151,7 @@ OLCP Database
                 <Heading
                   size="auto"
                   as="h6"
-                  className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#B8D0F2] md:text-[14px]"
+                  className="font-montserrat text-[22px] font-bold md:font-semibold uppercase tracking-[1.00px] text-[#CDDAED] md:text-[14px]"
                 >
                   Contact us
                 </Heading>
@@ -174,7 +174,7 @@ OLCP Database
               </div>
             </div>
           </div>
-          <div className="mt-[118px] md:mt-[80px] h-px self-stretch bg-blue_gray-500_7f w-[1296px] md:w-full mx-auto" />
+          <div className="mt-[118px] md:mt-[80px] h-px self-stretch bg-[linear-gradient(135deg,#080C26,#384861,#080C26)] w-[1296px] md:w-full mx-auto" />
           <Heading
             size="textxs"
             as="p"

@@ -294,7 +294,7 @@ export default function TesthomeRowquarteryour({ fetchedSection }: TesthomeRowOn
               {section.section6_description_p3}
             </Heading> */}
           </div>
-          <div className="mb-[174px] flex w-[695px] justify-center lg:w-full md:w-full">
+          <div className="mb-[174px] flex w-[695px] justify-center md:w-full">
             <Input
               type="email"
               id="requestSignUp"

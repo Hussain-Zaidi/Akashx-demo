@@ -126,7 +126,7 @@ export default function StickyStackSection() {
                         {card.example}
                       </p>
                     </div>
-                    <div className="bg-[linear-gradient(135deg,#7657ff9f,#080c26_70%)] p-[1px] rounded-[0.625rem] md:rounded-[0.25rem] overflow-hidden" >
+                    <div className="bg-[linear-gradient(135deg,#7657ff9f,#080c26_70%)] p-[1px] rounded-[0.625rem] md:rounded-[0.25rem] overflow-hidden opacity-60 flex-[0_0_8.9rem] w-[8.9rem] h-[8.9rem] md:flex-[0_0_3.125rem] md:w-[3.125rem] md:h-[3.125rem]" >
                     <div className="bg-[#080c26] rounded-[0.625rem] md:rounded-[0.25rem]" >
                       <img
                         className="self-end bg-[linear-gradient(135deg,#2B7FFF33_20%,#080d26_60%)] flex-[0_0_8.9rem] w-[8.9rem] h-[8.9rem] md:flex-[0_0_3.125rem] md:w-[3.125rem] md:h-[3.125rem] md:py-[.5rem] pointer-events-none select-none py-[2.15rem] rounded-[0.625rem] md:rounded-[0.25rem]"
