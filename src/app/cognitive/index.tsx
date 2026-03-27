@@ -55,7 +55,7 @@ export default function CognitivePage() {
         {/* {fetchedSection && <HeroSection />} */}
         <HeroSection />
         <img
-          className="w-[60rem] h-[64rem] opacity-20 absolute block md:hidden   pointer-events-none select-none"
+          className="w-[115rem] h-[80rem] opacity-20 absolute left-[9rem] block md:hidden   pointer-events-none select-none"
           src="/images/cognitive/Group1000004535.svg"
         />
         {/* <img
