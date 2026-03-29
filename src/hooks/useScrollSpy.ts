@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function useScrollSpy(sectionIds: string[], offset = 100) {
   const [activeId, setActiveId] = useState("");
+  const pathname = usePathname();
+  const disableHashUpdates = ["/", "/cognitive", "/cognitive-sql", "/ontlogy-views", "/use-cases"].includes(pathname || "");
 
   useEffect(() => {
     const elements = sectionIds
@@ -25,17 +28,21 @@ export default function useScrollSpy(sectionIds: string[], offset = 100) {
           setActiveId(topSection);
           
           // Update URL hash without triggering scroll
-          const currentHash = window.location.hash.replace("#", "");
-          if (currentHash !== topSection) {
-            history.replaceState(null, "", `#${topSection}`);
+          if (!disableHashUpdates) {
+            const currentHash = window.location.hash.replace("#", "");
+            if (currentHash !== topSection) {
+              history.replaceState(null, "", `#${topSection}`);
+            }
           }
         } else {
           // If no section is visible, check if we're at the very top of the page
           if (window.scrollY < offset) {
             setActiveId("HeroSection");
-            const currentHash = window.location.hash.replace("#", "");
-            if (currentHash !== "HeroSection") {
-              history.replaceState(null, "", "#HeroSection");
+            if (!disableHashUpdates) {
+              const currentHash = window.location.hash.replace("#", "");
+              if (currentHash !== "HeroSection") {
+                history.replaceState(null, "", "#HeroSection");
+              }
             }
           }
         }
@@ -69,7 +76,7 @@ export default function useScrollSpy(sectionIds: string[], offset = 100) {
       elements.forEach((el) => observer.unobserve(el));
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [sectionIds, offset]);
+  }, [sectionIds, offset, disableHashUpdates]);
 
   return activeId;
 }

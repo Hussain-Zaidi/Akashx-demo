@@ -8,6 +8,22 @@ const nextConfig = {
   images: {
     domains: ['64.227.37.208'], // Add your IP address here
   },
+  async rewrites() {
+    return [
+      {
+        source: '/cognitive-sql',
+        destination: '/cognitive',
+      },
+      {
+        source: '/ontlogy-views',
+        destination: '/cognitive',
+      },
+      {
+        source: '/use-cases',
+        destination: '/cognitive',
+      },
+    ];
+  },
   async redirects() {
     return [
       {

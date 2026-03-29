@@ -37,11 +37,29 @@ export default function Header({ ...props }: Props) {
 
   // Use scroll spy for active section highlighting
   const activeSection = useScrollSpy(sectionIds, 100);
+  const routeSectionHints: Record<string, string> = {
+    '/': 'HeroSection',
+    '/cognitive': 'HeroSection',
+    '/cognitive-sql': 'CognitiveSQL',
+    '/ontlogy-views': 'OntlogyViews',
+    '/use-cases': 'UseCases',
+  };
+  const hintedSection = routeSectionHints[pathname || ''];
 
   // Use hash navigation for smooth scrolling
   useHashNavigation();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const handleSameRouteReload = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    route: string
+  ) => {
+    if ((pathname || '') !== route) return;
+
+    // Keep section state stable when clicking an already-active SEO route.
+    event.preventDefault();
+    window.location.reload();
+  };
 
   // Detect screen size and update isMobile state
   useEffect(() => {
@@ -63,12 +81,19 @@ export default function Header({ ...props }: Props) {
   // Helper function to check if a link is active
   const isLinkActive = (sectionId?: string) => {
     // Only apply active styles on the cognitive page
-    if (pathname !== '/cognitive') return false;
+    if (!['/', '/cognitive', '/cognitive-sql', '/ontlogy-views', '/use-cases'].includes(pathname || '')) return false;
 
     if (sectionId) {
+      // For SEO alias routes, use URL as source-of-truth for immediate deterministic highlighting.
+      if (hintedSection && hintedSection !== 'HeroSection') {
+        return hintedSection === sectionId;
+      }
       // For section links - check if this section is active
       return activeSection === sectionId;
     } else {
+      if (hintedSection) {
+        return hintedSection === 'HeroSection';
+      }
       // For home link - active when HeroSection is active
       return activeSection === 'HeroSection';
     }
@@ -90,7 +115,7 @@ export default function Header({ ...props }: Props) {
           height:isMobile ? '4rem' : '',
         }}
       >
-        <Link href="/cognitive#HeroSection">
+        <Link href="/">
           <Img
             src="img_header_logo.svg"
             width={175.92}
@@ -138,7 +163,7 @@ export default function Header({ ...props }: Props) {
           {/* Home Link - Active when HeroSection is visible */}
           <li onClick={() => setIsMenuOpen(false)}>
             <Link
-              href="/cognitive#HeroSection"
+              href="/"
               className={`hidden cursor-pointer lg:text-[1.0625rem] ${
                 isMobile
                   ? 'border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]'
@@ -162,7 +187,8 @@ export default function Header({ ...props }: Props) {
           {/* Cognitive SQL Link */}
           <li onClick={() => setIsMenuOpen(false)}>
             <Link
-              href="/cognitive#CognitiveSQL"
+              href="/cognitive-sql"
+              onClick={(event) => handleSameRouteReload(event, '/cognitive-sql')}
               className={`cursor-pointer lg:text-[1.0625rem] ${
                 isMobile
                   ? 'border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]'
@@ -186,7 +212,8 @@ export default function Header({ ...props }: Props) {
           {/* Ontology Views Link */}
           <li onClick={() => setIsMenuOpen(false)}>
             <Link
-              href="/cognitive#OntlogyViews"
+              href="/ontlogy-views"
+              onClick={(event) => handleSameRouteReload(event, '/ontlogy-views')}
               className={`cursor-pointer lg:text-[1.0625rem] ${
                 isMobile
                   ? 'border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]'
@@ -210,7 +237,8 @@ export default function Header({ ...props }: Props) {
           {/* Use Cases Link */}
           <li onClick={() => setIsMenuOpen(false)}>
             <Link
-              href="/cognitive#UseCases"
+              href="/use-cases"
+              onClick={(event) => handleSameRouteReload(event, '/use-cases')}
               className={`cursor-pointer lg:text-[1.0625rem] ${
                 isMobile
                   ? 'border-b border-[#546e937f] pb-[1.25rem] pt-[1.25rem] px-[1.25rem]'

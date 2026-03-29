@@ -65,21 +65,21 @@ OLCP Database
                 </Heading>
                 <ul className="flex flex-col items-start gap-6 md:gap-4">
                   <li>
-                    <Link href="/cognitive#CognitiveSQL" rel="noreferrer" className="md:text-[0.875rem]">
+                    <Link href="/cognitive-sql" rel="noreferrer" className="md:text-[0.875rem]">
                       <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                         Cognitive SQL          
                       </Heading>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/cognitive#OntlogyViews" rel="noreferrer" className="md:text-[0.875rem]">
+                    <Link href="/ontlogy-views" rel="noreferrer" className="md:text-[0.875rem]">
                       <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                        Ontlogy Views 
                       </Heading>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/cognitive#UseCases" rel="noreferrer" className="md:text-[0.875rem]">
+                    <Link href="/use-cases" rel="noreferrer" className="md:text-[0.875rem]">
                       <Heading size="auto" as="p" className=" font-inter text-[1.375rem] md:text-[.875rem]  font-normal text-[#B8D0F2] hover:text-indigo-50 hover:underline">
                        Use Cases
                       </Heading>

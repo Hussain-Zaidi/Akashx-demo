@@ -114,7 +114,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   useEffect(() => {
-    if (!isLoading && pathname !== '/cognitive') {
+    if (!isLoading && !['/', '/cognitive', '/cognitive-sql', '/ontlogy-views', '/use-cases'].includes(pathname || '')) {
       setCustomViewport();
       removeResponsiveRootFontSize();
       
@@ -169,7 +169,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <link rel="icon" href="/favicon.ico" />
         </head>
         <body>
-          {pathname && pathname !== '/cognitive' && (
+          {pathname && !['/', '/cognitive', '/cognitive-sql', '/ontlogy-views', '/use-cases'].includes(pathname || '') && (
             <div id="container">
               <Header />
             </div>

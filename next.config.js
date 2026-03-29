@@ -8,16 +8,27 @@ const nextConfig = {
   images: {
     domains: ['134.209.180.241'], // Add your IP address here
   },
+  async rewrites() {
+    return [
+      {
+        source: '/cognitive-sql',
+        destination: '/cognitive',
+      },
+      {
+        source: '/ontlogy-views',
+        destination: '/cognitive',
+      },
+      {
+        source: '/use-cases',
+        destination: '/cognitive',
+      },
+    ];
+  },
   async redirects() {
     return [
       {
         source: '/admin', // When the /admin URL is accessed
         destination: 'http://134.209.180.241:1337/admin', // Redirect to your Strapi admin
-        permanent: true, // Use true for a 308 redirect (permanent)
-      },
-      {
-        source: '/', // The root URL
-        destination: '/cognitive', // Redirect to /home
         permanent: true, // Use true for a 308 redirect (permanent)
       },
     ];

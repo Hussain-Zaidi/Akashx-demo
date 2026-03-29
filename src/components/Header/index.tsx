@@ -47,7 +47,7 @@ export default function Header({ ...props }: Props) {
       }}
     >
       <Link
-      href="/cognitive#HeroSection">
+      href="/">
           <Img
           src="img_header_logo.svg"
           width={175.92}
@@ -91,7 +91,7 @@ export default function Header({ ...props }: Props) {
 >
 
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive#HeroSection" className={`hidden cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/" className={`hidden cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
@@ -106,7 +106,7 @@ export default function Header({ ...props }: Props) {
           </Link>
         </li>
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive#CognitiveSQL" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/cognitive-sql" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
@@ -121,7 +121,7 @@ export default function Header({ ...props }: Props) {
           </Link>
         </li>
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive#OntlogyViews" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/ontlogy-views" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"
@@ -136,7 +136,7 @@ export default function Header({ ...props }: Props) {
           </Link>
         </li>
         <li onClick={() => setIsMenuOpen(false)}>
-          <Link href="/cognitive#UseCases" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
+          <Link href="/use-cases" className={`cursor-pointer lg:text-[17px] ${isMobile ? "border-b border-[#546e937f] pb-[20px] pt-[20px] px-[20px]" : ""}`}>
             <Heading
               size="textmd"
               as="p"

@@ -26,6 +26,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/ontlogy-views`,
+      lastModified: new Date("2025-08-28T00:00:00Z"),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/use-cases`,
+      lastModified: new Date("2025-08-28T00:00:00Z"),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/agents`,
       lastModified: new Date("2025-08-28T00:00:00Z"),
       changeFrequency: "weekly",
