@@ -38,7 +38,7 @@ export default function StickyStackSection() {
             >
               <span className="blue-green-background-text">Ontology Views</span>{' '}
               transform <br className='md:hidden' />
-              TBs of files into queryable tables
+              billions of files into queryable tables
             </Heading>
           </div>
 

@@ -39,7 +39,7 @@ export default function StickyStackSection() {
           >
             Why RAG Fails Enterprises <br className="md:hidden" />
             {/* <br className='md:hidden' /><br className='hidden md:block' /> */}
-            going into Production
+            going into Production?
           </Heading>
         </div>
 
